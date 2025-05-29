@@ -118,9 +118,16 @@
                     <div class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="betaTester" name="beta_tester">
-                    <label class="form-check-label" for="betaTester">I'm interested in being a beta tester for Digital Companion™</label>
+                <div class="mb-3">
+                    <label class="form-label">Are you interested in being a beta tester for Digital Companion™ when it launches?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="beta_tester" id="betaTesterYes" value="yes">
+                        <label class="form-check-label" for="betaTesterYes">Yes, I'd like early access</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="beta_tester" id="betaTesterNo" value="no">
+                        <label class="form-check-label" for="betaTesterNo">No, just keep me informed about the launch</label>
+                    </div>
                 </div>
                 
                 <div class="mb-4">
@@ -143,45 +150,148 @@
             <!-- Step 2: Your Experience (Optional) -->
             <div id="step2" class="form-section" style="display: none;">
                 <div class="mb-3">
-                    <label for="relationship" class="form-label">What is your relationship to loss?</label>
-                    <select class="form-select" id="relationship" name="relationship">
-                        <option value="" selected>Please select...</option>
-                        <option value="recent">I've recently experienced a loss</option>
-                        <option value="past">I experienced a loss in the past</option>
-                        <option value="supporting">I'm supporting someone through loss</option>
-                        <option value="professional">I'm a professional in this field</option>
-                        <option value="preparing">I'm preparing for a future loss</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <label class="form-label">Have you experienced the loss of a loved one?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experienced_loss" id="lossYes" value="yes">
+                        <label class="form-check-label" for="lossYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experienced_loss" id="lossNo" value="no">
+                        <label class="form-check-label" for="lossNo">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experienced_loss" id="lossPreferNotSay" value="prefer_not_say">
+                        <label class="form-check-label" for="lossPreferNotSay">Prefer not to say</label>
+                    </div>
                 </div>
                 
                 <div class="mb-3">
-                    <label for="challenges" class="form-label">What challenges have you faced during the grief process?</label>
-                    <textarea class="form-control" id="challenges" name="challenges" rows="3"></textarea>
+                    <label class="form-label">What aspects of dealing with loss did you find most challenging? (Select all that apply)</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="emotional_processing" id="challenge1">
+                        <label class="form-check-label" for="challenge1">Emotional processing and grief</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="probate_process" id="challenge2">
+                        <label class="form-check-label" for="challenge2">Understanding and navigating the probate process</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="legal_support" id="challenge3">
+                        <label class="form-check-label" for="challenge3">Finding a suitable solicitor or legal support</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="task_knowledge" id="challenge4">
+                        <label class="form-check-label" for="challenge4">Knowing which tasks needed to be done and when</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="administrative_burden" id="challenge5">
+                        <label class="form-check-label" for="challenge5">Managing the administrative burden (paperwork, accounts, notifications)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="financial_matters" id="challenge6">
+                        <label class="form-check-label" for="challenge6">Handling financial matters and understanding inheritance implications</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="closing_accounts" id="challenge7">
+                        <label class="form-check-label" for="challenge7">Closing or transferring accounts and services</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="supporting_family" id="challenge8">
+                        <label class="form-check-label" for="challenge8">Supporting other family members through their grief</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="finding_support" id="challenge9">
+                        <label class="form-check-label" for="challenge9">Finding appropriate emotional support resources</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="self_care" id="challenge10">
+                        <label class="form-check-label" for="challenge10">Maintaining self-care during the process</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="challenges" value="other" id="challengeOther">
+                        <label class="form-check-label" for="challengeOther">Other</label>
+                    </div>
+                    <div class="mt-2">
+                        <input type="text" class="form-control" name="challenges_other" placeholder="Please specify other challenges">
+                    </div>
                 </div>
                 
                 <div class="mb-3">
-                    <label class="form-label">What aspects of Digital Companion™ are you most interested in?</label>
+                    <label class="form-label">Which resources or tools would have been most helpful during your experience with loss?</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="practicalSupport" name="interests" value="practical">
-                        <label class="form-check-label" for="practicalSupport">Practical support (paperwork, arrangements)</label>
+                        <input class="form-check-input" type="checkbox" name="helpful_resources" value="checklists" id="resource1">
+                        <label class="form-check-label" for="resource1">Checklists for administrative tasks</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="emotionalSupport" name="interests" value="emotional">
-                        <label class="form-check-label" for="emotionalSupport">Emotional support and resources</label>
+                        <input class="form-check-input" type="checkbox" name="helpful_resources" value="emotional_support" id="resource2">
+                        <label class="form-check-label" for="resource2">Emotional support resources</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="community" name="interests" value="community">
-                        <label class="form-check-label" for="community">Community and connection</label>
+                        <input class="form-check-input" type="checkbox" name="helpful_resources" value="connection" id="resource3">
+                        <label class="form-check-label" for="resource3">Connection with others going through similar experiences</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="memorialization" name="interests" value="memorialization">
-                        <label class="form-check-label" for="memorialization">Memorialization tools</label>
+                        <input class="form-check-input" type="checkbox" name="helpful_resources" value="professional_guidance" id="resource4">
+                        <label class="form-check-label" for="resource4">Professional guidance (legal, financial, etc.)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="helpful_resources" value="journaling" id="resource5">
+                        <label class="form-check-label" for="resource5">Journaling or reflection tools</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="helpful_resources" value="grief_info" id="resource6">
+                        <label class="form-check-label" for="resource6">Information about the grief process</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="helpful_resources" value="other" id="resourceOther">
+                        <label class="form-check-label" for="resourceOther">Other</label>
+                    </div>
+                    <div class="mt-2">
+                        <input type="text" class="form-control" name="resources_other" placeholder="Please specify other resources">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">What features would be most valuable to you in a digital companion for grief support? (Select up to 3)</label>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="task_management" id="feature1">
+                        <label class="form-check-label" for="feature1">Task management for administrative matters</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="resource_library" id="feature2">
+                        <label class="form-check-label" for="feature2">Resource library with articles and guides</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="journal" id="feature3">
+                        <label class="form-check-label" for="feature3">Journal for recording thoughts and feelings</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="community" id="feature4">
+                        <label class="form-check-label" for="feature4">Community forum to connect with others</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="reminders" id="feature5">
+                        <label class="form-check-label" for="feature5">Reminders for important dates and tasks</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="health_tracking" id="feature6">
+                        <label class="form-check-label" for="feature6">Integration with health tracking</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="offline_access" id="feature7">
+                        <label class="form-check-label" for="feature7">Offline access to resources</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input feature-checkbox" type="checkbox" name="valuable_features" value="other" id="featureOther">
+                        <label class="form-check-label" for="featureOther">Other</label>
+                    </div>
+                    <div class="mt-2">
+                        <input type="text" class="form-control" name="features_other" placeholder="Please specify other features">
                     </div>
                 </div>
                 
                 <div class="mb-4">
-                    <label for="additionalFeedback" class="form-label">Any additional feedback or suggestions?</label>
+                    <label for="additionalFeedback" class="form-label">Is there anything else you'd like to share about your experience or what you're looking for in a support service?</label>
                     <textarea class="form-control" id="additionalFeedback" name="additional_feedback" rows="3"></textarea>
                 </div>
                 
@@ -212,6 +322,18 @@
             const prevStepBtn = document.getElementById('prevStep');
             const submitBtn = document.getElementById('submitSurvey');
             const surveyForm = document.getElementById('surveyForm');
+            const featureCheckboxes = document.querySelectorAll('.feature-checkbox');
+            
+            // Limit feature selection to 3
+            featureCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checked = document.querySelectorAll('.feature-checkbox:checked');
+                    if (checked.length > 3) {
+                        this.checked = false;
+                        alert('Please select up to 3 features only.');
+                    }
+                });
+            });
             
             // Move to step 2
             nextStepBtn.addEventListener('click', function() {
