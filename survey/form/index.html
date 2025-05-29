@@ -17,7 +17,7 @@
             padding: 2rem;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1 );
         }
         .form-header {
             margin-bottom: 2rem;
@@ -102,7 +102,9 @@
             </div>
         </div>
         
-        <form id="surveyForm">
+        <form id="surveyForm" name="digital-companion-survey" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="digital-companion-survey">
+            
             <!-- Step 1: Essential Information -->
             <div id="step1" class="form-section">
                 <div class="mb-3">
@@ -188,9 +190,7 @@
                     <button type="submit" class="btn btn-primary" id="submitSurvey">Submit Survey</button>
                 </div>
             </div>
-        <form name="digital-companion-survey" method="POST" data-netlify="true">
-<input type="hidden" name="form-name" value="digital-companion-survey">
-
+        </form>
             
         <!-- Thank You Message (Hidden initially) -->
         <div id="thankYou" class="thank-you">
@@ -240,23 +240,34 @@
             });
             
             // Submit the form
-            submitBtn.addEventListener('click', function(e) {
+            surveyForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // In a real implementation, we would send the data to a server here
-                // For now, we'll just show the thank you message
-                
-                // Simulate form submission delay
+                // Disable button to prevent multiple submissions
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Submitting...';
                 
-                setTimeout(function() {
+                // Get form data
+                const formData = new FormData(surveyForm);
+                
+                // Submit to Netlify
+                fetch('/', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(() => {
+                    // Show thank you message
                     surveyForm.style.display = 'none';
                     thankYou.style.display = 'block';
                     
                     // Store in localStorage that the user has completed the survey
                     localStorage.setItem('surveyCompleted', 'true');
-                }, 1500);
+                })
+                .catch(error => {
+                    alert('There was a problem submitting your form. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submit Survey';
+                });
             });
             
             // Email validation helper
