@@ -2,23 +2,18 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
 }
 
 .main-content {
   flex: 1;
-  padding: var(--spacing-lg) 0;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .app-container {
-    padding: 0 var(--spacing-sm);
-  }
-  
-  .main-content {
-    padding: var(--spacing-md) 0;
-  }
+.app-footer {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
 }
