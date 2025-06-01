@@ -1,7 +1,7 @@
 [build]
-  base = "platform"
-  command = "npm install && npm run build"
-  publish = "build"
+  base = "/"
+  command = "cd platform && npm install && npm run build"
+  publish = "platform/build"
 
 [build.environment]
   NODE_VERSION = "16"
