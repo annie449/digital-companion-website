@@ -1,3 +1,4 @@
+/* GlobalNavigation.css */
 .global-navigation {
   display: flex;
   justify-content: space-between;
@@ -5,37 +6,41 @@
   padding: 10px 20px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.nav-brand a {
-  color: #6B5B95;
-  font-size: 18px;
+.nav-brand {
+  margin-right: 20px;
   font-weight: bold;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 .nav-links {
   display: flex;
   gap: 15px;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .nav-links a {
-  color: #333;
   text-decoration: none;
+  color: var(--text-color);
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   transition: background-color 0.2s;
 }
 
 .nav-links a:hover {
-  background-color: #f0edf6;
+  background-color: var(--secondary-color);
 }
 
 .nav-links a.active {
-  background-color: #6B5B95;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -44,74 +49,37 @@
   gap: 10px;
 }
 
-.notification-button {
-  position: relative;
-  background: none;
+.nav-actions button {
+  background-color: var(--secondary-color);
   border: none;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.notification-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: #e74c3c;
-  color: white;
-  font-size: 12px;
-  width: 18px;
-  height: 18px;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.user-button {
-  background-color: #6B5B95;
-  color: white;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-/* Responsive Design */
+.nav-actions button:hover {
+  background-color: #e0dbe8;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .global-navigation {
-    flex-direction: column;
-    padding: 10px;
-  }
-  
-  .nav-brand {
-    margin-bottom: 10px;
-  }
-  
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 10px;
+    display: none; /* Replace with mobile menu */
   }
   
-  .nav-links a {
-    font-size: 14px;
-    padding: 6px 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    gap: 5px;
-  }
-  
-  .nav-links a {
-    padding: 5px 7px;
-    font-size: 13px;
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
 }
