@@ -1,6 +1,6 @@
 [build]
   base = "/"
-  command = "cd platform && npm install && npm run build"
+  command = "cd platform && npm install && CI=false npm run build"
   publish = "platform/build"
 
 [build.environment]
