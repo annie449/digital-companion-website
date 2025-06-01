@@ -1,0 +1,100 @@
+/* Touch Target Improvements for Digital Companion™ Website */
+
+/* General touch target improvements */
+a, button, input[type="button"], input[type="submit"], input[type="reset"], 
+[role="button"], .clickable {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px;
+  margin: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation links */
+nav a, header a, .navbar a, .nav-link {
+  padding: 12px 15px;
+  margin: 2px;
+}
+
+/* Form elements */
+input[type="text"], input[type="email"], input[type="password"], 
+input[type="search"], input[type="tel"], input[type="url"], 
+input[type="number"], textarea, select {
+  min-height: 44px;
+  padding: 10px;
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+/* Checkboxes and radio buttons */
+input[type="checkbox"], input[type="radio"] {
+  min-width: 22px;
+  min-height: 22px;
+  margin: 10px;
+}
+
+/* Labels for form elements */
+label {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+/* Call-to-action buttons */
+.cta, .btn, .button, [class*="btn-"] {
+  min-height: 50px;
+  min-width: 120px;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  font-size: 16px;
+}
+
+/* Footer links */
+footer a {
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+}
+
+/* Social media icons */
+.social-icon, [class*="social-"] {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+/* Spacing between interactive elements */
+.nav-item + .nav-item,
+.btn + .btn,
+.button + .button {
+  margin-left: 10px;
+}
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+  /* Increase spacing on mobile */
+  a, button, input[type="button"], input[type="submit"], input[type="reset"] {
+    margin: 8px;
+  }
+  
+  /* Stack buttons on mobile */
+  .btn-group, .button-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .btn-group .btn,
+  .button-group .button {
+    margin: 5px 0;
+  }
+}
+
+/* Ensure proper focus states for accessibility */
+a:focus, button:focus, input:focus, textarea:focus, select:focus,
+[tabindex]:focus {
+  outline: 3px solid #6B5B95;
+  outline-offset: 2px;
+}
