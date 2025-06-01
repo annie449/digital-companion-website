@@ -1,113 +1,77 @@
-/* GlobalNavigation.css */
 .global-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--secondary-color);
 }
 
-.nav-brand {
-  margin-right: 20px;
+.nav-logo a {
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 1.2rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 15px;
-  flex-grow: 1;
-  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: var(--spacing-lg);
 }
 
 .nav-links a {
-  text-decoration: none;
   color: var(--text-color);
-  padding: 8px 12px;
-  border-radius: var(--border-radius);
-  transition: background-color 0.2s;
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-xs) 0;
+  position: relative;
 }
 
 .nav-links a:hover {
-  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
 .nav-links a.active {
+  color: var(--primary-color);
+}
+
+.nav-links a.active:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
   background-color: var(--primary-color);
-  color: white;
-}
-
-.nav-actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.login-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.login-button:hover {
-  background-color: #5a4c7f;
-}
-
-.nav-actions button {
-  background-color: var(--secondary-color);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.nav-actions button:hover {
-  background-color: #e0dbe8;
-}
-
-.mobile-menu-button {
-  display: none;
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  .global-navigation {
     flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-sm) 0;
   }
   
-  .nav-links.mobile-active {
-    display: flex;
+  .nav-logo {
+    margin-bottom: var(--spacing-md);
   }
   
-  .mobile-menu-button {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: var(--spacing-xs);
+  }
+  
+  .nav-links li {
+    margin-left: var(--spacing-md);
+  }
+  
+  .nav-links li:first-child {
+    margin-left: 0;
   }
 }

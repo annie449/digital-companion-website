@@ -1,41 +1,45 @@
-import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './GlobalNavigation.css';
 
 function GlobalNavigation() {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  
-  const toggleMobileMenu = () => {
-    setShowMobileMenu(!showMobileMenu);
-  };
-
   return (
     <nav className="global-navigation">
-      <Link to="/" className="nav-brand">Digital Companion™</Link>
-      
-      <div className={`nav-links ${showMobileMenu ? 'mobile-active' : ''}`}>
-        <NavLink to="/" end>🏠 Home</NavLink>
-        <NavLink to="/tasks">✓ Tasks</NavLink>
-        <NavLink to="/estate">📊 Estate</NavLink>
-        <NavLink to="/journal">📓 Journal</NavLink>
-        <NavLink to="/meditation">🧘 Meditation</NavLink>
-        <NavLink to="/services">🔍 Services</NavLink>
-        <NavLink to="/help">❓ Help</NavLink>
+      <div className="nav-logo">
+        <NavLink to="/">Digital Companion</NavLink>
       </div>
-      
-      <div className="nav-actions">
-        <button className="login-button" aria-label="Login">Login</button>
-        <button aria-label="Notifications">🔔 2</button>
-        <button aria-label="User Profile">JD</button>
-      </div>
-      
-      <button 
-        className="mobile-menu-button" 
-        aria-label="Menu" 
-        onClick={toggleMobileMenu}
-      >
-        ☰
-      </button>
+      <ul className="nav-links">
+        <li>
+          <NavLink to="/tasks" className={({ isActive }) => isActive ? 'active' : ''}>
+            Tasks
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/estate" className={({ isActive }) => isActive ? 'active' : ''}>
+            Estate
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/journal" className={({ isActive }) => isActive ? 'active' : ''}>
+            Journal
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/meditation" className={({ isActive }) => isActive ? 'active' : ''}>
+            Meditation
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''}>
+            Services
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/help" className={({ isActive }) => isActive ? 'active' : ''}>
+            Help
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   );
 }

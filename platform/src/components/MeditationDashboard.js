@@ -1,174 +1,135 @@
 import React from 'react';
 import './MeditationDashboard.css';
 
-/**
- * Meditation Dashboard Component
- * 
- * This component displays meditation content, tracks progress,
- * and provides access to guided meditation sessions.
- */
-const MeditationDashboard = () => {
-  // Sample meditation data - in a real app, this would come from a context or API
-  const featuredMeditations = [
-    {
-      id: 1,
-      title: 'Finding Peace in Grief',
-      description: 'A gentle meditation to help process feelings of loss and find moments of peace.',
-      duration: 15,
-      category: 'Grief & Loss',
-      image: 'https://via.placeholder.com/300x200?text=Meditation',
-      instructor: 'Sarah Johnson'
-    },
-    {
-      id: 2,
-      title: 'Calming Anxiety',
-      description: 'Techniques to help calm anxious thoughts and find your center during difficult times.',
-      duration: 10,
-      category: 'Anxiety Relief',
-      image: 'https://via.placeholder.com/300x200?text=Meditation',
-      instructor: 'Michael Chen'
-    },
-    {
-      id: 3,
-      title: 'Restful Sleep',
-      description: 'A soothing meditation to help you find rest when grief affects your sleep.',
-      duration: 20,
-      category: 'Sleep',
-      image: 'https://via.placeholder.com/300x200?text=Meditation',
-      instructor: 'Emma Wilson'
-    }
-  ];
-
-  const recentlyPlayed = [
-    {
-      id: 4,
-      title: 'Mindful Breathing',
-      duration: 5,
-      lastPlayed: '2 days ago',
-      progress: 100
-    },
-    {
-      id: 5,
-      title: 'Releasing Emotions',
-      duration: 12,
-      lastPlayed: '1 week ago',
-      progress: 75
-    }
-  ];
-
-  const collections = [
-    { id: 1, name: 'Grief & Loss', count: 8 },
-    { id: 2, name: 'Sleep & Rest', count: 6 },
-    { id: 3, name: 'Anxiety Relief', count: 5 },
-    { id: 4, name: 'Mindfulness', count: 10 }
-  ];
-
+function MeditationDashboard() {
   return (
     <div className="meditation-dashboard">
-      <header className="dashboard-header">
-        <h1>Meditation</h1>
-        <p>Find moments of peace and mindfulness during your grief journey.</p>
-      </header>
-
-      <section className="meditation-stats">
-        <div className="stats-card">
-          <h3>Your Meditation Journey</h3>
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-value">12</div>
-              <div className="stat-label">Sessions</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">3.5</div>
-              <div className="stat-label">Hours</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">8</div>
-              <div className="stat-label">Days Streak</div>
-            </div>
+      <h1>Meditation Dashboard</h1>
+      <p className="dashboard-description">Find peace and support through guided meditations and mindfulness practices.</p>
+      
+      <div className="featured-meditation">
+        <h2>Featured Meditation</h2>
+        <div className="meditation-player">
+          <div className="meditation-image">
+            <div className="play-button">▶</div>
+          </div>
+          <div className="meditation-info">
+            <h3>Finding Calm in Difficult Times</h3>
+            <p className="meditation-details">
+              <span className="meditation-duration">15 minutes</span>
+              <span className="meditation-category">Grief Support</span>
+            </p>
+            <p className="meditation-description">
+              A gentle meditation to help you find moments of calm and peace during challenging times.
+            </p>
+            <button className="play-meditation-button">Play Meditation</button>
           </div>
         </div>
-      </section>
-
-      <section className="featured-meditations">
-        <h2>Recommended for You</h2>
-        <div className="meditations-grid">
-          {featuredMeditations.map(meditation => (
-            <div key={meditation.id} className="meditation-card">
-              <div className="meditation-image">
-                <img src={meditation.image} alt={meditation.title} />
-                <div className="meditation-duration">{meditation.duration} min</div>
-              </div>
-              <div className="meditation-content">
-                <div className="meditation-category">{meditation.category}</div>
-                <h3>{meditation.title}</h3>
-                <p>{meditation.description}</p>
-                <div className="meditation-instructor">
-                  With {meditation.instructor}
-                </div>
-              </div>
-              <div className="meditation-actions">
-                <button className="primary-button">Play</button>
-                <button className="icon-button">♡</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="dashboard-columns">
-        <section className="recently-played">
-          <h2>Recently Played</h2>
-          <div className="recently-played-list">
-            {recentlyPlayed.map(item => (
-              <div key={item.id} className="recently-played-item">
-                <div className="play-button">▶</div>
-                <div className="item-details">
-                  <h3>{item.title}</h3>
-                  <div className="item-meta">
-                    <span>{item.duration} min</span>
-                    <span>•</span>
-                    <span>{item.lastPlayed}</span>
-                  </div>
-                  {item.progress < 100 && (
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${item.progress}%` }}></div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="collections">
-          <h2>Collections</h2>
-          <div className="collections-list">
-            {collections.map(collection => (
-              <div key={collection.id} className="collection-item">
-                <h3>{collection.name}</h3>
-                <span>{collection.count} meditations</span>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
-
-      <section className="daily-meditation">
-        <div className="daily-meditation-card">
-          <div className="daily-meditation-content">
-            <h2>Daily Meditation</h2>
-            <h3>Gentle Acceptance</h3>
-            <p>A 5-minute practice to cultivate acceptance and peace in your day.</p>
-            <button className="primary-button">Start Now</button>
-          </div>
-          <div className="daily-meditation-image">
-            <img src="https://via.placeholder.com/300x200?text=Daily+Meditation" alt="Daily Meditation" />
+      
+      <div className="meditation-collections">
+        <div className="collection-header">
+          <h2>Meditation Collections</h2>
+          <div className="collection-filters">
+            <button className="filter-button active">All</button>
+            <button className="filter-button">Grief Support</button>
+            <button className="filter-button">Stress Relief</button>
+            <button className="filter-button">Sleep</button>
+            <button className="filter-button">Mindfulness</button>
           </div>
         </div>
-      </section>
+        
+        <div className="meditation-grid">
+          <div className="meditation-card">
+            <div className="meditation-card-image grief">
+              <div className="play-icon">▶</div>
+            </div>
+            <div className="meditation-card-content">
+              <h3>Processing Grief</h3>
+              <p className="meditation-card-details">
+                <span>10 minutes</span>
+                <span>Grief Support</span>
+              </p>
+              <p className="meditation-card-description">
+                A meditation to help acknowledge and process feelings of grief.
+              </p>
+            </div>
+          </div>
+          
+          <div className="meditation-card">
+            <div className="meditation-card-image sleep">
+              <div className="play-icon">▶</div>
+            </div>
+            <div className="meditation-card-content">
+              <h3>Peaceful Sleep</h3>
+              <p className="meditation-card-details">
+                <span>20 minutes</span>
+                <span>Sleep</span>
+              </p>
+              <p className="meditation-card-description">
+                A calming meditation to help you fall asleep during difficult times.
+              </p>
+            </div>
+          </div>
+          
+          <div className="meditation-card">
+            <div className="meditation-card-image stress">
+              <div className="play-icon">▶</div>
+            </div>
+            <div className="meditation-card-content">
+              <h3>Releasing Tension</h3>
+              <p className="meditation-card-details">
+                <span>12 minutes</span>
+                <span>Stress Relief</span>
+              </p>
+              <p className="meditation-card-description">
+                A guided practice to release physical and emotional tension.
+              </p>
+            </div>
+          </div>
+          
+          <div className="meditation-card">
+            <div className="meditation-card-image mindfulness">
+              <div className="play-icon">▶</div>
+            </div>
+            <div className="meditation-card-content">
+              <h3>Present Moment Awareness</h3>
+              <p className="meditation-card-details">
+                <span>8 minutes</span>
+                <span>Mindfulness</span>
+              </p>
+              <p className="meditation-card-description">
+                A short practice to bring awareness to the present moment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="meditation-resources">
+        <h2>Mindfulness Resources</h2>
+        <div className="resources-grid">
+          <div className="resource-card">
+            <h3>Benefits of Meditation During Grief</h3>
+            <p>Learn how meditation can support the grieving process.</p>
+            <a href="#" className="resource-link">Read Article</a>
+          </div>
+          
+          <div className="resource-card">
+            <h3>Simple Daily Mindfulness Practices</h3>
+            <p>Easy ways to incorporate mindfulness into your daily routine.</p>
+            <a href="#" className="resource-link">View Practices</a>
+          </div>
+          
+          <div className="resource-card">
+            <h3>Creating a Meditation Space</h3>
+            <p>Tips for creating a peaceful space for your meditation practice.</p>
+            <a href="#" className="resource-link">Read Guide</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default MeditationDashboard;

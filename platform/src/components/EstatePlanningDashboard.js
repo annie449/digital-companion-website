@@ -1,232 +1,110 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './EstatePlanningDashboard.css';
 
-/**
- * Estate Planning Dashboard Component
- * 
- * This component serves as the main interface for the estate planning feature,
- * allowing users to create, manage, and track progress on essential estate planning documents.
- */
-const EstatePlanningDashboard = () => {
-  // State for tracking document completion progress
-  const [planningProgress, setPlanningProgress] = useState({
-    will: 25,
-    healthcareDirective: 10,
-    powerOfAttorney: 0,
-    digitalAssets: 5,
-    overall: 10
-  });
-
-  // State for document templates
-  const [documentTemplates, setDocumentTemplates] = useState([
-    {
-      id: 'will',
-      title: 'Will & Testament',
-      description: 'Specify how your assets should be distributed and who will execute your estate.',
-      icon: '📜',
-      progress: 25,
-      lastUpdated: '2 days ago'
-    },
-    {
-      id: 'healthcare',
-      title: 'Healthcare Directive',
-      description: 'Document your medical care preferences if you become unable to make decisions.',
-      icon: '🏥',
-      progress: 10,
-      lastUpdated: '1 week ago'
-    },
-    {
-      id: 'poa',
-      title: 'Power of Attorney',
-      description: 'Designate someone to make financial or legal decisions on your behalf.',
-      icon: '⚖️',
-      progress: 0,
-      lastUpdated: 'Not started'
-    },
-    {
-      id: 'digital',
-      title: 'Digital Asset Instructions',
-      description: 'Provide guidance for handling your online accounts and digital property.',
-      icon: '💻',
-      progress: 5,
-      lastUpdated: '2 weeks ago'
-    }
-  ]);
-
-  // State for recent activity
-  const [recentActivity, setRecentActivity] = useState([
-    {
-      id: 1,
-      action: 'updated',
-      document: 'Will & Testament',
-      timestamp: '2 days ago'
-    },
-    {
-      id: 2,
-      action: 'created',
-      document: 'Healthcare Directive',
-      timestamp: '1 week ago'
-    },
-    {
-      id: 3,
-      action: 'shared',
-      document: 'Will & Testament',
-      recipient: 'Family Lawyer',
-      timestamp: '1 week ago'
-    }
-  ]);
-
-  // Handler for document selection
-  const handleDocumentSelect = (documentId) => {
-    console.log(`Selected document: ${documentId}`);
-    // In a full implementation, this would navigate to the document editor
-    // or create a new document if it doesn't exist
-  };
-
+function EstatePlanningDashboard() {
   return (
     <div className="estate-planning-dashboard">
-      <header className="dashboard-header">
-        <h1>Estate Planning</h1>
-        <p>Prepare important documents to protect your legacy and support your loved ones.</p>
-      </header>
-
-      <section className="planning-progress">
-        <h2>Your Planning Progress</h2>
-        <div className="progress-overview">
-          <div className="progress-circle">
-            <svg viewBox="0 0 36 36" className="circular-chart">
-              <path className="circle-bg"
-                d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path className="circle"
-                strokeDasharray={`${planningProgress.overall}, 100`}
-                d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <text x="18" y="20.35" className="percentage">{planningProgress.overall}%</text>
-            </svg>
+      <h1>Estate Planning Dashboard</h1>
+      <p className="dashboard-description">Organize important documents and make critical decisions for the future.</p>
+      
+      <div className="planning-progress">
+        <h2>Your Progress</h2>
+        <div className="progress-container">
+          <div className="progress-label">
+            <span>Overall Completion</span>
+            <span>35%</span>
           </div>
-          <div className="progress-details">
-            <div className="progress-item">
-              <span>Will & Testament</span>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${planningProgress.will}%` }}></div>
-              </div>
-              <span>{planningProgress.will}%</span>
+          <div className="progress-bar">
+            <div className="progress-fill" style={{ width: '35%' }}></div>
+          </div>
+        </div>
+        
+        <div className="progress-categories">
+          <div className="progress-category">
+            <div className="category-header">
+              <h3>Important Documents</h3>
+              <span>40%</span>
             </div>
-            <div className="progress-item">
-              <span>Healthcare Directive</span>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${planningProgress.healthcareDirective}%` }}></div>
-              </div>
-              <span>{planningProgress.healthcareDirective}%</span>
+            <div className="progress-bar">
+              <div className="progress-fill" style={{ width: '40%' }}></div>
             </div>
-            <div className="progress-item">
-              <span>Power of Attorney</span>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${planningProgress.powerOfAttorney}%` }}></div>
-              </div>
-              <span>{planningProgress.powerOfAttorney}%</span>
+          </div>
+          
+          <div className="progress-category">
+            <div className="category-header">
+              <h3>Financial Planning</h3>
+              <span>25%</span>
             </div>
-            <div className="progress-item">
-              <span>Digital Assets</span>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${planningProgress.digitalAssets}%` }}></div>
-              </div>
-              <span>{planningProgress.digitalAssets}%</span>
+            <div className="progress-bar">
+              <div className="progress-fill" style={{ width: '25%' }}></div>
+            </div>
+          </div>
+          
+          <div className="progress-category">
+            <div className="category-header">
+              <h3>Healthcare Directives</h3>
+              <span>50%</span>
+            </div>
+            <div className="progress-bar">
+              <div className="progress-fill" style={{ width: '50%' }}></div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="document-templates">
+      </div>
+      
+      <div className="document-templates">
         <h2>Document Templates</h2>
         <div className="templates-grid">
-          {documentTemplates.map(template => (
-            <div 
-              key={template.id} 
-              className="template-card"
-              onClick={() => handleDocumentSelect(template.id)}
-            >
-              <div className="template-icon">{template.icon}</div>
-              <h3>{template.title}</h3>
-              <p>{template.description}</p>
-              <div className="template-footer">
-                <div className="template-progress">
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: `${template.progress}%` }}></div>
-                  </div>
-                  <span>{template.progress}% complete</span>
-                </div>
-                <div className="template-updated">Last updated: {template.lastUpdated}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="memory-vault-preview">
-        <div className="section-header">
-          <h2>Memory Vault</h2>
-          <button className="secondary-button">View All</button>
-        </div>
-        <div className="memory-preview">
-          <p>Preserve and share important memories, stories, photos, and videos with your loved ones.</p>
-          <div className="memory-actions">
-            <button className="primary-button">Create Memory</button>
-            <button className="secondary-button">Explore Timeline</button>
+          <div className="template-card">
+            <h3>Last Will and Testament</h3>
+            <p>Create a legally binding document that outlines how you want your assets distributed.</p>
+            <button className="template-button">Start Template</button>
+          </div>
+          
+          <div className="template-card">
+            <h3>Power of Attorney</h3>
+            <p>Designate someone to make financial decisions on your behalf if you're unable to do so.</p>
+            <button className="template-button">Start Template</button>
+          </div>
+          
+          <div className="template-card">
+            <h3>Healthcare Directive</h3>
+            <p>Document your wishes for medical care if you're unable to communicate.</p>
+            <button className="template-button">Start Template</button>
+          </div>
+          
+          <div className="template-card">
+            <h3>Digital Asset Inventory</h3>
+            <p>Create a comprehensive list of your digital accounts and assets.</p>
+            <button className="template-button">Start Template</button>
           </div>
         </div>
-      </section>
-
-      <section className="recent-activity">
-        <h2>Recent Activity</h2>
-        <ul className="activity-list">
-          {recentActivity.map(activity => (
-            <li key={activity.id} className="activity-item">
-              <div className="activity-icon">
-                {activity.action === 'updated' && '✏️'}
-                {activity.action === 'created' && '🆕'}
-                {activity.action === 'shared' && '🔗'}
-              </div>
-              <div className="activity-details">
-                <p>
-                  <strong>{activity.action}</strong> {activity.document}
-                  {activity.recipient && <span> with {activity.recipient}</span>}
-                </p>
-                <span className="activity-time">{activity.timestamp}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="quick-actions">
-        <h2>Quick Actions</h2>
-        <div className="action-buttons">
-          <button className="action-button">
-            <span className="action-icon">📝</span>
-            <span>Create New Document</span>
-          </button>
-          <button className="action-button">
-            <span className="action-icon">📤</span>
-            <span>Share Documents</span>
-          </button>
-          <button className="action-button">
-            <span className="action-icon">📋</span>
-            <span>Document Checklist</span>
-          </button>
-          <button className="action-button">
-            <span className="action-icon">❓</span>
-            <span>Get Planning Advice</span>
-          </button>
+      </div>
+      
+      <div className="planning-resources">
+        <h2>Helpful Resources</h2>
+        <div className="resources-list">
+          <div className="resource-item">
+            <h3>Estate Planning Basics Guide</h3>
+            <p>Learn the fundamentals of estate planning and why it's important.</p>
+            <a href="#" className="resource-link">Read Guide</a>
+          </div>
+          
+          <div className="resource-item">
+            <h3>Finding an Estate Attorney</h3>
+            <p>Tips for finding and working with an estate planning attorney.</p>
+            <a href="#" className="resource-link">Read Article</a>
+          </div>
+          
+          <div className="resource-item">
+            <h3>Digital Legacy Planning</h3>
+            <p>How to manage your digital assets and accounts as part of your estate plan.</p>
+            <a href="#" className="resource-link">Read Article</a>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
-};
+}
 
 export default EstatePlanningDashboard;
