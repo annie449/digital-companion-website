@@ -1,33 +1,56 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './GlobalNavigation.css';
 
 function GlobalNavigation() {
-  const location = useLocation();
+  const [showDropdown, setShowDropdown] = useState(false);
   
-  // Function to check if a path is active
-  const isActive = (path) => {
-    return location.pathname === path;
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
-  
+
   return (
     <nav className="global-navigation">
       <div className="nav-logo">
-        <Link to="/">Digital Companion</Link>
+        <NavLink to="/">Digital Companion</NavLink>
       </div>
       
       <div className="nav-links">
-        <Link to="/" className={isActive('/') ? 'active' : ''}>
-          Home
-        </Link>
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/about">About Us</NavLink>
+        <NavLink to="/how-it-works">How It Works</NavLink>
         
-        <Link to="/about" className={isActive('/about') ? 'active' : ''}>
-          About Us
-        </Link>
+        <div className="dropdown">
+          <button 
+            className="dropdown-button" 
+            onClick={toggleDropdown}
+            onMouseEnter={() => setShowDropdown(true)}
+            onMouseLeave={() => setShowDropdown(false)}
+          >
+            Digital Companion Platform
+          </button>
+          
+          {showDropdown && (
+            <div 
+              className="dropdown-content"
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
+            >
+              <NavLink to="/tasks">Tasks Management</NavLink>
+              <NavLink to="/estate">Estate</NavLink>
+              <NavLink to="/journal">Journal</NavLink>
+              <NavLink to="/meditation">Meditation</NavLink>
+              <NavLink to="/memory">Memory</NavLink>
+              <NavLink to="/practical-guides">Practical Guides</NavLink>
+              <NavLink to="/emotional-support">Emotional Support</NavLink>
+              <NavLink to="/services">Services</NavLink>
+            </div>
+          )}
+        </div>
         
-        <Link to="/how-it-works" className={isActive('/how-it-works') ? 'active' : ''}>
-          How It Works
-        </Link>
+        <NavLink to="/faq">FAQ</NavLink>
+        <NavLink to="/privacy">Privacy Policy</NavLink>
+        <NavLink to="/terms">Terms of Service</NavLink>
       </div>
     </nav>
   );
