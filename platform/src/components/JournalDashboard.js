@@ -13,7 +13,7 @@ const JournalDashboard = () => {
     {
       id: 1,
       title: 'First Week Reflections',
-      preview: 'This first week has been incredibly difficult, but I'm finding small moments of peace...',
+      preview: 'This first week has been incredibly difficult, but I\'m finding small moments of peace...',
       date: '2025-05-28',
       mood: 'reflective',
       tags: ['grief', 'coping', 'memories']
