@@ -1,0 +1,191 @@
+.assistant-suggestions {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 350px;
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.assistant-suggestions.collapsed {
+  height: 60px;
+}
+
+.assistant-suggestions.expanded {
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions-header {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.suggestions-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.toggle-suggestions-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.suggestion-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: all 0.2s ease;
+}
+
+.tab.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.tab:hover:not(.active) {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.suggestions-content {
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+.suggestion-list {
+  padding: 0.5rem;
+}
+
+.suggestion-item {
+  display: flex;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--background-color);
+}
+
+.suggestion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.task-icon {
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  color: var(--primary-color);
+}
+
+.insight-icon {
+  background-color: rgba(var(--accent-color-rgb), 0.1);
+  color: var(--accent-color);
+}
+
+.memory-icon {
+  background-color: rgba(var(--secondary-color-rgb), 0.1);
+  color: var(--secondary-color);
+}
+
+.suggestion-details {
+  flex: 1;
+}
+
+.suggestion-details h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.suggestion-details p {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.suggestion-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.priority {
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.priority-high {
+  background-color: rgba(var(--danger-color-rgb), 0.1);
+  color: var(--danger-color);
+}
+
+.priority-medium {
+  background-color: rgba(var(--warning-color-rgb), 0.1);
+  color: var(--warning-color);
+}
+
+.priority-low {
+  background-color: rgba(var(--success-color-rgb), 0.1);
+  color: var(--success-color);
+}
+
+.category,
+.insight-type,
+.prompt-time {
+  color: var(--text-light);
+}
+
+.empty-suggestions {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .assistant-suggestions {
+    width: calc(100% - 40px);
+    left: 20px;
+  }
+}

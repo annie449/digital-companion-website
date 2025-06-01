@@ -1,0 +1,362 @@
+.meditation-library {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.library-header h2 {
+  margin: 0;
+  color: #6B5B95;
+  font-size: 1.8rem;
+}
+
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 24px;
+  border: 1px solid #e0d8f0;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #6B5B95;
+  box-shadow: 0 0 0 2px rgba(107, 91, 149, 0.1);
+}
+
+.clear-search {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+}
+
+.view-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.view-mode-button, .filter-toggle {
+  background: none;
+  border: 1px solid #e0d8f0;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.view-mode-button.active, .filter-toggle.active {
+  background-color: #6B5B95;
+  color: white;
+  border-color: #6B5B95;
+}
+
+.filters-panel {
+  background-color: #f8f5ff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #e0d8f0;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #555;
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #e0d8f0;
+  background-color: white;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.category-navigation {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  background: none;
+  border: 1px solid #e0d8f0;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.category-button:hover {
+  background-color: #f0ebff;
+}
+
+.category-button.active {
+  background-color: #6B5B95;
+  color: white;
+  border-color: #6B5B95;
+}
+
+.results-count {
+  margin-bottom: 16px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px 0;
+  color: #666;
+}
+
+.no-results button {
+  background-color: #6B5B95;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.no-results button:hover {
+  background-color: #5a4d7e;
+}
+
+.meditations-container {
+  display: grid;
+  gap: 20px;
+}
+
+.meditations-container.grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.meditations-container.list {
+  grid-template-columns: 1fr;
+}
+
+.meditation-item {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.meditation-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(107, 91, 149, 0.1);
+}
+
+.meditations-container.list .meditation-item {
+  display: flex;
+  align-items: center;
+}
+
+.meditation-image-container {
+  position: relative;
+}
+
+.meditations-container.grid .meditation-image-container {
+  height: 160px;
+}
+
+.meditations-container.list .meditation-image-container {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.meditation-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meditation-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.meditation-details {
+  padding: 16px;
+}
+
+.meditations-container.list .meditation-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.meditation-title {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.meditation-creator {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 12px 0;
+}
+
+.meditation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  background-color: #f0ebff;
+  color: #6B5B95;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.meditation-indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  font-size: 1rem;
+}
+
+.indicator.favorite {
+  color: #FFD700;
+}
+
+.indicator.downloaded {
+  color: #6B5B95;
+}
+
+.meditation-library.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #6B5B95;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.meditation-library.error {
+  text-align: center;
+  padding: 40px 0;
+  color: #d32f2f;
+}
+
+.retry-button {
+  background-color: #6B5B95;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.retry-button:hover {
+  background-color: #5a4d7e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .library-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .view-controls {
+    align-self: flex-end;
+  }
+  
+  .meditations-container.grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .meditations-container.list .meditation-item {
+    flex-direction: column;
+  }
+  
+  .meditations-container.list .meditation-image-container {
+    width: 100%;
+    height: 160px;
+  }
+}

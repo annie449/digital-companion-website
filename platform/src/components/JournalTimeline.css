@@ -1,0 +1,195 @@
+.journal-timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.timeline-header h2 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.new-entry-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.new-entry-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.timeline-content {
+  position: relative;
+}
+
+.timeline-month {
+  margin-bottom: 3rem;
+}
+
+.month-heading {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.month-entries {
+  position: relative;
+}
+
+.month-entries::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-entry {
+  display: flex;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.timeline-entry:hover {
+  transform: translateX(5px);
+}
+
+.entry-date-marker {
+  position: relative;
+  margin-right: 1.5rem;
+  z-index: 1;
+}
+
+.date-bubble {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50px;
+  bottom: -30px;
+  left: 24px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-entry:last-child .timeline-line {
+  display: none;
+}
+
+.timeline-entry-content {
+  flex: 1;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-entry-content .entry-title {
+  margin: 0 0 0.75rem 0;
+  color: var(--primary-color);
+}
+
+.timeline-entry-content .entry-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.timeline-entry-content .entry-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline-entry-content .entry-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--border-color);
+  border-radius: 50px;
+  color: var(--text-color);
+}
+
+.timeline-entry-content .entry-mood {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  color: white;
+}
+
+.empty-timeline {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+}
+
+.start-journal-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-journal-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .month-entries::before {
+    left: 20px;
+  }
+  
+  .entry-date-marker {
+    margin-right: 1rem;
+  }
+  
+  .date-bubble {
+    width: 40px;
+    height: 40px;
+    font-size: 0.7rem;
+  }
+  
+  .timeline-line {
+    top: 40px;
+    left: 20px;
+  }
+  
+  .timeline-entry-content {
+    padding: 1rem;
+  }
+}

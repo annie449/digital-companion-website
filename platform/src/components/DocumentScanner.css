@@ -1,0 +1,451 @@
+.document-scanner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.scanner-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.scanner-header h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.scanner-header p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Scan Interface Styles */
+.scan-interface {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.video-container {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scan-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan-frame {
+  width: 80%;
+  height: 60%;
+  border: 2px solid #6B5B95;
+  box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.scan-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(107, 91, 149, 0.7);
+  animation: scanLine 2s linear infinite;
+}
+
+@keyframes scanLine {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.scan-controls {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.capture-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 3px solid #6B5B95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.capture-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #6B5B95;
+}
+
+.cancel-scan-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+/* Document Form Styles */
+.document-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.capture-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.scan-btn, .upload-btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  border: 2px dashed #6B5B95;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scan-btn:hover, .upload-btn:hover {
+  background-color: rgba(107, 91, 149, 0.05);
+  transform: translateY(-5px);
+}
+
+.camera-icon, .upload-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.camera-icon {
+  background-image: url('../assets/camera-icon.svg');
+}
+
+.upload-icon {
+  background-image: url('../assets/upload-icon.svg');
+}
+
+.scan-btn span, .upload-btn span {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.option-divider {
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.option-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ddd;
+  z-index: 1;
+}
+
+.option-divider span {
+  background-color: #f9f9f9;
+  padding: 0 15px;
+  position: relative;
+  z-index: 2;
+  color: #999;
+}
+
+.document-preview {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.document-preview img {
+  width: 100%;
+  display: block;
+}
+
+.preview-actions {
+  padding: 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.retake-btn {
+  background-color: transparent;
+  border: 1px solid #6B5B95;
+  color: #6B5B95;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.retake-btn:hover {
+  background-color: rgba(107, 91, 149, 0.05);
+}
+
+.document-details {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.tags-input {
+  display: flex;
+  gap: 10px;
+}
+
+.tags-input input {
+  flex-grow: 1;
+}
+
+.add-tag-btn {
+  background-color: #6B5B95;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: rgba(107, 91, 149, 0.1);
+  color: #6B5B95;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.remove-tag {
+  background: transparent;
+  border: none;
+  color: #6B5B95;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+}
+
+.ocr-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.ocr-processing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.processing-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(107, 91, 149, 0.3);
+  border-top-color: #6B5B95;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ocr-results h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.ocr-text {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.ocr-error {
+  color: #d32f2f;
+}
+
+.retry-ocr-btn {
+  background-color: transparent;
+  border: 1px solid #6B5B95;
+  color: #6B5B95;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: #d32f2f;
+  padding: 10px;
+  background-color: rgba(211, 47, 47, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: #666;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #6B5B95;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #5A4A84;
+}
+
+.save-btn:disabled {
+  background-color: #b5b5b5;
+  cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .document-scanner {
+    padding: 15px;
+  }
+  
+  .scanner-header h2 {
+    font-size: 24px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn, .save-btn {
+    width: 100%;
+  }
+}

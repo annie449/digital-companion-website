@@ -1,0 +1,106 @@
+.wellbeing-dashboard {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wellbeing-summary {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wellbeing-progress-bar {
+  height: 10px;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.wellbeing-progress-fill {
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.wellbeing-stats {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.wellbeing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.wellbeing-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wellbeing-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mood-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.activities-card {
+  border-left: 4px solid var(--accent-color);
+}
+
+.journal-card {
+  border-left: 4px solid var(--info-color);
+}
+
+.meditation-card {
+  border-left: 4px solid var(--secondary-color);
+}
+
+.metrics-card {
+  border-left: 4px solid var(--success-color);
+}
+
+.view-all-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wellbeing-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .wellbeing-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

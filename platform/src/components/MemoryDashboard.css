@@ -1,0 +1,386 @@
+.memory-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.memory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.memory-header h2 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.memory-search {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.memory-search input {
+  width: 300px;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.search-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.memory-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.action-btn {
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.photo-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.document-btn {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.story-btn {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.album-btn {
+  background-color: var(--info-color);
+  color: white;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.memory-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.memory-section {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.view-all-btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-all-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.photo-thumbnail {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.photo-thumbnail:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.photo-image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-info {
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.photo-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.photo-date {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.document-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.document-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.document-info {
+  flex: 1;
+}
+
+.document-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.document-description {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.document-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.document-type {
+  font-weight: 500;
+}
+
+.secure-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+}
+
+.stories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story-card {
+  padding: 1.25rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-title {
+  margin: 0 0 0.75rem 0;
+  color: var(--primary-color);
+}
+
+.story-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.story-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.album-card {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.album-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.album-cover {
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--border-color);
+}
+
+.no-cover {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.album-photo-count {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.album-info {
+  padding: 0.75rem;
+}
+
+.album-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.album-description {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.empty-section {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .memory-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .memory-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .memory-search {
+    width: 100%;
+  }
+  
+  .memory-search input {
+    flex: 1;
+  }
+  
+  .memory-quick-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .photos-grid,
+  .albums-grid {
+    grid-template-columns: 1fr;
+  }
+}
