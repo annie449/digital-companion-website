@@ -1,0 +1,252 @@
+/* EstateOverview.css */
+.estate-overview {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.estate-overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.estate-overview-title {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.estate-overview-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.estate-overview-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.estate-overview-button:hover {
+  background-color: var(--accent-color);
+}
+
+.estate-overview-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.estate-overview-stat {
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.estate-overview-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.estate-overview-stat-label {
+  color: var(--text-color);
+  margin: 0;
+}
+
+.estate-overview-assets {
+  margin-bottom: 1.5rem;
+}
+
+.estate-overview-section-title {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+.estate-overview-asset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.estate-overview-asset-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.estate-overview-asset-item:last-child {
+  border-bottom: none;
+}
+
+.estate-overview-asset-info {
+  display: flex;
+  align-items: center;
+}
+
+.estate-overview-asset-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: var(--primary-color);
+}
+
+.estate-overview-asset-details {
+  flex-grow: 1;
+}
+
+.estate-overview-asset-name {
+  font-weight: bold;
+  margin: 0 0 0.25rem 0;
+}
+
+.estate-overview-asset-meta {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.estate-overview-asset-value {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.estate-overview-documents {
+  margin-bottom: 1.5rem;
+}
+
+.estate-overview-document-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.estate-overview-document-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.estate-overview-document-item:last-child {
+  border-bottom: none;
+}
+
+.estate-overview-document-icon {
+  margin-right: 1rem;
+  color: var(--primary-color);
+}
+
+.estate-overview-document-info {
+  flex-grow: 1;
+}
+
+.estate-overview-document-name {
+  font-weight: bold;
+  margin: 0 0 0.25rem 0;
+}
+
+.estate-overview-document-meta {
+  font-size: 0.875rem;
+  color: #666;
+  display: flex;
+  gap: 1rem;
+}
+
+.estate-overview-document-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.estate-overview-document-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.estate-overview-document-button:hover {
+  background-color: var(--accent-color);
+}
+
+.estate-overview-chart {
+  height: 250px;
+  margin-bottom: 1.5rem;
+}
+
+.estate-overview-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.estate-overview-footer-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.estate-overview-footer-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .estate-overview-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .estate-overview-asset-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .estate-overview-asset-value {
+    margin-left: 50px;
+  }
+  
+  .estate-overview-document-item {
+    flex-wrap: wrap;
+  }
+  
+  .estate-overview-document-actions {
+    margin-left: 2.5rem;
+    margin-top: 0.5rem;
+  }
+}
