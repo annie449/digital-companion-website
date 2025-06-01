@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Companion™ Survey Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .survey-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .form-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .form-header h1 {
+            color: #6B5B95;
+            font-weight: 600;
+        }
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 0 1rem;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #6B5B95;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+        .step-text {
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #6B5B95;
+            border-color: #6B5B95;
+        }
+        .btn-primary:hover {
+            background-color: #5A4A84;
+            border-color: #5A4A84;
+        }
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        .thank-you {
+            display: none;
+            text-align: center;
+        }
+        .thank-you h2 {
+            color: #6B5B95;
+            margin-bottom: 1rem;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .logo img {
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <div class="logo">
+            <img src="/images/logo.png" alt="Digital Companion™ Logo">
+        </div>
+        
+        <div class="form-header">
+            <h1>Help Shape Digital Companion™</h1>
+            <p class="text-muted">Your feedback will help us create a better service</p>
+        </div>
+        
+        <div class="step-indicator">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Essential Information</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Your Experience (Optional)</div>
+            </div>
+        </div>
+        
+        <form id="surveyForm">
+            <!-- Step 1: Essential Information -->
+            <div id="step1" class="form-section">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="betaTester" name="beta_tester">
+                    <label class="form-check-label" for="betaTester">I'm interested in being a beta tester for Digital Companion™</label>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="heardFrom" class="form-label">How did you hear about us?</label>
+                    <select class="form-select" id="heardFrom" name="heard_from">
+                        <option value="" selected>Please select...</option>
+                        <option value="social_media">Social Media</option>
+                        <option value="search">Search Engine</option>
+                        <option value="friend">Friend or Family</option>
+                        <option value="professional">Professional Referral</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="d-grid">
+                    <button type="button" class="btn btn-primary" id="nextStep">Next Step</button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Your Experience (Optional) -->
+            <div id="step2" class="form-section" style="display: none;">
+                <div class="mb-3">
+                    <label for="relationship" class="form-label">What is your relationship to loss?</label>
+                    <select class="form-select" id="relationship" name="relationship">
+                        <option value="" selected>Please select...</option>
+                        <option value="recent">I've recently experienced a loss</option>
+                        <option value="past">I experienced a loss in the past</option>
+                        <option value="supporting">I'm supporting someone through loss</option>
+                        <option value="professional">I'm a professional in this field</option>
+                        <option value="preparing">I'm preparing for a future loss</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="challenges" class="form-label">What challenges have you faced during the grief process?</label>
+                    <textarea class="form-control" id="challenges" name="challenges" rows="3"></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">What aspects of Digital Companion™ are you most interested in?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="practicalSupport" name="interests" value="practical">
+                        <label class="form-check-label" for="practicalSupport">Practical support (paperwork, arrangements)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="emotionalSupport" name="interests" value="emotional">
+                        <label class="form-check-label" for="emotionalSupport">Emotional support and resources</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="community" name="interests" value="community">
+                        <label class="form-check-label" for="community">Community and connection</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="memorialization" name="interests" value="memorialization">
+                        <label class="form-check-label" for="memorialization">Memorialization tools</label>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="additionalFeedback" class="form-label">Any additional feedback or suggestions?</label>
+                    <textarea class="form-control" id="additionalFeedback" name="additional_feedback" rows="3"></textarea>
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-secondary" id="prevStep">Previous Step</button>
+                    <button type="submit" class="btn btn-primary" id="submitSurvey">Submit Survey</button>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Thank You Message (Hidden initially) -->
+        <div id="thankYou" class="thank-you">
+            <h2>Thank You!</h2>
+            <p>Your feedback has been submitted successfully. We appreciate your help in shaping Digital Companion™.</p>
+            <p>We'll be in touch soon with updates about our launch and beta testing opportunities.</p>
+            <div class="mt-4">
+                <a href="/" class="btn btn-primary">Return to Homepage</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const step1 = document.getElementById('step1');
+            const step2 = document.getElementById('step2');
+            const thankYou = document.getElementById('thankYou');
+            const nextStepBtn = document.getElementById('nextStep');
+            const prevStepBtn = document.getElementById('prevStep');
+            const submitBtn = document.getElementById('submitSurvey');
+            const surveyForm = document.getElementById('surveyForm');
+            
+            // Move to step 2
+            nextStepBtn.addEventListener('click', function() {
+                // Basic validation for step 1
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                
+                if (!name || !email) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                step1.style.display = 'none';
+                step2.style.display = 'block';
+            });
+            
+            // Go back to step 1
+            prevStepBtn.addEventListener('click', function() {
+                step2.style.display = 'none';
+                step1.style.display = 'block';
+            });
+            
+            // Submit the form
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, we would send the data to a server here
+                // For now, we'll just show the thank you message
+                
+                // Simulate form submission delay
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Submitting...';
+                
+                setTimeout(function() {
+                    surveyForm.style.display = 'none';
+                    thankYou.style.display = 'block';
+                    
+                    // Store in localStorage that the user has completed the survey
+                    localStorage.setItem('surveyCompleted', 'true');
+                }, 1500);
+            });
+            
+            // Email validation helper
+            function isValidEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            
+            // Check if user has already completed the survey
+            if (localStorage.getItem('surveyCompleted') === 'true') {
+                surveyForm.style.display = 'none';
+                thankYou.style.display = 'block';
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
