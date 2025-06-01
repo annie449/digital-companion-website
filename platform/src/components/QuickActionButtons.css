@@ -1,0 +1,102 @@
+/* QuickActionButtons.css */
+.quick-action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.quick-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.quick-action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.quick-action-button-icon {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.quick-action-button.primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.quick-action-button.primary .quick-action-button-icon {
+  color: white;
+}
+
+.quick-action-button.primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.quick-action-button.secondary {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border-color: var(--accent-color);
+}
+
+.quick-action-button.secondary:hover {
+  background-color: #e0dced;
+}
+
+.quick-action-button.small {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.quick-action-button.small .quick-action-button-icon {
+  font-size: 1rem;
+}
+
+.quick-action-button.large {
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+.quick-action-button.large .quick-action-button-icon {
+  font-size: 1.5rem;
+}
+
+.quick-action-button.icon-only {
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+.quick-action-button.icon-only.small {
+  padding: 0.5rem;
+}
+
+.quick-action-button.icon-only.large {
+  padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quick-action-buttons {
+    justify-content: center;
+  }
+  
+  .quick-action-button {
+    flex: 1 1 auto;
+    min-width: 120px;
+    justify-content: center;
+  }
+}
