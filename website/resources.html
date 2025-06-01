@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Digital Companion™</title>
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Mobile improvements integration script -->
+    <script src="/mobile_improvements/integration.js"></script>
+    <!-- URL redirects for extensionless URLs -->
+    <script src="/js/redirects.js"></script>
+    <meta name="description" content="Access helpful resources, guides, and support materials from Digital Companion™ to help navigate the journey of loss and grief.">
+    <style>
+        .page-hero {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-hero h1 {
+            margin-bottom: 15px;
+        }
+        
+        .page-hero .lead {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .resources-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .resource-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .category-button {
+            background-color: #f5f5f5;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .category-button.active {
+            background-color: #6B5B95;
+            color: white;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .resource-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-image {
+            height: 180px;
+            background-color: #e0e0e0;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .resource-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-category {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            color: #6B5B95;
+        }
+        
+        .resource-title {
+            font-size: 1.3rem;
+            margin: 0 0 15px;
+            color: #333;
+        }
+        
+        .resource-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .resource-link {
+            color: #6B5B95;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: auto;
+        }
+        
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        
+        .featured-resources {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            margin-bottom: 60px;
+            border-radius: 10px;
+        }
+        
+        .featured-resources h2 {
+            margin-bottom: 40px;
+        }
+        
+        .external-resources {
+            margin-top: 80px;
+        }
+        
+        .external-resources h2 {
+            margin-bottom: 40px;
+        }
+        
+        .external-resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .external-resource {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .external-resource h3 {
+            font-size: 1.2rem;
+            margin: 0 0 15px;
+            color: #333;
+        }
+        
+        .external-resource p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .external-resource a {
+            color: #6B5B95;
+            font-weight: 500;
+        }
+        
+        .external-resource a:hover {
+            text-decoration: underline;
+        }
+        
+        .newsletter-section {
+            background-color: #6B5B95;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 80px;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-content h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        .newsletter-input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            min-width: 300px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-button {
+            background-color: white;
+            color: #6B5B95;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        @media (max-width: 768px) {
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-input {
+                min-width: auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="announcement-bar">
+            <p>Coming Soon - Full Service Launching Shortly!</p>
+        </div>
+        <nav class="desktop-nav">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
+            </div>
+            <ul>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/practical-support.html">Practical Support</a></li>
+                <li><a href="/emotional-support.html">Emotional Support</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Help Shape Digital Companion™</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Resources</h1>
+                <p class="lead">Helpful guides, articles, and tools to support you through the journey of loss and grief</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <p class="resources-intro">We've gathered resources to help you navigate both the practical and emotional aspects of loss. These materials are designed to provide guidance, comfort, and practical assistance during challenging times.</p>
+            
+            <div class="resource-categories">
+                <button class="category-button active" data-category="all">All Resources</button>
+                <button class="category-button" data-category="practical">Practical Guides</button>
+                <button class="category-button" data-category="emotional">Emotional Support</button>
+                <button class="category-button" data-category="legal">Legal & Financial</button>
+                <button class="category-button" data-category="self-care">Self-Care</button>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card" data-categories="practical legal">
+                    <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                    <div class="resource-content">
+                        <span class="resource-category">Practical Guide</span>
+                        <h3 class="resource-title">Essential Documents Checklist</h3>
+                        <p class="resource-description">A comprehensive checklist of important documents you'll need to gather and organize after a loss, with guidance on how to obtain copies if needed.</p>
+                        <a href="#" class="resource-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-categories="emotional self-care">
+                    <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                    <div class="resource-content">
+                        <span class="resource-category">Emotional Support</span>
+                        <h3 class="resource-title">Understanding Grief: Common Experiences</h3>
+                        <p class="resource-description">An overview of common grief experiences and emotions, helping you understand that your feelings are normal and shared by many others.</p>
+                        <a href="#" class="resource-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-categories="practical legal">
+                    <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                    <div class="resource-content">
+                        <span class="resource-category">Legal Guide</span>
+                        <h3 class="resource-title">Navigating Probate: A Simple Guide</h3>
+                        <p class="resource-description">A straightforward explanation of the probate process, what to expect, and how to prepare for each step along the way.</p>
+                        <a href="#" class="resource-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-categories="emotional self-care">
+                    <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                    <div class="resource-content">
+                        <span class="resource-category">Self-Care</span>
+                        <h3 class="resource-title">Self-Care Practices During Grief</h3>
+                        <p class="resource-description">Practical self-care strategies to help you maintain your physical and emotional wellbeing during the grieving process.</p>
+                        <a href="#" class="resource-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-categories="practical">
+                    <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                    <div class="resource-content">
+                        <span class="resource-category">Practical Guide</span>
+                        <h3 class="resource-title">Notifying Organizations: Who to Contact</h3>
+                        <p class="resource-description">A comprehensive list of organizations and institutions that need to be notified after a death, with templates for notification letters.</p>
+                        <a href="#" class="resource-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card" data-categories="emotional">
+                    <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                    <div class="resource-content">
+                        <span class="resource-category">Emotional Support</span>
+                        <h3 class="resource-title">Supporting Children Through Grief</h3>
+                        <p class="resource-description">Guidance for helping children understand and process loss in age-appropriate ways, with suggestions for conversations and activities.</p>
+                        <a href="#" class="resource-link">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="featured-resources">
+            <div class="container">
+                <h2>Featured Resources</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                        <div class="resource-content">
+                            <span class="resource-category">Downloadable</span>
+                            <h3 class="resource-title">Complete Estate Organization Workbook</h3>
+                            <p class="resource-description">A comprehensive workbook to help you organize all aspects of an estate, from assets and accounts to important contacts and wishes.</p>
+                            <a href="#" class="resource-link">Download PDF</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                        <div class="resource-content">
+                            <span class="resource-category">Video Series</span>
+                            <h3 class="resource-title">Navigating Grief: Expert Conversations</h3>
+                            <p class="resource-description">A series of interviews with grief counselors, therapists, and others who share insights and guidance for the grief journey.</p>
+                            <a href="#" class="resource-link">Watch Series</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-image" style="background-color: #e0e0e0;"></div>
+                        <div class="resource-content">
+                            <span class="resource-category">Interactive Tool</span>
+                            <h3 class="resource-title">Task Priority Assistant</h3>
+                            <p class="resource-description">An interactive tool that helps you identify which tasks need immediate attention and which can wait, reducing overwhelm.</p>
+                            <a href="#" class="resource-link">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="external-resources">
+                <h2>Helpful External Resources</h2>
+                
+                <div class="external-resources-grid">
+                    <div class="external-resource">
+                        <h3>National Grief Support Organizations</h3>
+                        <p>Organizations providing grief counseling, support groups, and resources across the country.</p>
+                        <a href="#" target="_blank">View Directory</a>
+                    </div>
+                    
+                    <div class="external-resource">
+                        <h3>Legal Aid Resources</h3>
+                        <p>Information on accessing legal assistance for estate matters, including low-cost and pro bono services.</p>
+                        <a href="#" target="_blank">Learn More</a>
+                    </div>
+                    
+                    <div class="external-resource">
+                        <h3>Financial Support Programs</h3>
+                        <p>Information about financial assistance programs that may be available after a loss.</p>
+                        <a href="#" target="_blank">Explore Options</a>
+                    </div>
+                    
+                    <div class="external-resource">
+                        <h3>Grief Literature Recommendations</h3>
+                        <p>A curated list of books, articles, and poems that many have found helpful during grief.</p>
+                        <a href="#" target="_blank">View Recommendations</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter-section">
+                <div class="newsletter-content">
+                    <h2>Stay Updated with New Resources</h2>
+                    <p>Subscribe to our newsletter to receive new resources, articles, and supportive content directly in your inbox.</p>
+                    
+                    <form class="newsletter-form" action="/api/subscribe" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="newsletter">
+                        <input type="email" name="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-button">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Digital Companion™</h5>
+                <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/team.html">Our Team</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="/practical-support.html">Practical Support</a></li>
+                    <li><a href="/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/pricing.html">Pricing</a></li>
+                    <li><a href="/resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Stay Connected</h5>
+                <p>Subscribe to our newsletter for helpful resources and updates.</p>
+                <!-- Newsletter signup form here -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/terms.html">Terms and Conditions</a>
+                <a href="/privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Category filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const resourceCards = document.querySelectorAll('.resource-card');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter resources
+                    resourceCards.forEach(card => {
+                        if (category === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const cardCategories = card.getAttribute('data-categories').split(' ');
+                            if (cardCategories.includes(category)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
