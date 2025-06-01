@@ -1,45 +1,34 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './GlobalNavigation.css';
 
 function GlobalNavigation() {
+  const location = useLocation();
+  
+  // Function to check if a path is active
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+  
   return (
     <nav className="global-navigation">
       <div className="nav-logo">
-        <NavLink to="/">Digital Companion</NavLink>
+        <Link to="/">Digital Companion</Link>
       </div>
-      <ul className="nav-links">
-        <li>
-          <NavLink to="/tasks" className={({ isActive }) => isActive ? 'active' : ''}>
-            Tasks
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/estate" className={({ isActive }) => isActive ? 'active' : ''}>
-            Estate
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/journal" className={({ isActive }) => isActive ? 'active' : ''}>
-            Journal
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/meditation" className={({ isActive }) => isActive ? 'active' : ''}>
-            Meditation
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''}>
-            Services
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/help" className={({ isActive }) => isActive ? 'active' : ''}>
-            Help
-          </NavLink>
-        </li>
-      </ul>
+      
+      <div className="nav-links">
+        <Link to="/" className={isActive('/') ? 'active' : ''}>
+          Home
+        </Link>
+        
+        <Link to="/about" className={isActive('/about') ? 'active' : ''}>
+          About Us
+        </Link>
+        
+        <Link to="/how-it-works" className={isActive('/how-it-works') ? 'active' : ''}>
+          How It Works
+        </Link>
+      </div>
     </nav>
   );
 }
