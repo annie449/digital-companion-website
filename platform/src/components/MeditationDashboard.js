@@ -1,225 +1,172 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { MeditationContext } from '../context/MeditationContext';
-import { SelfCareContext } from '../context/SelfCareContext';
-import MeditationPlayer from './MeditationPlayer';
-import MeditationLibrary from './MeditationLibrary';
+import React from 'react';
 import './MeditationDashboard.css';
 
 /**
- * MeditationDashboard Component
+ * Meditation Dashboard Component
  * 
- * Main dashboard for the meditation feature that integrates the player,
- * library, and user statistics in a cohesive interface.
+ * This component displays meditation content, tracks progress,
+ * and provides access to guided meditation sessions.
  */
 const MeditationDashboard = () => {
-  // State
-  const [selectedMeditation, setSelectedMeditation] = useState(null);
-  const [showLibrary, setShowLibrary] = useState(true);
-  const [sessionCompleted, setSessionCompleted] = useState(false);
-  
-  // Context
-  const { 
-    getRecommendedMeditations, 
-    getMeditationStats,
-    getMeditationHistory,
-    isLoading 
-  } = useContext(MeditationContext);
-  
-  const { userState } = useContext(SelfCareContext);
-  
-  // Get recommended meditations and stats
-  const [recommendedMeditations, setRecommendedMeditations] = useState([]);
-  const [stats, setStats] = useState({
-    totalSessions: 0,
-    totalMinutes: 0,
-    sessionsThisWeek: 0,
-    minutesThisWeek: 0
-  });
-  const [recentHistory, setRecentHistory] = useState([]);
-  
-  // Load data when component mounts
-  useEffect(() => {
-    if (!isLoading) {
-      const recommended = getRecommendedMeditations(userState);
-      setRecommendedMeditations(recommended.slice(0, 3));
-      
-      const meditationStats = getMeditationStats();
-      setStats(meditationStats);
-      
-      const history = getMeditationHistory();
-      setRecentHistory(history.slice(0, 5));
+  // Sample meditation data - in a real app, this would come from a context or API
+  const featuredMeditations = [
+    {
+      id: 1,
+      title: 'Finding Peace in Grief',
+      description: 'A gentle meditation to help process feelings of loss and find moments of peace.',
+      duration: 15,
+      category: 'Grief & Loss',
+      image: 'https://via.placeholder.com/300x200?text=Meditation',
+      instructor: 'Sarah Johnson'
+    },
+    {
+      id: 2,
+      title: 'Calming Anxiety',
+      description: 'Techniques to help calm anxious thoughts and find your center during difficult times.',
+      duration: 10,
+      category: 'Anxiety Relief',
+      image: 'https://via.placeholder.com/300x200?text=Meditation',
+      instructor: 'Michael Chen'
+    },
+    {
+      id: 3,
+      title: 'Restful Sleep',
+      description: 'A soothing meditation to help you find rest when grief affects your sleep.',
+      duration: 20,
+      category: 'Sleep',
+      image: 'https://via.placeholder.com/300x200?text=Meditation',
+      instructor: 'Emma Wilson'
     }
-  }, [isLoading, getRecommendedMeditations, getMeditationStats, getMeditationHistory, userState]);
-  
-  // Handle meditation selection
-  const handleSelectMeditation = (meditation) => {
-    setSelectedMeditation(meditation);
-    setShowLibrary(false);
-    setSessionCompleted(false);
-  };
-  
-  // Handle session completion
-  const handleSessionComplete = () => {
-    setSessionCompleted(true);
-    
-    // Refresh stats and history
-    const meditationStats = getMeditationStats();
-    setStats(meditationStats);
-    
-    const history = getMeditationHistory();
-    setRecentHistory(history.slice(0, 5));
-  };
-  
-  // Return to library
-  const handleReturnToLibrary = () => {
-    setShowLibrary(true);
-  };
-  
-  // Format date for display
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      month: 'short', 
-      day: 'numeric',
-      year: 'numeric'
-    });
-  };
-  
+  ];
+
+  const recentlyPlayed = [
+    {
+      id: 4,
+      title: 'Mindful Breathing',
+      duration: 5,
+      lastPlayed: '2 days ago',
+      progress: 100
+    },
+    {
+      id: 5,
+      title: 'Releasing Emotions',
+      duration: 12,
+      lastPlayed: '1 week ago',
+      progress: 75
+    }
+  ];
+
+  const collections = [
+    { id: 1, name: 'Grief & Loss', count: 8 },
+    { id: 2, name: 'Sleep & Rest', count: 6 },
+    { id: 3, name: 'Anxiety Relief', count: 5 },
+    { id: 4, name: 'Mindfulness', count: 10 }
+  ];
+
   return (
     <div className="meditation-dashboard">
-      <div className="dashboard-header">
-        <h1>Guided Meditation</h1>
-        <p className="dashboard-description">
-          Find peace and support through guided meditations designed for your grief journey.
-        </p>
+      <header className="dashboard-header">
+        <h1>Meditation</h1>
+        <p>Find moments of peace and mindfulness during your grief journey.</p>
+      </header>
+
+      <section className="meditation-stats">
+        <div className="stats-card">
+          <h3>Your Meditation Journey</h3>
+          <div className="stats-grid">
+            <div className="stat-item">
+              <div className="stat-value">12</div>
+              <div className="stat-label">Sessions</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-value">3.5</div>
+              <div className="stat-label">Hours</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-value">8</div>
+              <div className="stat-label">Days Streak</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="featured-meditations">
+        <h2>Recommended for You</h2>
+        <div className="meditations-grid">
+          {featuredMeditations.map(meditation => (
+            <div key={meditation.id} className="meditation-card">
+              <div className="meditation-image">
+                <img src={meditation.image} alt={meditation.title} />
+                <div className="meditation-duration">{meditation.duration} min</div>
+              </div>
+              <div className="meditation-content">
+                <div className="meditation-category">{meditation.category}</div>
+                <h3>{meditation.title}</h3>
+                <p>{meditation.description}</p>
+                <div className="meditation-instructor">
+                  With {meditation.instructor}
+                </div>
+              </div>
+              <div className="meditation-actions">
+                <button className="primary-button">Play</button>
+                <button className="icon-button">♡</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="dashboard-columns">
+        <section className="recently-played">
+          <h2>Recently Played</h2>
+          <div className="recently-played-list">
+            {recentlyPlayed.map(item => (
+              <div key={item.id} className="recently-played-item">
+                <div className="play-button">▶</div>
+                <div className="item-details">
+                  <h3>{item.title}</h3>
+                  <div className="item-meta">
+                    <span>{item.duration} min</span>
+                    <span>•</span>
+                    <span>{item.lastPlayed}</span>
+                  </div>
+                  {item.progress < 100 && (
+                    <div className="progress-bar">
+                      <div className="progress-fill" style={{ width: `${item.progress}%` }}></div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="collections">
+          <h2>Collections</h2>
+          <div className="collections-list">
+            {collections.map(collection => (
+              <div key={collection.id} className="collection-item">
+                <h3>{collection.name}</h3>
+                <span>{collection.count} meditations</span>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
-      
-      {showLibrary ? (
-        <div className="dashboard-content">
-          {/* Stats Section */}
-          <div className="meditation-stats-section">
-            <h2>Your Meditation Journey</h2>
-            <div className="stats-container">
-              <div className="stat-card">
-                <span className="stat-value">{stats.totalSessions}</span>
-                <span className="stat-label">Total Sessions</span>
-              </div>
-              <div className="stat-card">
-                <span className="stat-value">{stats.totalMinutes}</span>
-                <span className="stat-label">Total Minutes</span>
-              </div>
-              <div className="stat-card">
-                <span className="stat-value">{stats.sessionsThisWeek}</span>
-                <span className="stat-label">Sessions This Week</span>
-              </div>
-              <div className="stat-card">
-                <span className="stat-value">{stats.minutesThisWeek}</span>
-                <span className="stat-label">Minutes This Week</span>
-              </div>
-            </div>
+
+      <section className="daily-meditation">
+        <div className="daily-meditation-card">
+          <div className="daily-meditation-content">
+            <h2>Daily Meditation</h2>
+            <h3>Gentle Acceptance</h3>
+            <p>A 5-minute practice to cultivate acceptance and peace in your day.</p>
+            <button className="primary-button">Start Now</button>
           </div>
-          
-          {/* Recommended Section */}
-          {recommendedMeditations.length > 0 && (
-            <div className="recommended-section">
-              <h2>Recommended For You</h2>
-              <div className="recommended-container">
-                {recommendedMeditations.map(meditation => (
-                  <div 
-                    key={meditation.id}
-                    className="recommended-item"
-                    onClick={() => handleSelectMeditation(meditation)}
-                  >
-                    <img 
-                      src={meditation.content.image_url || '/assets/default-meditation.jpg'} 
-                      alt={meditation.title}
-                      className="recommended-thumbnail"
-                    />
-                    <div className="recommended-details">
-                      <h3>{meditation.title}</h3>
-                      <p className="recommended-creator">By {meditation.creator.name}</p>
-                      <p className="recommended-duration">
-                        {Math.floor(meditation.duration / 60)} min
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          
-          {/* Recent History */}
-          {recentHistory.length > 0 && (
-            <div className="history-section">
-              <h2>Recent Sessions</h2>
-              <div className="history-container">
-                {recentHistory.map(session => (
-                  <div 
-                    key={session.id}
-                    className="history-item"
-                    onClick={() => session.meditation && handleSelectMeditation(session.meditation)}
-                  >
-                    <div className="history-date">
-                      {formatDate(session.timestamp)}
-                    </div>
-                    <div className="history-details">
-                      <h3>{session.meditation ? session.meditation.title : 'Unknown Meditation'}</h3>
-                      <p className="history-duration">
-                        {Math.floor(session.duration / 60)} min
-                      </p>
-                    </div>
-                    {session.completed && (
-                      <div className="completion-badge">
-                        ✓
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          
-          {/* Full Library */}
-          <div className="library-section">
-            <MeditationLibrary onSelectMeditation={handleSelectMeditation} />
+          <div className="daily-meditation-image">
+            <img src="https://via.placeholder.com/300x200?text=Daily+Meditation" alt="Daily Meditation" />
           </div>
         </div>
-      ) : (
-        <div className="player-view">
-          {/* Back button */}
-          <button 
-            className="back-button"
-            onClick={handleReturnToLibrary}
-            aria-label="Return to library"
-          >
-            ← Back to Library
-          </button>
-          
-          {/* Player */}
-          <div className="player-container">
-            <MeditationPlayer 
-              meditation={selectedMeditation}
-              onComplete={handleSessionComplete}
-            />
-          </div>
-          
-          {/* Post-session message */}
-          {sessionCompleted && (
-            <div className="session-completed">
-              <h2>Session Completed</h2>
-              <p>Great job taking time for yourself. How are you feeling now?</p>
-              <div className="post-session-actions">
-                <button onClick={handleReturnToLibrary}>
-                  Return to Library
-                </button>
-                <button onClick={() => setSessionCompleted(false)}>
-                  Replay Meditation
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+      </section>
     </div>
   );
 };
