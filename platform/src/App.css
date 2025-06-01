@@ -1,19 +1,24 @@
-/* App.css */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
 }
 
 .main-content {
+  flex: 1;
+  padding: var(--spacing-lg) 0;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .main-content {
+    padding: var(--spacing-md) 0;
+  }
 }
