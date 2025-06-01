@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Import common components
-import GlobalNavigation from './common/GlobalNavigation';
+import GlobalNavigation from './components/GlobalNavigation';
 
 // Import only essential pages initially
 import HomePage from './pages/HomePage';
@@ -29,11 +29,7 @@ function App() {
         </main>
         
         <footer className="app-footer">
-          <div className="footer-content">
-            <div className="footer-copyright">
-              &copy; {new Date().getFullYear()} Digital Companion
-            </div>
-          </div>
+          <p>&copy; {new Date().getFullYear()} Digital Companion. All rights reserved.</p>
         </footer>
       </div>
     </Router>
