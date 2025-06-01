@@ -1,0 +1,174 @@
+.meditation-preview {
+  margin-bottom: 30px;
+}
+
+.meditation-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.meditation-preview-header h2 {
+  color: #6B5B95;
+  margin: 0;
+}
+
+.meditation-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.meditation-preview-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.meditation-preview-card:hover {
+  transform: translateY(-5px);
+}
+
+.meditation-preview-image {
+  position: relative;
+  height: 160px;
+}
+
+.meditation-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meditation-preview-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.meditation-preview-content {
+  padding: 15px;
+}
+
+.meditation-preview-category {
+  display: inline-block;
+  background-color: #f0edf6;
+  color: #6B5B95;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.meditation-preview-content h3 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.meditation-preview-content p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.meditation-preview-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 15px;
+}
+
+.meditation-preview-instructor {
+  color: #999;
+  font-size: 12px;
+}
+
+.meditation-preview-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.meditation-preview-play {
+  width: 36px;
+  height: 36px;
+  background-color: #6B5B95;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.meditation-preview-play:hover {
+  background-color: #5a4a84;
+}
+
+.meditation-preview-favorite {
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  color: #6B5B95;
+  border: 1px solid #6B5B95;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.meditation-preview-favorite:hover {
+  background-color: rgba(107, 91, 149, 0.1);
+}
+
+.meditation-preview-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.meditation-preview-button {
+  background-color: transparent;
+  color: #6B5B95;
+  border: 1px solid #6B5B95;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.meditation-preview-button:hover {
+  background-color: rgba(107, 91, 149, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .meditation-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .meditation-preview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .meditation-preview-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
