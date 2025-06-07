@@ -3,233 +3,435 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotional Support | Digital Companion™</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Emotional Support | Digital Companion</title>
+    <link rel="stylesheet" href="styles.css">
     <!-- Mobile improvements integration script -->
     <script src="/mobile_improvements/integration.js"></script>
     <!-- URL redirects for extensionless URLs -->
     <script src="/js/redirects.js"></script>
-    <meta name="description" content="Digital Companion™ provides compassionate emotional support resources to help you navigate the grief journey with care and understanding.">
+    <style>
+        :root {
+            --primary-color: #6B5B95;
+            --secondary-color: #6B5B95;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #555;
+            --border-color: #ddd;
+            --hover-color: #f0edf6;
+        }
+        
+        /* Coming Soon Banner */
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+        
+        /* Navigation Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+        }
+        
+        /* Feature Sections */
+        .feature-section {
+            padding: 4rem 0;
+        }
+        
+        .feature-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-style: italic;
+            color: var(--light-text);
+            margin-top: 1rem;
+        }
+        
+        /* Support Pathways Grid */
+        .support-pathways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-button span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark-text);
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+            }
+            
+            .support-pathways-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="announcement-bar">
-            <p>Coming Soon - Full Service Launching Shortly!</p>
+            <p>Coming Soon - Join our Beta Program!</p>
         </div>
         <nav class="desktop-nav">
             <div class="logo">
                 <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
             </div>
             <ul>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/practical-support.html">Practical Support</a></li>
-                <li><a href="/emotional-support.html" class="active">Emotional Support</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
-                <li><a href="/survey/form/index.html" class="cta-button">Help Shape Digital Companion™</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Digital Companion Platform ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/platform/tasks.html">Tasks Management</a>
+                        <a href="/platform/estate.html">Estate</a>
+                        <a href="/platform/journal.html">Journal</a>
+                        <a href="/platform/meditation.html">Meditation</a>
+                        <a href="/platform/memory.html">Memory</a>
+                        <a href="/platform/practical-guides.html">Practical Guides</a>
+                        <a href="/platform/emotional-support.html">Emotional Support Resources</a>
+                        <a href="/platform/services.html">Services</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                <li><a href="/platform/estate.html">Estate</a></li>
+                <li><a href="/platform/journal.html">Journal</a></li>
+                <li><a href="/platform/meditation.html">Meditation</a></li>
+                <li><a href="/platform/memory.html">Memory</a></li>
+                <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                <li><a href="/platform/emotional-support.html">Emotional Support Resources</a></li>
+                <li><a href="/platform/services.html">Services</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <h1>Compassionate Emotional Support</h1>
-                <p class="lead">Personalized resources to support your emotional wellbeing during the grief journey</p>
+        <!-- Hero Section -->
+        <section class="hero" id="main-content">
+            <div class="hero-content">
+                <h1>Emotional Support on Your Grief Journey</h1>
+                <p>Connect with others who understand, access professional guidance, and find resources tailored to your unique grief journey. You don't have to face this alone.</p>
             </div>
         </section>
 
-        <section class="emotional-challenges-section">
+        <!-- Grief Community Section -->
+        <section class="feature-section">
             <div class="container">
-                <h2>Understanding Emotional Challenges</h2>
-                <p>Grief is a deeply personal experience that affects each person differently. Digital Companion™ recognizes the complex emotional challenges that accompany loss:</p>
-                
-                <div class="challenges-grid">
-                    <div class="challenge-card">
-                        <h3>Overwhelming Emotions</h3>
-                        <p>Grief can bring waves of intense and sometimes conflicting emotions that feel impossible to navigate.</p>
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Supportive Community</h2>
+                        <p>Find connection and understanding in our compassionate community of people who truly understand what you're going through.</p>
+                        <p>Our community features:</p>
+                        <ul>
+                            <li>Moderated discussion forums organized by type of loss</li>
+                            <li>Small, private support groups led by trained facilitators</li>
+                            <li>One-to-one peer connections with others on similar journeys</li>
+                            <li>Virtual events and commemorations</li>
+                            <li>Shared resources and personal stories</li>
+                        </ul>
+                        <p>All community spaces are carefully moderated to ensure they remain safe, supportive environments where you can express yourself honestly and find genuine connection.</p>
                     </div>
-                    
-                    <div class="challenge-card">
-                        <h3>Isolation</h3>
-                        <p>Many people feel alone in their grief, even when surrounded by others who care about them.</p>
-                    </div>
-                    
-                    <div class="challenge-card">
-                        <h3>Uncertainty</h3>
-                        <p>Not knowing what to expect or how to process grief can create additional anxiety and stress.</p>
-                    </div>
-                    
-                    <div class="challenge-card">
-                        <h3>Changing Relationships</h3>
-                        <p>Loss often transforms relationships with others, creating new dynamics to navigate.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="emotional-support-features">
-            <div class="container">
-                <h2>How Digital Companion™ Supports You</h2>
-                <p>Our emotional support features are designed to provide compassionate guidance tailored to your unique journey:</p>
-                
-                <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">📔</div>
-                        <h3>Guided Journaling</h3>
-                        <p>Express and process emotions through structured journaling prompts designed to support healthy grief expression.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🧘</div>
-                        <h3>Mindfulness Resources</h3>
-                        <p>Access guided meditations, breathing exercises, and grounding techniques specifically created for grief and loss.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">📚</div>
-                        <h3>Educational Content</h3>
-                        <p>Learn about grief through evidence-based articles, videos, and resources that normalize and explain the grief experience.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <h3>Milestone Support</h3>
-                        <p>Receive compassionate guidance for navigating difficult days like anniversaries, birthdays, and holidays.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">💭</div>
-                        <h3>Reflection Tools</h3>
-                        <p>Track your emotional journey and identify patterns to better understand your unique grief process.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">👥</div>
-                        <h3>Community Connection</h3>
-                        <p>Find resources for connecting with others who understand, including support groups and community options.</p>
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Finding Connection</h3>
+                        <p>"I felt so isolated in my grief until I found the community here. Connecting with others who truly understood what I was going through made me feel less alone for the first time since my loss. The friendships I've formed have been a lifeline."</p>
+                        <p class="testimonial-author">— Sophia R., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="personalized-approach">
+        <!-- Professional Connections Section -->
+        <section class="feature-section bg-light">
             <div class="container">
-                <h2>A Personalized Approach</h2>
-                <p>Digital Companion™ recognizes that every grief journey is unique. Our approach adapts to your specific needs:</p>
-                
-                <div class="approach-features">
-                    <div class="approach-feature">
-                        <h3>Tailored Resources</h3>
-                        <p>Receive recommendations based on your specific situation, relationship to the deceased, and current emotional needs.</p>
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h2>Professional Connections</h2>
+                        <p>Access a network of qualified grief counselors, therapists, and support specialists who can provide professional guidance when you need it most.</p>
+                        <p>Professional support includes:</p>
+                        <ul>
+                            <li>Directory of verified grief counselors and therapists</li>
+                            <li>Filtering options to find professionals who specialize in your type of loss</li>
+                            <li>Secure messaging platform for initial consultations</li>
+                            <li>Resources for understanding different therapeutic approaches</li>
+                            <li>Guidance on finding the right professional match for your needs</li>
+                        </ul>
+                        <p>We carefully vet all professionals in our network to ensure they have appropriate qualifications and specialized experience in grief and bereavement support.</p>
                     </div>
-                    
-                    <div class="approach-feature">
-                        <h3>Adaptive Support</h3>
-                        <p>As your needs change over time, Digital Companion™ evolves to provide relevant resources for each stage of your journey.</p>
-                    </div>
-                    
-                    <div class="approach-feature">
-                        <h3>Self-Directed Pace</h3>
-                        <p>Engage with emotional support resources at your own pace, with no pressure or timeline.</p>
-                    </div>
-                    
-                    <div class="approach-feature">
-                        <h3>Holistic Integration</h3>
-                        <p>Emotional support is seamlessly integrated with practical assistance, recognizing how these aspects of grief interact.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Expert Guidance</h3>
+                        <p>"Finding a therapist who specialized in grief was a turning point for me. Through Digital Companion, I connected with someone who truly understood the complexity of loss and could guide me through the darkest moments with compassion and expertise."</p>
+                        <p class="testimonial-author">— Marcus J., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="research-section">
+        <!-- Personalized Resources Section -->
+        <section class="feature-section">
             <div class="container">
-                <h2>Research-Backed Approach</h2>
-                <p>Digital Companion™'s emotional support features are grounded in research and best practices in grief support:</p>
-                
-                <div class="research-points">
-                    <div class="research-point">
-                        <h3>Contemporary Grief Theory</h3>
-                        <p>Our approach is informed by modern understanding of grief as an individual process without a fixed timeline or "stages" to complete.</p>
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Personalized Resources</h2>
+                        <p>Access a curated library of resources tailored to your specific situation, type of loss, and current stage in your grief journey.</p>
+                        <p>Our resource library includes:</p>
+                        <ul>
+                            <li>Articles and guides written by grief experts</li>
+                            <li>Book recommendations for different types of loss</li>
+                            <li>Guided meditations and mindfulness exercises</li>
+                            <li>Video content featuring expert insights</li>
+                            <li>Interactive tools for processing emotions</li>
+                        </ul>
+                        <p>As you progress through your journey, our system adapts to recommend resources that align with your current needs and experiences, providing the right support at the right time.</p>
                     </div>
-                    
-                    <div class="research-point">
-                        <h3>Continuing Bonds Perspective</h3>
-                        <p>We recognize the importance of maintaining a connection with deceased loved ones as part of healthy grief integration.</p>
-                    </div>
-                    
-                    <div class="research-point">
-                        <h3>Trauma-Informed Care</h3>
-                        <p>Our resources are designed with sensitivity to the potential traumatic aspects of loss and grief.</p>
-                    </div>
-                    
-                    <div class="research-point">
-                        <h3>Positive Psychology</h3>
-                        <p>We incorporate evidence-based approaches for building resilience and finding meaning through difficult experiences.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Relevant Support</h3>
+                        <p>"The resources felt like they were chosen just for me. When I needed practical coping strategies, they were there. When I was ready to explore the deeper meaning of my loss, those resources appeared too. It was like having a guide who knew exactly what I needed at each step."</p>
+                        <p class="testimonial-author">— Amelia T., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="testimonials-section">
+        <!-- Ritual Creation Section -->
+        <section class="feature-section bg-light">
             <div class="container">
-                <h2>Stories of Support</h2>
-                <p class="testimonial-note">These examples illustrate how Digital Companion™ is designed to provide emotional support:</p>
-                
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <p class="testimonial-text">"After losing my mother, I felt completely lost. The guided journaling helped me express feelings I couldn't share with anyone else. Having a private space to process my grief made a tremendous difference."</p>
-                        <p class="testimonial-author">- Michael, 42</p>
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h2>Ritual Creation</h2>
+                        <p>Create meaningful rituals and commemorations that honor your loved one and provide structure to your grief journey.</p>
+                        <p>Ritual creation tools include:</p>
+                        <ul>
+                            <li>Ideas for personal rituals based on your relationship and values</li>
+                            <li>Guidance for marking important dates and anniversaries</li>
+                            <li>Templates for memorial services and gatherings</li>
+                            <li>Suggestions for creative expressions of grief</li>
+                            <li>Community ritual sharing for inspiration</li>
+                        </ul>
+                        <p>Rituals can provide comfort, meaning, and a sense of connection during the grief journey. Our tools help you create practices that feel authentic and meaningful to you and your relationship with the person you've lost.</p>
                     </div>
-                    
-                    <div class="testimonial">
-                        <p class="testimonial-text">"The anniversary of my husband's death was approaching, and I was dreading it. Digital Companion™ provided thoughtful suggestions for honoring his memory that helped transform a painful day into one with meaning."</p>
-                        <p class="testimonial-author">- Elena, 68</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-candle-holder"></i>
+                        </div>
+                        <h3>Meaningful Remembrance</h3>
+                        <p>"Creating a simple candle-lighting ritual for the anniversary of my mother's death gave me a way to honor her memory that felt right for me. It's become a meaningful practice that helps me feel connected to her, even as time passes."</p>
+                        <p class="testimonial-author">— Olivia M., using Digital Companion since 2024</p>
                     </div>
-                    
-                    <div class="testimonial">
-                        <p class="testimonial-text">"As a typically stoic person, I struggled to acknowledge my grief. The educational resources helped me understand that my experience was normal and gave me permission to grieve in my own way."</p>
-                        <p class="testimonial-author">- James, 35</p>
-                    </div>
-                </div>
-                
-                <p class="testimonial-note"><small>These testimonials represent the intended experience of Digital Companion™ users and are based on research with individuals experiencing grief.</small></p>
-            </div>
-        </section>
-
-        <section class="professional-support">
-            <div class="container">
-                <h2>Connection to Professional Support</h2>
-                <p>While Digital Companion™ provides valuable emotional support resources, we recognize when professional help is beneficial:</p>
-                
-                <div class="professional-support-content">
-                    <div class="support-info">
-                        <h3>Resource Directory</h3>
-                        <p>Access a curated directory of grief counselors, therapists, and support groups in your area.</p>
-                    </div>
-                    
-                    <div class="support-info">
-                        <h3>When to Seek Help</h3>
-                        <p>Educational content to help you recognize when professional support might be beneficial for your grief journey.</p>
-                    </div>
-                    
-                    <div class="support-info">
-                        <h3>Preparation Guidance</h3>
-                        <p>Resources to help you prepare for and get the most out of professional grief support.</p>
-                    </div>
-                </div>
-                
-                <div class="support-note">
-                    <p><strong>Note:</strong> Digital Companion™ complements but does not replace professional mental health support. If you're experiencing severe or persistent distress, please consult with a qualified healthcare provider.</p>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <!-- Legacy Preservation Section -->
+        <section class="feature-section">
             <div class="container">
-                <h2>Help Us Create Better Emotional Support</h2>
-                <p>We're developing Digital Companion™ with input from people who have experienced grief. Your insights can help us create more effective emotional support resources.</p>
-                <a href="/survey" class="button primary-button">Share Your Experience</a>
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Legacy Preservation</h2>
+                        <p>Create lasting tributes that capture the essence of your loved one's life and preserve their memory for future generations.</p>
+                        <p>Legacy preservation features include:</p>
+                        <ul>
+                            <li>Digital memorial creation with photos, stories, and timeline</li>
+                            <li>Memory collection tools to gather stories from friends and family</li>
+                            <li>Audio and video recording capabilities for oral histories</li>
+                            <li>Legacy projects that honor your loved one's values and passions</li>
+                            <li>Options for sharing memorials publicly or keeping them private</li>
+                        </ul>
+                        <p>Preserving your loved one's legacy can be a healing part of the grief journey, allowing you to celebrate their life while acknowledging your loss. Our tools make this process accessible and meaningful.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Lasting Tributes</h3>
+                        <p>"Creating my husband's digital memorial became a healing project for our whole family. Collecting photos and stories helped us remember the joy alongside the grief. Now we have a beautiful tribute that our grandchildren can visit to learn about the grandfather they never met."</p>
+                        <p class="testimonial-author">— Eleanor W., using Digital Companion since 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialized Support Pathways Section -->
+        <section class="feature-section bg-light">
+            <div class="container">
+                <h2 class="section-title">Specialized Support Pathways</h2>
+                <div class="support-pathways-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rings-wedding"></i>
+                        </div>
+                        <h3>Loss of a Partner</h3>
+                        <p>Specialized support for those navigating the unique challenges of losing a spouse or partner, including resources for adjusting to solo living, managing shared responsibilities, and rebuilding identity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Loss of a Child</h3>
+                        <p>Compassionate support for the profound grief of losing a child at any age, with resources for coping with this particular type of loss, supporting siblings, and preserving memories.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Loss of a Parent</h3>
+                        <p>Guidance for those who have lost a parent, including resources for processing this fundamental loss, managing family dynamics, and carrying forward family legacies.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <h3>Pet Loss</h3>
+                        <p>Support for the often underrecognized grief of losing a beloved pet, with resources that validate this significant loss and provide ways to honor your animal companion's memory.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <h3>Traumatic Loss</h3>
+                        <p>Specialized support for those dealing with sudden, unexpected, or traumatic losses, including resources for processing trauma alongside grief and finding stability during acute distress.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3>Pregnancy & Infant Loss</h3>
+                        <p>Compassionate support for those experiencing miscarriage, stillbirth, or infant loss, with resources that acknowledge the unique nature of this grief and provide ways to honor these profound losses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Begin Your Emotional Support Journey</h2>
+            <p>Take the first step toward finding the emotional support you need during this challenging time. Our compassionate community and resources are here for you.</p>
+            <div class="cta-buttons">
+                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
             </div>
         </section>
     </main>
@@ -243,34 +445,56 @@
             <div class="footer-section">
                 <h5>Company</h5>
                 <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/team">Our Team</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Services</h5>
+                <h5>Platform</h5>
                 <ul>
-                    <li><a href="/practical-support">Practical Support</a></li>
-                    <li><a href="/emotional-support">Emotional Support</a></li>
-                    <li><a href="/pricing">Pricing</a></li>
-                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                    <li><a href="/platform/estate.html">Estate</a></li>
+                    <li><a href="/platform/journal.html">Journal</a></li>
+                    <li><a href="/platform/meditation.html">Meditation</a></li>
+                    <li><a href="/platform/memory.html">Memory</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Stay Connected</h5>
-                <p>Subscribe to our newsletter for helpful resources and updates.</p>
-                <!-- Newsletter signup form here -->
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/resources.html">Resource Library</a></li>
+                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
             <div class="footer-links">
-                <a href="/terms.html">Terms and Conditions</a>
-                <a href="/privacy">Privacy Policy</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Mobile menu script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            if (mobileMenuButton && mobileNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
