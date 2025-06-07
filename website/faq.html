@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Digital Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Mobile improvements integration script -->
+    <script src="/mobile_improvements/integration.js"></script>
+    <!-- URL redirects for extensionless URLs -->
+    <script src="/js/redirects.js"></script>
+    <style>
+        :root {
+            --primary-color: #6B5B95;
+            --secondary-color: #6B5B95;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #555;
+            --border-color: #ddd;
+            --hover-color: #f0edf6;
+        }
+        
+        /* Coming Soon Banner */
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+        
+        /* Navigation Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+        }
+        
+        /* FAQ Category Cards */
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-category-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: block;
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+        
+        .faq-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+        
+        .faq-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-category-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Search Container */
+        .search-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .search-input-group {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        
+        .search-input {
+            flex-grow: 1;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px 0 0 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .search-button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        /* FAQ Accordion */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+        
+        .faq-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        
+        .accordion {
+            margin-bottom: 2rem;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            margin: 0;
+        }
+        
+        .accordion-button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 1.25rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            background-color: white;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .accordion-button:after {
+            content: '+';
+            position: absolute;
+            right: 1.25rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .accordion-button[aria-expanded="true"]:after {
+            content: '−';
+        }
+        
+        .accordion-button:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .accordion-collapse {
+            display: none;
+        }
+        
+        .accordion-collapse.show {
+            display: block;
+        }
+        
+        .accordion-body {
+            padding: 1.25rem;
+            background-color: white;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-button span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark-text);
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+            }
+            
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="announcement-bar">
+            <p>Coming Soon - Join our Beta Program!</p>
+        </div>
+        <nav class="desktop-nav">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Digital Companion Platform ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/platform/tasks.html">Tasks Management</a>
+                        <a href="/platform/estate.html">Estate</a>
+                        <a href="/platform/journal.html">Journal</a>
+                        <a href="/platform/meditation.html">Meditation</a>
+                        <a href="/platform/memory.html">Memory</a>
+                        <a href="/platform/practical-guides.html">Practical Guides</a>
+                        <a href="/platform/emotional-support.html">Emotional Support Resources</a>
+                        <a href="/platform/services.html">Services</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                <li><a href="/platform/estate.html">Estate</a></li>
+                <li><a href="/platform/journal.html">Journal</a></li>
+                <li><a href="/platform/meditation.html">Meditation</a></li>
+                <li><a href="/platform/memory.html">Memory</a></li>
+                <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                <li><a href="/platform/emotional-support.html">Emotional Support Resources</a></li>
+                <li><a href="/platform/services.html">Services</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="main-content">
+            <div class="hero-content">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to common questions about Digital Companion and how we can support you through your grief journey.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Categories Section -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="faq-categories">
+                    <a href="#general-questions" class="faq-category-card">
+                        <div class="faq-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>General Questions</h3>
+                        <p>Learn about Digital Companion and our approach to grief support.</p>
+                    </a>
+                    
+                    <a href="#practical-support" class="faq-category-card">
+                        <div class="faq-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Practical Support</h3>
+                        <p>Questions about our administrative tools and resources.</p>
+                    </a>
+                    
+                    <a href="#emotional-support" class="faq-category-card">
+                        <div class="faq-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Emotional Support</h3>
+                        <p>Information about our community and counseling services.</p>
+                    </a>
+                    
+                    <a href="#account-billing" class="faq-category-card">
+                        <div class="faq-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Account & Billing</h3>
+                        <p>Questions about subscriptions, payments, and account management.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="feature-section bg-light">
+            <div class="container">
+                <div class="search-container">
+                    <h2 class="section-title">Search Our FAQ</h2>
+                    <div class="search-input-group">
+                        <input type="text" class="search-input" placeholder="Type your question here..." aria-label="Search FAQ">
+                        <button class="search-button" type="button">Search</button>
+                    </div>
+                    <p class="text-center">Can't find what you're looking for? <a href="contact.html">Contact our support team</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- General Questions Section -->
+        <section class="faq-section" id="general-questions">
+            <div class="container">
+                <h2>General Questions</h2>
+                
+                <div class="accordion" id="generalAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="general1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#generalCollapse1" aria-expanded="true" aria-controls="generalCollapse1">
+                                What is Digital Companion?
+                            </button>
+                        </h3>
+                        <div id="generalCollapse1" class="accordion-collapse show" aria-labelledby="general1" data-bs-parent="#generalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion is a comprehensive platform designed to support people who have experienced the loss of a loved one. We combine practical administrative assistance with emotional support tools to help you navigate the complex journey of grief.</p>
+                                <p>Our platform offers:</p>
+                                <ul>
+                                    <li>Step-by-step guidance for managing administrative tasks after a death</li>
+                                    <li>Document storage and organization tools</li>
+                                    <li>Estate management features</li>
+                                    <li>Access to a supportive community of others experiencing grief</li>
+                                    <li>Resources for emotional well-being and healing</li>
+                                    <li>Personalized support based on your specific situation and needs</li>
+                                </ul>
+                                <p>We believe in providing both the practical help needed to manage the logistics after a loss and the emotional support essential for healing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="general2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalCollapse2" aria-expanded="false" aria-controls="generalCollapse2">
+                                How is Digital Companion different from other grief support services?
+                            </button>
+                        </h3>
+                        <div id="generalCollapse2" class="accordion-collapse collapse" aria-labelledby="general2" data-bs-parent="#generalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion stands apart from other grief support services in several key ways:</p>
+                                <ul>
+                                    <li><strong>Comprehensive Support:</strong> We uniquely combine practical administrative assistance with emotional support, addressing the full spectrum of needs that arise after a loss.</li>
+                                    <li><strong>Personalized Approach:</strong> Our platform adapts to your specific situation, providing relevant guidance and resources based on your relationship to the deceased, the timeframe of your loss, and your individual needs.</li>
+                                    <li><strong>Technology-Enabled Care:</strong> We leverage technology to simplify complex processes while maintaining a deeply human, compassionate approach to support.</li>
+                                    <li><strong>Community Connection:</strong> Beyond just information, we facilitate meaningful connections with others who understand what you're going through.</li>
+                                    <li><strong>Ongoing Journey Support:</strong> We recognize that grief isn't linear and doesn't follow a fixed timeline. Our support adapts as your needs change over time.</li>
+                                </ul>
+                                <p>While many services focus exclusively on either the practical or emotional aspects of loss, Digital Companion recognizes that these needs are interconnected and provides holistic support for your entire grief journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="general3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalCollapse3" aria-expanded="false" aria-controls="generalCollapse3">
+                                Is Digital Companion available in my country?
+                            </button>
+                        </h3>
+                        <div id="generalCollapse3" class="accordion-collapse collapse" aria-labelledby="general3" data-bs-parent="#generalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion is currently available in the United Kingdom, with plans to expand to other countries in the future. Our platform is designed with UK-specific guidance for legal processes, account notifications, and support resources.</p>
+                                <p>While users from other countries can access our emotional support resources and community features, the practical guidance and administrative tools are optimized for UK processes and regulations.</p>
+                                <p>If you're interested in Digital Companion becoming available in your country, please let us know by contacting <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a>. Your interest helps us prioritize our international expansion.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="general4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalCollapse4" aria-expanded="false" aria-controls="generalCollapse4">
+                                Do I need to be tech-savvy to use Digital Companion?
+                            </button>
+                        </h3>
+                        <div id="generalCollapse4" class="accordion-collapse collapse" aria-labelledby="general4" data-bs-parent="#generalAccordion">
+                            <div class="accordion-body">
+                                <p>Not at all. Digital Companion is designed to be intuitive and accessible for users of all technical abilities. We've created a simple, straightforward interface that guides you through each step of the process.</p>
+                                <p>Features that make Digital Companion user-friendly include:</p>
+                                <ul>
+                                    <li>Clear, step-by-step instructions</li>
+                                    <li>Simple navigation</li>
+                                    <li>Helpful tooltips and explanations</li>
+                                    <li>Responsive design that works on computers, tablets, and smartphones</li>
+                                    <li>Support resources if you get stuck</li>
+                                </ul>
+                                <p>If you do encounter any difficulties, our support team is available to help you navigate the platform. Simply contact us at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a> for assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Support Section -->
+        <section class="faq-section" id="practical-support">
+            <div class="container">
+                <h2>Practical Support</h2>
+                
+                <div class="accordion" id="practicalAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="practical1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse1" aria-expanded="true" aria-controls="practicalCollapse1">
+                                What practical support does Digital Companion provide?
+                            </button>
+                        </h3>
+                        <div id="practicalCollapse1" class="accordion-collapse show" aria-labelledby="practical1" data-bs-parent="#practicalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion offers a comprehensive range of practical support tools to help you manage the administrative aspects of loss:</p>
+                                <ul>
+                                    <li><strong>Personalized Task Checklist:</strong> A customized list of tasks based on your specific situation, with step-by-step guidance for each.</li>
+                                    <li><strong>Document Management:</strong> Secure storage for important documents like death certificates, wills, and financial records.</li>
+                                    <li><strong>Estate Management:</strong> Tools to help organize and manage estate affairs, including asset tracking and distribution planning.</li>
+                                    <li><strong>Account Notification System:</strong> Guidance on which organizations need to be notified, with templates for notification letters.</li>
+                                    <li><strong>Legal Process Guidance:</strong> Clear explanations of probate and other legal processes, with location-specific information.</li>
+                                    <li><strong>Financial Tools:</strong> Resources for managing financial matters, including inheritance, insurance claims, and benefit applications.</li>
+                                    <li><strong>Professional Referrals:</strong> Connections to vetted professionals when specialized assistance is needed.</li>
+                                </ul>
+                                <p>All practical support features are designed to simplify complex processes and reduce the administrative burden during an already difficult time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="practical2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse2" aria-expanded="false" aria-controls="practicalCollapse2">
+                                Is my information secure on Digital Companion?
+                            </button>
+                        </h3>
+                        <div id="practicalCollapse2" class="accordion-collapse collapse" aria-labelledby="practical2" data-bs-parent="#practicalAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, security is a top priority at Digital Companion. We implement multiple layers of protection to ensure your sensitive information remains secure:</p>
+                                <ul>
+                                    <li><strong>Bank-Level Encryption:</strong> We use 256-bit encryption (the same level used by banks) to protect all data transmission and storage.</li>
+                                    <li><strong>Secure Document Storage:</strong> All documents are encrypted both in transit and at rest.</li>
+                                    <li><strong>Regular Security Audits:</strong> Our systems undergo regular security assessments and penetration testing.</li>
+                                    <li><strong>Data Privacy Compliance:</strong> We adhere to GDPR and other relevant data protection regulations.</li>
+                                    <li><strong>Limited Data Collection:</strong> We only collect information that's necessary to provide our services.</li>
+                                    <li><strong>No Data Selling:</strong> We never sell your personal information to third parties.</li>
+                                </ul>
+                                <p>You can review our complete <a href="privacy.html">Privacy Policy</a> for detailed information about how we handle your data.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="practical3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse3" aria-expanded="false" aria-controls="practicalCollapse3">
+                                Can Digital Companion help with estate management?
+                            </button>
+                        </h3>
+                        <div id="practicalCollapse3" class="accordion-collapse collapse" aria-labelledby="practical3" data-bs-parent="#practicalAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, estate management is a core feature of Digital Companion. Our estate management tools help you organize, track, and manage the estate of your loved one:</p>
+                                <ul>
+                                    <li><strong>Asset Inventory:</strong> Tools to catalog and track all assets, including property, accounts, investments, and personal possessions.</li>
+                                    <li><strong>Liability Management:</strong> Systems to identify and manage outstanding debts and financial obligations.</li>
+                                    <li><strong>Beneficiary Tracking:</strong> Features to record beneficiary information and track distributions.</li>
+                                    <li><strong>Document Organization:</strong> Secure storage for wills, trusts, property deeds, and other important estate documents.</li>
+                                    <li><strong>Probate Guidance:</strong> Step-by-step assistance through the probate process, with UK-specific information.</li>
+                                    <li><strong>Executor Tools:</strong> Resources specifically designed to help executors fulfill their responsibilities.</li>
+                                </ul>
+                                <p>Our Basic plan includes essential estate management tools, while our Complete plan offers advanced features for more complex estates. Both plans provide structured guidance to help simplify what can often be an overwhelming process.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="practical4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse4" aria-expanded="false" aria-controls="practicalCollapse4">
+                                Does Digital Companion provide legal advice?
+                            </button>
+                        </h3>
+                        <div id="practicalCollapse4" class="accordion-collapse collapse" aria-labelledby="practical4" data-bs-parent="#practicalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion provides general legal information and guidance, but we do not provide personalized legal advice. Our platform offers:</p>
+                                <ul>
+                                    <li>Explanations of common legal processes in plain language</li>
+                                    <li>Checklists for legal procedures like probate</li>
+                                    <li>Document templates for standard legal communications</li>
+                                    <li>Information about when legal assistance may be necessary</li>
+                                    <li>Guidance on finding qualified legal professionals</li>
+                                </ul>
+                                <p>For specific legal advice tailored to your situation, we recommend consulting with a qualified solicitor. Our platform can help you prepare for legal consultations by organizing relevant information and documents, potentially making those consultations more efficient and cost-effective.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emotional Support Section -->
+        <section class="faq-section" id="emotional-support">
+            <div class="container">
+                <h2>Emotional Support</h2>
+                
+                <div class="accordion" id="emotionalAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="emotional1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse1" aria-expanded="true" aria-controls="emotionalCollapse1">
+                                What emotional support resources does Digital Companion offer?
+                            </button>
+                        </h3>
+                        <div id="emotionalCollapse1" class="accordion-collapse show" aria-labelledby="emotional1" data-bs-parent="#emotionalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion offers a variety of emotional support resources to help you navigate the grief journey:</p>
+                                <ul>
+                                    <li><strong>Community Forums:</strong> Connect with others who understand what you're going through in our moderated discussion spaces.</li>
+                                    <li><strong>Grief Education:</strong> Access articles, videos, and resources about grief, written by experts in bereavement support.</li>
+                                    <li><strong>Guided Journaling:</strong> Structured journaling prompts to help process emotions and preserve memories.</li>
+                                    <li><strong>Meditation Resources:</strong> Guided meditations specifically designed for grief and healing.</li>
+                                    <li><strong>Memory Preservation:</strong> Tools to create tributes and memory collections honoring your loved one.</li>
+                                    <li><strong>Ritual Creation:</strong> Guidance for creating meaningful rituals and commemorations.</li>
+                                    <li><strong>Professional Resources:</strong> Information about grief counseling and therapy, with guidance on finding the right support.</li>
+                                </ul>
+                                <p>Our emotional support resources are designed to complement, not replace, professional mental health services. If you're experiencing severe or persistent emotional distress, we encourage seeking help from a qualified mental health professional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="emotional2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse2" aria-expanded="false" aria-controls="emotionalCollapse2">
+                                How does the community support work?
+                            </button>
+                        </h3>
+                        <div id="emotionalCollapse2" class="accordion-collapse collapse" aria-labelledby="emotional2" data-bs-parent="#emotionalAccordion">
+                            <div class="accordion-body">
+                                <p>Our community support features are designed to connect you with others who understand the grief experience, reducing isolation and providing peer support:</p>
+                                <ul>
+                                    <li><strong>Moderated Forums:</strong> Discussion spaces organized by type of loss and relationship, all carefully moderated to ensure a safe, supportive environment.</li>
+                                    <li><strong>Small Support Groups:</strong> Optional small group connections with others in similar situations, facilitated by trained moderators.</li>
+                                    <li><strong>Resource Sharing:</strong> Community spaces for sharing helpful resources, articles, and coping strategies.</li>
+                                    <li><strong>Memorial Sharing:</strong> Optional spaces to share memories and tributes to loved ones.</li>
+                                    <li><strong>Virtual Events:</strong> Online gatherings for commemoration, education, and connection.</li>
+                                </ul>
+                                <p>All community spaces adhere to strict guidelines to ensure they remain supportive, respectful, and safe. Participation is always optional, and you can choose your level of engagement based on your comfort and needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="emotional3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse3" aria-expanded="false" aria-controls="emotionalCollapse3">
+                                Does Digital Companion offer grief counseling?
+                            </button>
+                        </h3>
+                        <div id="emotionalCollapse3" class="accordion-collapse collapse" aria-labelledby="emotional3" data-bs-parent="#emotionalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion does not directly provide grief counseling or therapy services. Instead, we offer:</p>
+                                <ul>
+                                    <li>Information about different types of grief support and therapy</li>
+                                    <li>Guidance on when professional support might be beneficial</li>
+                                    <li>Resources for finding qualified grief counselors and therapists</li>
+                                    <li>Tools to help you prepare for and get the most from professional support</li>
+                                </ul>
+                                <p>Our Complete plan includes access to a network of verified grief support professionals, making it easier to find qualified help when needed. We carefully vet all professionals in our network to ensure they have appropriate qualifications and specialized experience in grief and bereavement support.</p>
+                                <p>If you're experiencing severe emotional distress, please contact a crisis support service or mental health professional directly. In the UK, you can contact the Samaritans at 116 123 for immediate emotional support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="emotional4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse4" aria-expanded="false" aria-controls="emotionalCollapse4">
+                                How does Digital Companion's approach to grief differ from others?
+                            </button>
+                        </h3>
+                        <div id="emotionalCollapse4" class="accordion-collapse collapse" aria-labelledby="emotional4" data-bs-parent="#emotionalAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion's approach to grief is distinguished by several key principles:</p>
+                                <ul>
+                                    <li><strong>Personalized Support:</strong> We recognize that every grief journey is unique and provide resources tailored to your specific situation and needs.</li>
+                                    <li><strong>Non-Linear Understanding:</strong> We acknowledge that grief doesn't follow a predictable timeline or set of stages, and our support adapts accordingly.</li>
+                                    <li><strong>Holistic Perspective:</strong> We address both the practical and emotional aspects of loss, recognizing how they interconnect and influence each other.</li>
+                                    <li><strong>Continuing Bonds:</strong> We embrace the understanding that maintaining a connection with your loved one can be a healthy part of grief, rather than focusing solely on "moving on."</li>
+                                    <li><strong>Cultural Sensitivity:</strong> We respect diverse cultural and religious approaches to grief and loss.</li>
+                                    <li><strong>Evidence-Based Resources:</strong> Our educational content and support tools are grounded in current grief research and best practices.</li>
+                                </ul>
+                                <p>Rather than prescribing a single approach to grief, we provide a variety of resources and tools, allowing you to find what resonates with your personal experience and needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account & Billing Section -->
+        <section class="faq-section" id="account-billing">
+            <div class="container">
+                <h2>Account & Billing</h2>
+                
+                <div class="accordion" id="accountAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="account1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse1" aria-expanded="true" aria-controls="accountCollapse1">
+                                What subscription plans does Digital Companion offer?
+                            </button>
+                        </h3>
+                        <div id="accountCollapse1" class="accordion-collapse show" aria-labelledby="account1" data-bs-parent="#accountAccordion">
+                            <div class="accordion-body">
+                                <p>Digital Companion offers two subscription plans to meet different needs:</p>
+                                
+                                <h4>Basic Plan - £19.99/month</h4>
+                                <ul>
+                                    <li>Personalized Care Plan</li>
+                                    <li>Document Storage (5GB)</li>
+                                    <li>Estate Management Tools</li>
+                                    <li>Account Closure Tools</li>
+                                    <li>Community Forum Access</li>
+                                    <li>Resource Library</li>
+                                    <li>Email Support</li>
+                                </ul>
+                                
+                                <h4>Complete Plan - £29.99/month</h4>
+                                <ul>
+                                    <li>Everything in Basic</li>
+                                    <li>Unlimited Document Storage</li>
+                                    <li>Advanced Estate Management</li>
+                                    <li>Priority Support</li>
+                                    <li>Monthly Support Group Sessions</li>
+                                    <li>Legal Document Templates</li>
+                                    <li>Legacy Planning Tools</li>
+                                    <li>Journal & Memory Features</li>
+                                    <li>Meditation Resources</li>
+                                </ul>
+                                
+                                <p>Both plans include a 14-day free trial with no credit card required to start. You can also save 20% by choosing annual billing instead of monthly.</p>
+                                <p>For organizations looking to provide Digital Companion to their members, employees, or clients, we offer customized enterprise solutions. Please <a href="contact.html">contact us</a> for more information about enterprise pricing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="account2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse2" aria-expanded="false" aria-controls="accountCollapse2">
+                                How does the free trial work?
+                            </button>
+                        </h3>
+                        <div id="accountCollapse2" class="accordion-collapse collapse" aria-labelledby="account2" data-bs-parent="#accountAccordion">
+                            <div class="accordion-body">
+                                <p>Our free trial allows you to experience Digital Companion before committing to a subscription:</p>
+                                <ul>
+                                    <li>All plans include a 14-day free trial</li>
+                                    <li>No credit card is required to start the trial</li>
+                                    <li>Full access to all features of your selected plan during the trial period</li>
+                                    <li>Automatic reminder before the trial ends</li>
+                                    <li>Option to continue with a paid subscription or cancel at any time</li>
+                                    <li>No charges if you decide not to continue after the trial</li>
+                                </ul>
+                                <p>To start your free trial, simply sign up on our website and select the plan you'd like to try. You'll have immediate access to all features included in that plan for 14 days.</p>
+                                <p>If you decide Digital Companion isn't right for you, you can cancel anytime during the trial period with no charges. If you choose to continue, you'll be prompted to enter payment information at the end of the trial period.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="account3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse3" aria-expanded="false" aria-controls="accountCollapse3">
+                                Can I cancel my subscription at any time?
+                            </button>
+                        </h3>
+                        <div id="accountCollapse3" class="accordion-collapse collapse" aria-labelledby="account3" data-bs-parent="#accountAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, you can cancel your Digital Companion subscription at any time. There are no long-term contracts or cancellation fees.</p>
+                                <p>When you cancel:</p>
+                                <ul>
+                                    <li>You'll continue to have access until the end of your current billing period</li>
+                                    <li>No further charges will be made to your payment method</li>
+                                    <li>You'll receive a confirmation email when your cancellation is processed</li>
+                                    <li>Your data will be retained for 30 days after your subscription ends, giving you time to download any important information</li>
+                                </ul>
+                                <p>To cancel your subscription, simply go to Account Settings in your Digital Companion dashboard and select "Manage Subscription." From there, you can follow the cancellation process.</p>
+                                <p>If you need any assistance with cancellation, please contact our support team at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="account4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse4" aria-expanded="false" aria-controls="accountCollapse4">
+                                How do I get help if I have questions or issues?
+                            </button>
+                        </h3>
+                        <div id="accountCollapse4" class="accordion-collapse collapse" aria-labelledby="account4" data-bs-parent="#accountAccordion">
+                            <div class="accordion-body">
+                                <p>We offer several ways to get support if you have questions or encounter issues:</p>
+                                <ul>
+                                    <li><strong>Email Support:</strong> Contact our support team at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a> for personalized assistance.</li>
+                                    <li><strong>Help Center:</strong> Access our comprehensive knowledge base with step-by-step guides and answers to common questions.</li>
+                                    <li><strong>In-App Guidance:</strong> Find contextual help and tooltips throughout the platform to guide you through features.</li>
+                                    <li><strong>Contact Form:</strong> Use the <a href="contact.html">contact form</a> on our website to submit specific questions or feedback.</li>
+                                </ul>
+                                <p>Complete plan subscribers receive priority support, with faster response times and access to additional support channels.</p>
+                                <p>For technical issues, it's helpful to include details about the problem you're experiencing, including any error messages and the device/browser you're using. This helps us resolve your issue more quickly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Still Have Questions Section -->
+        <section class="feature-section bg-light">
+            <div class="container">
+                <div class="feature-row">
+                    <div class="feature-content text-center">
+                        <h2>Still Have Questions?</h2>
+                        <p>We're here to help. Reach out to our support team for personalized assistance.</p>
+                        <a href="contact.html" class="primary-button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to Get Started?</h2>
+            <p>Join our beta program today and be among the first to experience Digital Companion when we launch.</p>
+            <div class="cta-buttons">
+                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
+                <a href="/how-it-works.html" class="secondary-button">Learn More</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Digital Companion™</h5>
+                <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Platform</h5>
+                <ul>
+                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                    <li><a href="/platform/estate.html">Estate</a></li>
+                    <li><a href="/platform/journal.html">Journal</a></li>
+                    <li><a href="/platform/meditation.html">Meditation</a></li>
+                    <li><a href="/platform/memory.html">Memory</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/resources.html">Resource Library</a></li>
+                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Accordion and Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            if (mobileMenuButton && mobileNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+            }
+            
+            // Accordion functionality
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all accordion items in the same accordion
+                    const accordionId = this.getAttribute('data-bs-parent');
+                    const accordionItems = document.querySelectorAll(`${accordionId} .accordion-collapse`);
+                    const accordionButtons = document.querySelectorAll(`${accordionId} .accordion-button`);
+                    
+                    accordionItems.forEach(item => {
+                        item.classList.remove('show');
+                    });
+                    
+                    accordionButtons.forEach(btn => {
+                        btn.setAttribute('aria-expanded', 'false');
+                    });
+                    
+                    // Toggle the clicked item
+                    if (!isExpanded) {
+                        const targetId = this.getAttribute('data-bs-target').substring(1);
+                        const targetCollapse = document.getElementById(targetId);
+                        
+                        if (targetCollapse) {
+                            targetCollapse.classList.add('show');
+                            this.setAttribute('aria-expanded', 'true');
+                        }
+                    }
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.querySelector('.search-input');
+            const searchButton = document.querySelector('.search-button');
+            
+            if (searchInput && searchButton) {
+                searchButton.addEventListener('click', function() {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    
+                    if (searchTerm.trim() === '') {
+                        return;
+                    }
+                    
+                    // Simple search implementation - expand accordion items that contain the search term
+                    const accordionButtons = document.querySelectorAll('.accordion-button');
+                    let foundResults = false;
+                    
+                    accordionButtons.forEach(button => {
+                        const accordionText = button.textContent.toLowerCase();
+                        const accordionBodyId = button.getAttribute('data-bs-target').substring(1);
+                        const accordionBody = document.getElementById(accordionBodyId);
+                        const bodyText = accordionBody ? accordionBody.textContent.toLowerCase() : '';
+                        
+                        if (accordionText.includes(searchTerm) || bodyText.includes(searchTerm)) {
+                            // Expand this accordion item
+                            button.setAttribute('aria-expanded', 'true');
+                            if (accordionBody) {
+                                accordionBody.classList.add('show');
+                            }
+                            
+                            // Scroll to the first match
+                            if (!foundResults) {
+                                button.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                foundResults = true;
+                            }
+                        } else {
+                            // Collapse this accordion item
+                            button.setAttribute('aria-expanded', 'false');
+                            if (accordionBody) {
+                                accordionBody.classList.remove('show');
+                            }
+                        }
+                    });
+                    
+                    if (!foundResults) {
+                        alert('No results found for "' + searchTerm + '". Please try a different search term.');
+                    }
+                });
+                
+                // Allow search on Enter key
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchButton.click();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

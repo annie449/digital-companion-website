@@ -3,306 +3,489 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | Digital Companion™</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Pricing | Digital Companion</title>
+    <link rel="stylesheet" href="styles.css">
     <!-- Mobile improvements integration script -->
     <script src="/mobile_improvements/integration.js"></script>
     <!-- URL redirects for extensionless URLs -->
     <script src="/js/redirects.js"></script>
-    <meta name="description" content="Digital Companion™ pricing plans - transparent and flexible options to support you through the grief journey.">
+    <style>
+        :root {
+            --primary-color: #6B5B95;
+            --secondary-color: #6B5B95;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #555;
+            --border-color: #ddd;
+            --hover-color: #f0edf6;
+        }
+        
+        /* Coming Soon Banner */
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+        
+        /* Navigation Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+        }
+        
+        /* Pricing Cards */
+        .pricing-section {
+            padding: 4rem 0;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-period {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--light-text);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .faq-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        
+        .faq-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Testimonials */
+        .testimonial-section {
+            padding: 4rem 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            height: 100%;
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .testimonial-text::before {
+            content: """;
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 2rem;
+            color: var(--primary-color);
+            opacity: 0.5;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: right;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-button span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark-text);
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+            }
+            
+            .pricing-cards, .faq-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="announcement-bar">
-            <p>Coming Soon - Full Service Launching Shortly!</p>
+            <p>Coming Soon - Join our Beta Program!</p>
         </div>
         <nav class="desktop-nav">
             <div class="logo">
                 <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
             </div>
             <ul>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/practical-support.html">Practical Support</a></li>
-                <li><a href="/emotional-support.html">Emotional Support</a></li>
-                <li><a href="/pricing.html" class="active">Pricing</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
-                <li><a href="/survey/form/index.html" class="cta-button">Help Shape Digital Companion™</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Digital Companion Platform ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/platform/tasks.html">Tasks Management</a>
+                        <a href="/platform/estate.html">Estate</a>
+                        <a href="/platform/journal.html">Journal</a>
+                        <a href="/platform/meditation.html">Meditation</a>
+                        <a href="/platform/memory.html">Memory</a>
+                        <a href="/platform/practical-guides.html">Practical Guides</a>
+                        <a href="/platform/emotional-support.html">Emotional Support Resources</a>
+                        <a href="/platform/services.html">Services</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                <li><a href="/platform/estate.html">Estate</a></li>
+                <li><a href="/platform/journal.html">Journal</a></li>
+                <li><a href="/platform/meditation.html">Meditation</a></li>
+                <li><a href="/platform/memory.html">Memory</a></li>
+                <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                <li><a href="/platform/emotional-support.html">Emotional Support Resources</a></li>
+                <li><a href="/platform/services.html">Services</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <h1>Transparent Pricing</h1>
-                <p class="lead">Simple, flexible plans designed to support you when you need it most</p>
+        <!-- Hero Section -->
+        <section class="hero" id="main-content">
+            <div class="hero-content">
+                <h1>Simple, Transparent Pricing</h1>
+                <p>Choose the plan that works best for your needs. All plans include a 14-day free trial with no credit card required to start.</p>
             </div>
         </section>
 
-        <section class="coming-soon-section">
+        <!-- Pricing Section -->
+        <section class="pricing-section">
             <div class="container">
-                <div class="coming-soon-banner">
-                    <h2>Coming Soon</h2>
-                    <p>Digital Companion™ is currently in development. The pricing plans below represent our planned structure when we launch. Early beta testers will receive special pricing and benefits.</p>
-                    <a href="/survey" class="button primary-button">Join Our Beta Program</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="pricing-plans">
-            <div class="container">
-                <h2>Choose the Right Plan for You</h2>
-                <p>We've designed our pricing to be accessible and flexible, with options to suit different needs:</p>
-                
-                <div class="pricing-grid">
+                <div class="pricing-cards">
                     <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3>Basic</h3>
-                            <p class="price">£4.99<span>/month</span></p>
+                        <h3>Basic</h3>
+                        <div class="pricing-price">
+                            £19.99<span class="pricing-period">/month</span>
                         </div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li>Essential task management</li>
-                                <li>Basic document organization</li>
-                                <li>Core emotional support resources</li>
-                                <li>Web access</li>
-                                <li>Email support</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-cta">
-                            <a href="/survey" class="button secondary-button">Join Beta</a>
-                        </div>
-                        <p class="pricing-note">Perfect for those seeking fundamental support</p>
+                        <ul class="pricing-features">
+                            <li>Personalized Care Plan</li>
+                            <li>Document Storage (5GB)</li>
+                            <li>Estate Management Tools</li>
+                            <li>Account Closure Tools</li>
+                            <li>Community Forum Access</li>
+                            <li>Resource Library</li>
+                            <li>Email Support</li>
+                        </ul>
+                        <a href="/survey/form/index.html" class="secondary-button">Join our Beta Program</a>
                     </div>
                     
                     <div class="pricing-card featured">
-                        <div class="pricing-badge">Most Popular</div>
-                        <div class="pricing-header">
-                            <h3>Standard</h3>
-                            <p class="price">£9.99<span>/month</span></p>
+                        <h3>Complete</h3>
+                        <div class="pricing-price">
+                            £29.99<span class="pricing-period">/month</span>
                         </div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li>Comprehensive task management</li>
-                                <li>Advanced document organization</li>
-                                <li>Full emotional support library</li>
-                                <li>Web and mobile app access</li>
-                                <li>Priority email support</li>
-                                <li>Guided journaling tools</li>
-                                <li>Resource sharing with family</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-cta">
-                            <a href="/survey" class="button primary-button">Join Beta</a>
-                        </div>
-                        <p class="pricing-note">Ideal for most individuals seeking comprehensive support</p>
+                        <ul class="pricing-features">
+                            <li>Everything in Basic</li>
+                            <li>Unlimited Document Storage</li>
+                            <li>Advanced Estate Management</li>
+                            <li>Priority Support</li>
+                            <li>Monthly Support Group Sessions</li>
+                            <li>Legal Document Templates</li>
+                            <li>Legacy Planning Tools</li>
+                            <li>Journal & Memory Features</li>
+                            <li>Meditation Resources</li>
+                        </ul>
+                        <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
                     </div>
-                    
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3>Premium</h3>
-                            <p class="price">£19.99<span>/month</span></p>
-                        </div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li>Everything in Standard</li>
-                                <li>Family account (up to 5 users)</li>
-                                <li>Advanced milestone planning</li>
-                                <li>Premium resources and content</li>
-                                <li>Priority support with faster response</li>
-                                <li>Professional resource directory</li>
-                                <li>Legacy preservation tools</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-cta">
-                            <a href="/survey" class="button secondary-button">Join Beta</a>
-                        </div>
-                        <p class="pricing-note">Perfect for families managing loss together</p>
-                    </div>
-                </div>
-                
-                <div class="pricing-note-section">
-                    <p><strong>Note:</strong> All plans include a 14-day free trial. No credit card required to join our beta program.</p>
                 </div>
             </div>
         </section>
 
-        <section class="pricing-comparison">
+        <!-- FAQ Section -->
+        <section class="faq-section">
             <div class="container">
-                <h2>Detailed Plan Comparison</h2>
-                <div class="table-responsive">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Features</th>
-                                <th>Basic</th>
-                                <th>Standard</th>
-                                <th>Premium</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="category-row">
-                                <td colspan="4">Practical Support</td>
-                            </tr>
-                            <tr>
-                                <td>Task Management</td>
-                                <td>Basic</td>
-                                <td>Advanced</td>
-                                <td>Advanced</td>
-                            </tr>
-                            <tr>
-                                <td>Document Organization</td>
-                                <td>Limited Storage</td>
-                                <td>5GB Storage</td>
-                                <td>15GB Shared Storage</td>
-                            </tr>
-                            <tr>
-                                <td>Checklists & Guides</td>
-                                <td>Essential</td>
-                                <td>Comprehensive</td>
-                                <td>Comprehensive</td>
-                            </tr>
-                            <tr>
-                                <td>Timeline & Reminders</td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Form Guidance</td>
-                                <td>Basic</td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Contact Management</td>
-                                <td>Limited</td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            
-                            <tr class="category-row">
-                                <td colspan="4">Emotional Support</td>
-                            </tr>
-                            <tr>
-                                <td>Educational Resources</td>
-                                <td>Basic</td>
-                                <td>Full Library</td>
-                                <td>Premium Library</td>
-                            </tr>
-                            <tr>
-                                <td>Guided Journaling</td>
-                                <td><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td>Advanced</td>
-                            </tr>
-                            <tr>
-                                <td>Mindfulness Resources</td>
-                                <td>Limited</td>
-                                <td><span class="check">✓</span></td>
-                                <td>Premium</td>
-                            </tr>
-                            <tr>
-                                <td>Milestone Support</td>
-                                <td>Basic</td>
-                                <td><span class="check">✓</span></td>
-                                <td>Advanced</td>
-                            </tr>
-                            <tr>
-                                <td>Community Resources</td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td>Premium</td>
-                            </tr>
-                            
-                            <tr class="category-row">
-                                <td colspan="4">Access & Support</td>
-                            </tr>
-                            <tr>
-                                <td>Web Access</td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Mobile App</td>
-                                <td><span class="cross">✗</span></td>
-                                <td><span class="check">✓</span></td>
-                                <td><span class="check">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td>Family Accounts</td>
-                                <td><span class="cross">✗</span></td>
-                                <td><span class="cross">✗</span></td>
-                                <td>Up to 5 Users</td>
-                            </tr>
-                            <tr>
-                                <td>Customer Support</td>
-                                <td>Email</td>
-                                <td>Priority Email</td>
-                                <td>Priority Support</td>
-                            </tr>
-                            <tr>
-                                <td>Response Time</td>
-                                <td>48 Hours</td>
-                                <td>24 Hours</td>
-                                <td>12 Hours</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section class="pricing-faq">
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                
+                <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-grid">
-                    <div class="faq-item">
-                        <h3>When will Digital Companion™ launch?</h3>
-                        <p>Digital Companion™ is currently in development and will be launching soon. Join our beta program to be among the first to access our service and receive special pricing.</p>
+                    <div class="faq-card">
+                        <h3>Can I cancel my subscription at any time?</h3>
+                        <p>Yes, you can cancel your subscription at any time. There are no long-term contracts or cancellation fees. You'll continue to have access until the end of your current billing period.</p>
                     </div>
                     
-                    <div class="faq-item">
-                        <h3>Can I change plans later?</h3>
-                        <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.</p>
+                    <div class="faq-card">
+                        <h3>How does the free trial work?</h3>
+                        <p>All plans include a 14-day free trial. No credit card is required to start. You'll only be charged when you decide to continue after the trial period ends.</p>
                     </div>
                     
-                    <div class="faq-item">
-                        <h3>Is there a free trial?</h3>
-                        <p>Yes, all plans include a 14-day free trial so you can experience Digital Companion™ before committing.</p>
+                    <div class="faq-card">
+                        <h3>Can I switch between plans?</h3>
+                        <p>Yes, you can upgrade or downgrade your plan at any time. Changes will take effect at the start of your next billing cycle.</p>
                     </div>
                     
-                    <div class="faq-item">
-                        <h3>What payment methods do you accept?</h3>
-                        <p>We accept all major credit cards, debit cards, and PayPal. All payments are securely processed.</p>
+                    <div class="faq-card">
+                        <h3>Is my information secure?</h3>
+                        <p>Yes, we use bank-level encryption to protect your data. Your privacy and security are our top priorities. We never share your personal information with third parties without your explicit consent.</p>
                     </div>
                     
-                    <div class="faq-item">
-                        <h3>Can I cancel my subscription?</h3>
-                        <p>Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period.</p>
+                    <div class="faq-card">
+                        <h3>What if I need help choosing a plan?</h3>
+                        <p>Our support team is available to help you choose the right plan for your needs. Contact us at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a> or use the chat feature on our website.</p>
                     </div>
                     
-                    <div class="faq-item">
-                        <h3>Are there any discounts available?</h3>
-                        <p>Beta testers will receive special pricing. We're also developing programs for those with financial need. Contact us for more information.</p>
+                    <div class="faq-card">
+                        <h3>Do you offer discounts for annual subscriptions?</h3>
+                        <p>Yes, we offer a 20% discount when you choose annual billing. This option will be available after your free trial period.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="beta-cta-section">
+        <!-- Testimonials Section -->
+        <section class="testimonial-section">
             <div class="container">
-                <h2>Join Our Beta Program</h2>
-                <p>Help shape Digital Companion™ and receive special benefits:</p>
-                <ul class="beta-benefits">
-                    <li>Early access to all features</li>
-                    <li>Special beta pricing (50% off for 6 months)</li>
-                    <li>Direct input into feature development</li>
-                    <li>Priority support from our team</li>
-                </ul>
-                <a href="/survey" class="button primary-button">Sign Up for Beta Access</a>
+                <h2 class="section-title">What Our Users Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            The Complete plan has been invaluable during this difficult time. The estate management tools alone saved me countless hours of confusion and stress. Well worth the investment for the peace of mind it provides.
+                        </div>
+                        <div class="testimonial-author">
+                            — James R., Complete Plan
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            I started with the Basic plan and it had everything I needed to get organized after my loss. The document storage and personalized care plan were exactly what I needed to start making sense of everything.
+                        </div>
+                        <div class="testimonial-author">
+                            — Sarah T., Basic Plan
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            The meditation resources and journal features in the Complete plan have been essential for my emotional wellbeing. Combined with the practical support, it's truly a comprehensive solution during a difficult time.
+                        </div>
+                        <div class="testimonial-author">
+                            — Michael L., Complete Plan
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise Section -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Enterprise Solutions</h2>
+                        <p>Digital Companion offers customized solutions for organizations looking to provide grief and loss support to their members, employees, or clients.</p>
+                        <p>Our enterprise packages include:</p>
+                        <ul>
+                            <li>Customized platform with your branding</li>
+                            <li>Bulk user management</li>
+                            <li>Dedicated account manager</li>
+                            <li>Usage analytics and reporting</li>
+                            <li>API integration options</li>
+                            <li>Staff training and resources</li>
+                        </ul>
+                        <p>Perfect for:</p>
+                        <ul>
+                            <li>Employee assistance programs</li>
+                            <li>Healthcare organizations</li>
+                            <li>Insurance providers</li>
+                            <li>Funeral service networks</li>
+                            <li>Religious and community organizations</li>
+                        </ul>
+                        <a href="contact.html" class="primary-button">Contact Us for Enterprise Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to Get Started?</h2>
+            <p>Join our beta program today and be among the first to experience Digital Companion when we launch.</p>
+            <div class="cta-buttons">
+                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
+                <a href="/how-it-works.html" class="secondary-button">Learn More</a>
             </div>
         </section>
     </main>
@@ -316,34 +499,56 @@
             <div class="footer-section">
                 <h5>Company</h5>
                 <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/team">Our Team</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Services</h5>
+                <h5>Platform</h5>
                 <ul>
-                    <li><a href="/practical-support">Practical Support</a></li>
-                    <li><a href="/emotional-support">Emotional Support</a></li>
-                    <li><a href="/pricing">Pricing</a></li>
-                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                    <li><a href="/platform/estate.html">Estate</a></li>
+                    <li><a href="/platform/journal.html">Journal</a></li>
+                    <li><a href="/platform/meditation.html">Meditation</a></li>
+                    <li><a href="/platform/memory.html">Memory</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Stay Connected</h5>
-                <p>Subscribe to our newsletter for helpful resources and updates.</p>
-                <!-- Newsletter signup form here -->
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/resources.html">Resource Library</a></li>
+                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
             <div class="footer-links">
-                <a href="/terms.html">Terms and Conditions</a>
-                <a href="/privacy">Privacy Policy</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Mobile menu script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            if (mobileMenuButton && mobileNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

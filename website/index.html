@@ -3,420 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Companion™ | Support for the Journey of Loss</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Mobile improvements integration script -->
-    <script src="/mobile_improvements/integration.js"></script>
-    <!-- URL redirects for extensionless URLs -->
-    <script src="/js/redirects.js"></script>
-    <style>
-        :root {
-            --primary-color: #6B5B95;
-            --secondary-color: #6B5B95;
-            --light-bg: #f8f9fa;
-            --dark-text: #333;
-            --light-text: #555;
-            --border-color: #ddd;
-            --hover-color: #f0edf6;
-        }
-        
-        /* Coming Soon Banner */
-        .announcement-bar {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 0.5rem;
-            font-weight: 600;
-        }
-        
-        /* Navigation Dropdown Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-            border-radius: 4px;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        .dropdown-content a {
-            color: var(--dark-text);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: var(--hover-color);
-            color: var(--primary-color);
-        }
-        
-        /* Feature Cards */
-        .features {
-            padding: 3rem 0;
-        }
-        
-        .features h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 0 2rem;
-        }
-        
-        .feature-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        .feature-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card p {
-            margin-bottom: 1.5rem;
-            color: var(--light-text);
-        }
-        
-        .feature-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-block;
-            position: relative;
-        }
-        
-        .feature-link:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--primary-color);
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-link:hover:after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-button {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-        }
-        
-        .mobile-menu-button span {
-            height: 3px;
-            width: 100%;
-            background-color: var(--dark-text);
-            border-radius: 3px;
-        }
-        
-        @media (max-width: 768px) {
-            .desktop-nav ul {
-                display: none;
-            }
-            
-            .mobile-menu-button {
-                display: flex;
-            }
-            
-            .mobile-nav {
-                display: none;
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 70%;
-                height: 100vh;
-                background-color: white;
-                z-index: 1000;
-                padding: 2rem;
-                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-            }
-            
-            .mobile-nav.active {
-                display: block;
-            }
-            
-            .mobile-nav ul {
-                flex-direction: column;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Digital Companion | Support for the Journey of Loss</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <div class="announcement-bar">
-            <p>Coming Soon - Join our Beta Program!</p>
-        </div>
-        <nav class="desktop-nav">
-            <div class="logo">
-                <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
+<body style="padding-top: 60px;">
+    <div id="coming-soon-banner" style="text-align: center; padding: 15px; background-color: #FFC107; color: #495057; font-weight: bold; border-bottom: 1px solid #e0a800; position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; box-sizing: border-box;">Coming Soon - Full Service Launching Shortly!</div>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                Digital Companion
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="practical-support.html">Practical Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="emotional-support.html">Emotional Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-3" href="mailto:anniedigitalcompanion@gmail.com?subject=Notify%20Me%20About%20Digital%20Companion%20Launch">Notify Me When Launched</a>
+                    </li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about.html">About Us</a></li>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Digital Companion Platform ▼</a>
-                    <div class="dropdown-content">
-                        <a href="/platform/tasks.html">Tasks Management</a>
-                        <a href="/platform/estate.html">Estate</a>
-                        <a href="/platform/journal.html">Journal</a>
-                        <a href="/platform/meditation.html">Meditation</a>
-                        <a href="/platform/memory.html">Memory</a>
-                        <a href="/platform/practical-guides.html">Practical Guides</a>
-                        <a href="/platform/emotional-support.html">Emotional Support Resources</a>
-                        <a href="/platform/services.html">Services</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main-content">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content animate-on-scroll">
+                    <h1>Support for the Journey of Loss</h1>
+                    <p>Digital Companion provides both practical assistance and emotional support during one of life's most challenging transitions. We're with you every step of the way.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="mailto:anniedigitalcompanion@gmail.com?subject=Notify%20Me%20About%20Digital%20Companion%20Launch" class="btn btn-primary">Notify Me When Launched</a>
+                        <a href="how-it-works.html" class="btn btn-outline">Learn More</a>
                     </div>
-                </li>
-                <li><a href="/faq.html">FAQ</a></li>
-                <li><a href="/privacy.html">Privacy Policy</a></li>
-                <li><a href="/terms.html">Terms of Service</a></li>
-                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
-            </ul>
-            <div class="mobile-menu-button">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about.html">About Us</a></li>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/platform/tasks.html">Tasks Management</a></li>
-                <li><a href="/platform/estate.html">Estate</a></li>
-                <li><a href="/platform/journal.html">Journal</a></li>
-                <li><a href="/platform/meditation.html">Meditation</a></li>
-                <li><a href="/platform/memory.html">Memory</a></li>
-                <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
-                <li><a href="/platform/emotional-support.html">Emotional Support Resources</a></li>
-                <li><a href="/platform/services.html">Services</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
-                <li><a href="/privacy.html">Privacy Policy</a></li>
-                <li><a href="/terms.html">Terms of Service</a></li>
-                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Support for the Journey of Loss</h1>
-                <p>Digital Companion™ provides both practical assistance and emotional support during one of life's most challenging transitions. We're with you every step of the way.</p>
-                <div class="cta-buttons">
-                    <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/supportive-presence.jpg" alt="Supportive presence during grief">
-            </div>
-        </section>
-
-        <section class="journey">
-            <h2>Your Journey With Us</h2>
-            <div class="journey-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Initial Assessment</h3>
-                    <p>We begin by understanding your unique situation and needs through a simple, supportive process.</p>
+                <div class="col-lg-6 d-none d-lg-block animate-on-scroll">
+                    <img src="images/hero-image.jpg" alt="Supportive presence during grief" class="img-fluid rounded-image">
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Personalized Plan</h3>
-                    <p>Receive a customized Care Plan tailored to your specific situation within 24 hours.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Guided Support</h3>
-                    <p>Step-by-step guidance through both practical tasks and emotional support.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Ongoing Care</h3>
-                    <p>Continuous support that adapts to your changing needs over time.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <h2>How We Can Help</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Tasks Management</h3>
-                    <p>Organize and track important tasks during difficult times. We provide customized task lists based on your location and situation.</p>
-                    <a href="/platform/tasks.html" class="feature-link">Explore Tasks</a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Estate</h3>
-                    <p>Prepare and organize important documents for the future. Manage assets, accounts, and legal matters with guidance.</p>
-                    <a href="/platform/estate.html" class="feature-link">Explore Estate</a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📔</div>
-                    <h3>Journal</h3>
-                    <p>Document your thoughts and feelings in a private, secure space. Track your grief journey and see your progress over time.</p>
-                    <a href="/platform/journal.html" class="feature-link">Explore Journal</a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🧘</div>
-                    <h3>Meditation</h3>
-                    <p>Access guided meditations specifically designed for grief and loss. Find moments of peace during difficult times.</p>
-                    <a href="/platform/meditation.html" class="feature-link">Explore Meditation</a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💭</div>
-                    <h3>Memory</h3>
-                    <p>Preserve and celebrate important memories of loved ones. Create digital memorials and share stories.</p>
-                    <a href="/platform/memory.html" class="feature-link">Explore Memory</a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Practical Guides</h3>
-                    <p>Access step-by-step guides for navigating practical matters after loss. From legal processes to financial considerations.</p>
-                    <a href="/platform/practical-guides.html" class="feature-link">Explore Guides</a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">❤️</div>
-                    <h3>Emotional Support</h3>
-                    <p>Connect with resources for emotional wellbeing. Access articles, videos, and tools for coping with grief.</p>
-                    <a href="/platform/emotional-support.html" class="feature-link">Explore Support</a>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Services</h3>
-                    <p>Find vetted professional services when you need additional help. From legal assistance to grief counseling.</p>
-                    <a href="/platform/services.html" class="feature-link">Explore Services</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2>Stories from Our Community</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"Digital Companion provided structure during a time when everything felt chaotic. The task management system helped me focus on one thing at a time."</p>
-                    <p class="testimonial-author">- Sarah M.</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"The practical guides were invaluable. They walked me through processes I had no idea how to navigate, making everything less overwhelming."</p>
-                    <p class="testimonial-author">- Michael T.</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Having all the resources in one place made such a difference. I didn't have to search for information while I was grieving."</p>
-                    <p class="testimonial-author">- Elena K.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta">
-            <h2>Start Your Journey with Digital Companion™</h2>
-            <p>Take the first step toward navigating loss with support and guidance. Our compassionate tools and community are here to help you through this difficult time.</p>
-            <div class="cta-buttons">
-                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h5>Digital Companion™</h5>
-                <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
-            </div>
-            <div class="footer-section">
-                <h5>Company</h5>
-                <ul>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/how-it-works.html">How It Works</a></li>
-                    <li><a href="/faq.html">FAQ</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h5>Platform</h5>
-                <ul>
-                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
-                    <li><a href="/platform/estate.html">Estate</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
-                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
-                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h5>Legal</h5>
-                <ul>
-                    <li><a href="/terms.html">Terms and Conditions</a></li>
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
+    </section>
+
+    <!-- Journey Visualization Section -->
+    <section class="journey-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Your Journey With Us</h2>
+            <div class="position-relative">
+                <div class="journey-line"></div>
+                <div class="row">
+                    <div class="col-md-3 journey-step animate-on-scroll">
+                        <div class="step-circle">1</div>
+                        <h3>Initial Assessment</h3>
+                        <p>We begin by understanding your unique situation and needs through a simple, supportive process.</p>
+                    </div>
+                    <div class="col-md-3 journey-step animate-on-scroll">
+                        <div class="step-circle">2</div>
+                        <h3>Personalized Plan</h3>
+                        <p>Receive a customized Care Plan tailored to your specific situation within 24 hours.</p>
+                    </div>
+                    <div class="col-md-3 journey-step animate-on-scroll">
+                        <div class="step-circle">3</div>
+                        <h3>Guided Support</h3>
+                        <p>Step-by-step guidance through both practical tasks and emotional support.</p>
+                    </div>
+                    <div class="col-md-3 journey-step animate-on-scroll">
+                        <div class="step-circle">4</div>
+                        <h3>Ongoing Care</h3>
+                        <p>Continuous support that adapts to your changing needs over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help Section -->
+    <section class="feature-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">How We Help</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 animate-on-scroll">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Practical Support</h3>
+                        <p>We simplify the administrative burden that comes with loss. From managing accounts and documents to navigating legal processes, our tools make complex tasks manageable.</p>
+                        <a href="practical-support.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 animate-on-scroll">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Emotional Support</h3>
+                        <p>Connect with others who understand, access professional guidance, and find resources tailored to your unique grief journey. You don't have to face this alone.</p>
+                        <a href="emotional-support.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Join Our Supportive Community</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="community-card">
+                        <div class="community-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Peer Support Groups</h3>
+                        <p>Connect with others who understand your specific loss experience in moderated, safe spaces.</p>
+                        <div class="community-members">
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                        </div>
+                        <a href="community.html" class="btn btn-outline">Join a Group</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="community-card">
+                        <div class="community-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <h3>One-on-One Support</h3>
+                        <p>Connect with trained grief companions who can provide personalized guidance and a listening ear.</p>
+                        <div class="community-members">
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                        </div>
+                        <a href="support.html" class="btn btn-outline">Find Support</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mx-auto animate-on-scroll">
+                    <div class="community-card">
+                        <div class="community-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Virtual Events</h3>
+                        <p>Participate in workshops, remembrance ceremonies, and educational sessions from anywhere.</p>
+                        <div class="community-members">
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                            <div class="community-member"></div>
+                        </div>
+                        <a href="events.html" class="btn btn-outline">View Calendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Stories from Our Community</h2>
+            <div class="row testimonial-rotation">
+                <div class="col-md-6 mb-4 mx-auto animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "After my mother passed away, I was overwhelmed by all the accounts that needed to be closed and paperwork that needed to be filed. Digital Companion guided me through each step, making an impossible task manageable."
+                        </div>
+                        <div class="testimonial-author">
+                            — Michael R., using Digital Companion since 2024
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 mx-auto animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "The community I found through Digital Companion helped me feel less alone. Being able to connect with others who truly understand what I'm going through has been invaluable in my healing process."
+                        </div>
+                        <div class="testimonial-author">
+                            — Sarah T., using Digital Companion since 2024
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 mx-auto animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "I never realized how many legal and financial matters would need attention after my father's passing. Digital Companion's step-by-step guidance through probate was a lifesaver during an already difficult time."
+                        </div>
+                        <div class="testimonial-author">
+                            — James L., using Digital Companion since 2024
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct-to-Consumer Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="text-center mb-3 animate-on-scroll">Simple, Transparent Pricing</h2>
+            <p class="text-center mb-5 animate-on-scroll">Choose the plan that works best for your needs. No hidden fees, cancel anytime.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <div class="pricing-price">
+                            $9.99<span class="pricing-period">/month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Personalized Care Plan</li>
+                            <li>Document Storage</li>
+                            <li>Account Closure Tools</li>
+                            <li>Community Forum Access</li>
+                            <li>Resource Library</li>
+                        </ul>
+                        <a href="mailto:anniedigitalcompanion@gmail.com?subject=Notify%20Me%20About%20Digital%20Companion%20Launch" class="btn btn-outline">Notify Me When Launched</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="pricing-card featured">
+                        <h3>Complete</h3>
+                        <div class="pricing-price">
+                            $19.99<span class="pricing-period">/month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Everything in Basic</li>
+                            <li>Unlimited Document Storage</li>
+                            <li>Priority Support</li>
+                            <li>Monthly Support Group Sessions</li>
+                            <li>Legal Document Templates</li>
+                            <li>Legacy Planning Tools</li>
+                        </ul>
+                        <a href="mailto:anniedigitalcompanion@gmail.com?subject=Notify%20Me%20About%20Digital%20Companion%20Launch" class="btn btn-primary">Notify Me When Launched</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mx-auto animate-on-scroll">
+                    <div class="pricing-card">
+                        <h3>Professional</h3>
+                        <div class="pricing-price">
+                            $39.99<span class="pricing-period">/month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Everything in Complete</li>
+                            <li>Dedicated Care Manager</li>
+                            <li>Weekly 1:1 Support Sessions</li>
+                            <li>Professional Referral Network</li>
+                            <li>Advanced Estate Tools</li>
+                            <li>Family Account Sharing</li>
+                        </ul>
+                        <a href="mailto:anniedigitalcompanion@gmail.com?subject=Notify%20Me%20About%20Digital%20Companion%20Launch" class="btn btn-outline">Notify Me When Launched</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 animate-on-scroll">
+                <p>All plans include a 14-day free trial. No credit card required to start.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="animate-on-scroll">Start Your Journey with Digital Companion</h2>
+            <p class="animate-on-scroll">Take the first step toward navigating loss with support and guidance. Our compassionate tools and community are here to help you through this difficult time.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap animate-on-scroll">
+                <a href="mailto:anniedigitalcompanion@gmail.com?subject=Notify%20Me%20About%20Digital%20Companion%20Launch" class="btn btn-secondary">Notify Me When Launched</a>
+                <a href="how-it-works.html" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Digital Companion</h5>
+                    <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="practical-support.html">Practical Support</a></li>
+                        <li><a href="emotional-support.html">Emotional Support</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Stay Connected</h5>
+                    <p>Subscribe to our newsletter for helpful resources and updates.</p>
+                    <form class="needs-validation" novalidate>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email" aria-label="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Digital Companion. All rights reserved.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+        <button id="toggle-contrast" aria-label="Toggle high contrast mode">
+            <i class="fas fa-adjust"></i>
+        </button>
+        <button id="toggle-text-size" aria-label="Toggle large text mode">
+            <i class="fas fa-text-height"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            document.querySelector('.mobile-nav').classList.toggle('active');
+        // Accessibility controls
+        document.getElementById('toggle-contrast').addEventListener('click', function() {
+            document.body.classList.toggle('high-contrast');
+        });
+        
+        document.getElementById('toggle-text-size').addEventListener('click', function() {
+            document.body.classList.toggle('large-text');
         });
     </script>
 </body>

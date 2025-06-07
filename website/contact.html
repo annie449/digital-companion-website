@@ -3,201 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Digital Companion™</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Contact Us | Digital Companion</title>
+    <link rel="stylesheet" href="styles.css">
     <!-- Mobile improvements integration script -->
     <script src="/mobile_improvements/integration.js"></script>
     <!-- URL redirects for extensionless URLs -->
     <script src="/js/redirects.js"></script>
-    <meta name="description" content="Get in touch with the Digital Companion™ team. We're here to answer your questions and provide support during life's most challenging transitions.">
     <style>
-        .page-hero {
-            background-color: #f5f5f5;
-            padding: 60px 0;
+        :root {
+            --primary-color: #6B5B95;
+            --secondary-color: #6B5B95;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #555;
+            --border-color: #ddd;
+            --hover-color: #f0edf6;
+        }
+        
+        /* Coming Soon Banner */
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: white;
             text-align: center;
-            margin-bottom: 60px;
+            padding: 0.5rem;
+            font-weight: 600;
         }
         
-        .page-hero h1 {
-            margin-bottom: 15px;
+        /* Navigation Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
         
-        .page-hero .lead {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 4px;
         }
         
-        .contact-section {
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+        }
+        
+        /* Contact Cards */
+        .contact-options {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
         
-        .contact-info h2 {
-            text-align: left;
-            margin-bottom: 30px;
+        .contact-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .contact-methods {
-            margin-bottom: 40px;
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .contact-method {
-            margin-bottom: 25px;
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
         
-        .contact-method h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #6B5B95;
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
         
-        .contact-method p {
-            margin: 0;
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
         }
         
-        .contact-form h2 {
-            text-align: left;
-            margin-bottom: 30px;
+        .contact-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info li i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* Contact Forms */
+        .contact-form {
+            margin-top: 2rem;
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
         
-        .form-group label {
+        .form-label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
             font-weight: 500;
+            color: var(--dark-text);
         }
         
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-control {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
             font-family: inherit;
             font-size: 1rem;
         }
         
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(107, 91, 149, 0.2);
         }
         
-        .form-group select {
-            background-color: white;
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236B5B95' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 16px 12px;
         }
         
-        .form-submit {
-            background-color: #6B5B95;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: 500;
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-check-input {
+            margin-right: 0.5rem;
+            margin-top: 0.25rem;
+        }
+        
+        .form-check-label {
+            font-size: 0.9rem;
+        }
+        
+        .invalid-feedback {
+            display: none;
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Testimonial Card */
+        .testimonial-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-quote {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .testimonial-quote i {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .testimonial-author {
+            font-style: italic;
+            color: var(--light-text);
+            margin-top: 1rem;
+            text-align: right;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
         
-        .form-submit:hover {
-            background-color: #5A4A84;
-        }
-        
-        .office-section {
-            margin-top: 80px;
-        }
-        
-        .office-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .office-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .office-card {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .office-image {
-            height: 200px;
-            background-color: #e0e0e0;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .office-info {
-            padding: 25px;
-        }
-        
-        .office-name {
-            font-size: 1.3rem;
-            margin: 0 0 15px;
-            color: #333;
-        }
-        
-        .office-address {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .office-contact {
-            color: #6B5B95;
-        }
-        
-        .faq-section {
-            margin-top: 80px;
-            background-color: #f9f9f9;
-            padding: 60px 0;
-            border-radius: 10px;
-        }
-        
-        .faq-section h2 {
-            margin-bottom: 40px;
-        }
-        
-        .faq-item {
-            margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 25px;
-        }
-        
-        .faq-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .faq-answer {
-            line-height: 1.6;
+        .mobile-menu-button span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark-text);
+            border-radius: 3px;
         }
         
         @media (max-width: 768px) {
-            .contact-section {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .desktop-nav ul {
+                display: none;
             }
             
-            .office-grid {
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+            }
+            
+            .contact-options {
                 grid-template-columns: 1fr;
             }
         }
@@ -206,165 +264,337 @@
 <body>
     <header>
         <div class="announcement-bar">
-            <p>Coming Soon - Full Service Launching Shortly!</p>
+            <p>Coming Soon - Join our Beta Program!</p>
         </div>
         <nav class="desktop-nav">
             <div class="logo">
                 <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
             </div>
             <ul>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/practical-support.html">Practical Support</a></li>
-                <li><a href="/emotional-support.html">Emotional Support</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
-                <li><a href="/survey/form/index.html" class="cta-button">Help Shape Digital Companion™</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Digital Companion Platform ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/platform/tasks.html">Tasks Management</a>
+                        <a href="/platform/estate.html">Estate</a>
+                        <a href="/platform/journal.html">Journal</a>
+                        <a href="/platform/meditation.html">Meditation</a>
+                        <a href="/platform/memory.html">Memory</a>
+                        <a href="/platform/practical-guides.html">Practical Guides</a>
+                        <a href="/platform/emotional-support.html">Emotional Support Resources</a>
+                        <a href="/platform/services.html">Services</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                <li><a href="/platform/estate.html">Estate</a></li>
+                <li><a href="/platform/journal.html">Journal</a></li>
+                <li><a href="/platform/meditation.html">Meditation</a></li>
+                <li><a href="/platform/memory.html">Memory</a></li>
+                <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                <li><a href="/platform/emotional-support.html">Emotional Support Resources</a></li>
+                <li><a href="/platform/services.html">Services</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="main-content">
+            <div class="hero-content">
                 <h1>Contact Us</h1>
-                <p class="lead">We're here to answer your questions and provide support during life's most challenging transitions</p>
+                <p>We're here to help. Reach out with questions, feedback, or support needs, and our team will respond promptly.</p>
             </div>
         </section>
 
-        <div class="container">
-            <section class="contact-section">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>We welcome your questions, feedback, and inquiries. Our team is here to help you navigate the Digital Companion™ platform and provide the support you need.</p>
+        <!-- Contact Options Section -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="contact-options">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Support</h3>
+                        <p>Need help with your account or have questions about our services?</p>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></li>
+                        </ul>
+                        <a href="#support-form" class="feature-link">Contact Support</a>
+                    </div>
                     
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <h3>General Inquiries</h3>
-                            <p><a href="mailto:info@digitalcompanion.com">info@digitalcompanion.com</a></p>
-                            <p>For general questions about Digital Companion™</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Business Inquiries</h3>
+                        <p>Interested in partnerships, enterprise solutions, or media inquiries?</p>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></li>
+                        </ul>
+                        <a href="#business-form" class="feature-link">Business Contact</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Grief Support</h3>
+                        <p>Need immediate emotional support or crisis assistance?</p>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-globe"></i> <a href="https://www.cruse.org.uk/" target="_blank">Cruse Bereavement Care</a></li>
+                            <li><i class="fas fa-comment"></i> <a href="emotional-support.html">Join our community</a></li>
+                        </ul>
+                        <p>For immediate support, please contact these resources directly.</p>
+                        <a href="resources.html" class="feature-link">Support Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="feature-section bg-light" id="support-form">
+            <div class="container">
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Get in Touch</h2>
+                        <p>Fill out the form below, and a member of our team will get back to you as soon as possible. We're committed to providing timely, compassionate support.</p>
+                        
+                        <form class="contact-form" id="supportForm" action="https://formspree.io/f/annie@digitalcompanion.co.uk" method="POST">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your name.
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject" name="subject" required>
+                                    <option value="" selected disabled>Select a subject</option>
+                                    <option value="account">Account Help</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="billing">Billing Question</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a subject.
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter your message.
+                                </div>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                <label class="form-check-label" for="privacy">
+                                    I agree to the <a href="privacy.html">Privacy Policy</a> and consent to the processing of my data.
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree to the privacy policy.
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="primary-button">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>The support team at Digital Companion was incredibly responsive and compassionate. They understood the sensitivity of my situation and provided clear guidance that helped me navigate a difficult time.</p>
+                            </div>
+                            <p class="testimonial-author">— Rachel K., using Digital Companion since 2024</p>
                         </div>
                         
-                        <div class="contact-method">
-                            <h3>Support</h3>
-                            <p><a href="mailto:support@digitalcompanion.com">support@digitalcompanion.com</a></p>
-                            <p>For assistance with using our platform</p>
+                        <div class="remote-team-info">
+                            <h3>Our Remote Team</h3>
+                            <p>Digital Companion's support team works remotely across the UK to provide you with the best possible assistance. Our team members are trained in grief support and technical assistance to ensure you receive compassionate, knowledgeable help.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Inquiries Section -->
+        <section class="feature-section" id="business-form">
+            <div class="container">
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h2>Business Inquiries</h2>
+                        <p>Interested in partnering with Digital Companion or learning more about our enterprise solutions? Complete the form below, and our business development team will be in touch.</p>
                         
-                        <div class="contact-method">
-                            <h3>Partnerships</h3>
-                            <p><a href="mailto:partnerships@digitalcompanion.com">partnerships@digitalcompanion.com</a></p>
-                            <p>For organizations interested in collaborating with us</p>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <h3>Phone</h3>
-                            <p>(555) 123-4567</p>
-                            <p>Monday-Friday, 9am-5pm EST</p>
+                        <form class="contact-form" id="businessForm" action="https://formspree.io/f/annie@digitalcompanion.co.uk" method="POST">
+                            <div class="form-group">
+                                <label for="business-name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="business-name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="business-email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="business-email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company/Organization</label>
+                                <input type="text" class="form-control" id="company" name="company" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inquiry-type" class="form-label">Inquiry Type</label>
+                                <select class="form-select" id="inquiry-type" name="inquiry_type" required>
+                                    <option value="" selected disabled>Select inquiry type</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="enterprise">Enterprise Solution</option>
+                                    <option value="media">Media Inquiry</option>
+                                    <option value="investment">Investment Interest</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="business-message" class="form-label">Message</label>
+                                <textarea class="form-control" id="business-message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="business-privacy" name="privacy" required>
+                                <label class="form-check-label" for="business-privacy">
+                                    I agree to the <a href="privacy.html">Privacy Policy</a> and consent to the processing of my data.
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="primary-button">Send Inquiry</button>
+                        </form>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Partner With Us</h3>
+                        <p>Digital Companion partners with organizations that share our mission of supporting people through grief and loss. Our partnerships include:</p>
+                        <ul>
+                            <li>Bereavement support organizations</li>
+                            <li>Funeral service providers</li>
+                            <li>Healthcare organizations</li>
+                            <li>Employee assistance programs</li>
+                            <li>Insurance providers</li>
+                            <li>Legal and financial services</li>
+                        </ul>
+                        <p>We offer customized solutions for organizations looking to provide comprehensive grief support to their clients, members, or employees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="feature-section bg-light">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="accordion" id="contactFAQ">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faq1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                                How quickly will I receive a response to my inquiry?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse1" class="accordion-collapse show" aria-labelledby="faq1" data-bs-parent="#contactFAQ">
+                            <div class="accordion-body">
+                                <p>We strive to respond to all inquiries as quickly as possible. Our team will get back to you as soon as they can.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <p>We aim to respond to all inquiries within 24 hours during business days.</p>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                I need immediate emotional support. What should I do?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#contactFAQ">
+                            <div class="accordion-body">
+                                <p>If you need immediate emotional support, please contact a crisis support service such as:</p>
+                                <ul>
+                                    <li>Samaritans (UK): 116 123</li>
+                                    <li>Crisis Text Line (UK): Text SHOUT to 85258</li>
+                                    <li>National Suicide Prevention Lifeline (US): 1-800-273-8255</li>
+                                </ul>
+                                <p>These services are available 24/7 and can provide immediate support. Digital Companion's support team is not equipped to handle crisis situations, but we can connect you with resources for ongoing support once the immediate crisis has passed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                How can I provide feedback about Digital Companion?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#contactFAQ">
+                            <div class="accordion-body">
+                                <p>We welcome feedback about your experience with Digital Companion. You can provide feedback through:</p>
+                                <ul>
+                                    <li>The contact form on this page (select "Feedback" as the subject)</li>
+                                    <li>Emailing us directly at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></li>
+                                    <li>The feedback option within your account dashboard (for registered users)</li>
+                                </ul>
+                                <p>Your feedback helps us improve our services and better support our community.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h2>Send Us a Message</h2>
-                    <form id="contactForm" action="/api/contact" method="POST" data-netlify="true">
-                        <input type="hidden" name="form-name" value="contact">
-                        
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Please select</option>
-                                <option value="General Inquiry">General Inquiry</option>
-                                <option value="Support Request">Support Request</option>
-                                <option value="Partnership Opportunity">Partnership Opportunity</option>
-                                <option value="Feedback">Feedback</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="form-submit">Send Message</button>
-                    </form>
+                <div class="text-center mt-4">
+                    <a href="faq.html" class="secondary-button">View All FAQs</a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="office-section">
-                <h2>Our Offices</h2>
-                
-                <div class="office-grid">
-                    <div class="office-card">
-                        <div class="office-image" style="background-color: #e0e0e0;"></div>
-                        <div class="office-info">
-                            <h3 class="office-name">Boston Headquarters</h3>
-                            <p class="office-address">
-                                123 Compassion Way<br>
-                                Suite 400<br>
-                                Boston, MA 02110
-                            </p>
-                            <p class="office-contact">
-                                <a href="tel:+15551234567">(555) 123-4567</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="office-card">
-                        <div class="office-image" style="background-color: #e0e0e0;"></div>
-                        <div class="office-info">
-                            <h3 class="office-name">San Francisco Office</h3>
-                            <p class="office-address">
-                                456 Support Street<br>
-                                Floor 3<br>
-                                San Francisco, CA 94105
-                            </p>
-                            <p class="office-contact">
-                                <a href="tel:+15557891234">(555) 789-1234</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="faq-section">
-                <div class="container">
-                    <h2>Frequently Asked Questions</h2>
-                    
-                    <div class="faq-item">
-                        <h3 class="faq-question">When will Digital Companion™ be fully launched?</h3>
-                        <p class="faq-answer">Digital Companion™ is currently in the final stages of development and will be launching soon. You can sign up for our notification list to be among the first to know when we're live.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3 class="faq-question">How can I provide feedback on the platform?</h3>
-                        <p class="faq-answer">We welcome your feedback! You can share your thoughts through our <a href="/survey/form/index.html">survey</a> or by emailing us at <a href="mailto:feedback@digitalcompanion.com">feedback@digitalcompanion.com</a>.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3 class="faq-question">Is Digital Companion™ available internationally?</h3>
-                        <p class="faq-answer">Initially, Digital Companion™ will be available in the United States, with plans to expand internationally in the future. Our resources section will be available worldwide.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3 class="faq-question">How can organizations partner with Digital Companion™?</h3>
-                        <p class="faq-answer">We're open to partnerships with grief support organizations, mental health professionals, and administrative service providers. Please contact us at <a href="mailto:partnerships@digitalcompanion.com">partnerships@digitalcompanion.com</a> to discuss collaboration opportunities.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to Join Our Community?</h2>
+            <p>Sign up for our beta program to be among the first to experience Digital Companion's comprehensive support platform.</p>
+            <div class="cta-buttons">
+                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
+                <a href="/how-it-works.html" class="secondary-button">Learn More</a>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -377,51 +607,128 @@
                 <h5>Company</h5>
                 <ul>
                     <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/team.html">Our Team</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Services</h5>
+                <h5>Platform</h5>
                 <ul>
-                    <li><a href="/practical-support.html">Practical Support</a></li>
-                    <li><a href="/emotional-support.html">Emotional Support</a></li>
-                    <li><a href="/pricing.html">Pricing</a></li>
-                    <li><a href="/resources.html">Resources</a></li>
+                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                    <li><a href="/platform/estate.html">Estate</a></li>
+                    <li><a href="/platform/journal.html">Journal</a></li>
+                    <li><a href="/platform/meditation.html">Meditation</a></li>
+                    <li><a href="/platform/memory.html">Memory</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Stay Connected</h5>
-                <p>Subscribe to our newsletter for helpful resources and updates.</p>
-                <!-- Newsletter signup form here -->
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/resources.html">Resource Library</a></li>
+                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
             <div class="footer-links">
-                <a href="/terms.html">Terms and Conditions</a>
                 <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
 
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Form validation script -->
     <script>
-        // Simple form validation
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            let valid = true;
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
             
-            if (!name || !email || !subject || !message) {
-                valid = false;
-                alert('Please fill out all fields');
+            if (mobileMenuButton && mobileNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
             }
             
-            if (!valid) {
-                event.preventDefault();
+            // Form validation
+            const supportForm = document.getElementById('supportForm');
+            const businessForm = document.getElementById('businessForm');
+            
+            if (supportForm) {
+                supportForm.addEventListener('submit', function(event) {
+                    if (!supportForm.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        // Show validation messages
+                        const invalidInputs = supportForm.querySelectorAll(':invalid');
+                        invalidInputs.forEach(input => {
+                            const feedback = input.nextElementSibling;
+                            if (feedback && feedback.classList.contains('invalid-feedback')) {
+                                feedback.style.display = 'block';
+                            }
+                        });
+                    }
+                });
             }
+            
+            if (businessForm) {
+                businessForm.addEventListener('submit', function(event) {
+                    if (!businessForm.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        // Show validation messages
+                        const invalidInputs = businessForm.querySelectorAll(':invalid');
+                        invalidInputs.forEach(input => {
+                            const feedback = input.nextElementSibling;
+                            if (feedback && feedback.classList.contains('invalid-feedback')) {
+                                feedback.style.display = 'block';
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Accordion functionality
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all accordion items in the same accordion
+                    const accordionId = this.getAttribute('data-bs-parent');
+                    const accordionItems = document.querySelectorAll(`${accordionId} .accordion-collapse`);
+                    const accordionButtons = document.querySelectorAll(`${accordionId} .accordion-button`);
+                    
+                    accordionItems.forEach(item => {
+                        item.classList.remove('show');
+                    });
+                    
+                    accordionButtons.forEach(btn => {
+                        btn.setAttribute('aria-expanded', 'false');
+                    });
+                    
+                    // Toggle the clicked item
+                    if (!isExpanded) {
+                        const targetId = this.getAttribute('data-bs-target').substring(1);
+                        const targetCollapse = document.getElementById(targetId);
+                        
+                        if (targetCollapse) {
+                            targetCollapse.classList.add('show');
+                            this.setAttribute('aria-expanded', 'true');
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
