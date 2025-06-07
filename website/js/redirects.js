@@ -1,33 +1,95 @@
-// Client-side redirects for extensionless URLs
+/**
+ * URL redirects for extensionless URLs
+ * This script handles redirects for URLs without file extensions
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Get current path
-    const path = window.location.pathname;
-    
-    // Check if the path doesn't end with .html and isn't the root
-    if (path !== '/' && !path.endsWith('.html') && !path.endsWith('/')) {
-        // Check if this is a known page that should have .html
-        const knownPages = [
-            '/how-it-works',
-            '/practical-support',
-            '/emotional-support',
-            '/pricing',
-            '/about',
-            '/terms',
-            '/privacy',
-            '/team',
-            '/careers',
-            '/contact',
-            '/resources'
-        ];
-        
-        if (knownPages.includes(path)) {
-            // Redirect to the .html version
-            window.location.href = path + '.html';
-        }
-    }
-    
-    // Special redirects
-    if (path === '/notify' || path === '/survey') {
-        window.location.href = '/survey/form/index.html';
-    }
+    // Check if we need to redirect based on the current URL
+    handleRedirects();
 });
+
+/**
+ * Handle redirects for extensionless URLs
+ */
+function handleRedirects() {
+    // Get the current path
+    const currentPath = window.location.pathname;
+    
+    // Define redirects mapping (extensionless path to HTML file)
+    const redirects = {
+        '/about': '/about.html',
+        '/contact': '/contact.html',
+        '/emotional-support': '/emotional-support.html',
+        '/practical-support': '/practical-support.html',
+        '/pricing': '/pricing.html',
+        '/faq': '/faq.html',
+        '/resources': '/resources.html',
+        '/signup': '/signup.html',
+        '/how-it-works': '/how-it-works.html',
+        '/terms': '/terms.html',
+        '/privacy': '/privacy.html'
+    };
+    
+    // Check if the current path needs a redirect
+    if (currentPath in redirects) {
+        // Get the target URL
+        const targetUrl = redirects[currentPath];
+        
+        // Redirect to the target URL
+        window.location.href = targetUrl;
+    }
+    
+    // Handle subdirectory paths
+    if (currentPath.endsWith('/')) {
+        // Check for index.html in the current directory
+        const indexPath = currentPath + 'index.html';
+        
+        // Try to fetch the index.html file
+        fetch(indexPath)
+            .then(response => {
+                if (response.ok) {
+                    // If the file exists and the current URL doesn't end with index.html, redirect
+                    if (!currentPath.endsWith('index.html')) {
+                        window.location.href = indexPath;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error checking for index.html:', error);
+            });
+    }
+}
+
+/**
+ * Update links to use extensionless URLs
+ * This function can be called to update all links on the page to use extensionless URLs
+ */
+function updateLinks() {
+    // Get all links on the page
+    const links = document.querySelectorAll('a');
+    
+    // Define the extensions to remove
+    const extensions = ['.html'];
+    
+    // Loop through all links
+    links.forEach(link => {
+        // Get the href attribute
+        const href = link.getAttribute('href');
+        
+        // Skip if no href or external link
+        if (!href || href.startsWith('http' ) || href.startsWith('mailto:') || href.startsWith('#')) {
+            return;
+        }
+        
+        // Check if the href ends with any of the extensions
+        extensions.forEach(extension => {
+            if (href.endsWith(extension)) {
+                // Remove the extension
+                const newHref = href.substring(0, href.length - extension.length);
+                
+                // Update the href attribute
+                link.setAttribute('href', newHref);
+            }
+        });
+    });
+}
