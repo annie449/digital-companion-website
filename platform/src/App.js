@@ -5,10 +5,10 @@ import './App.css';
 // Import common components
 import GlobalNavigation from './components/GlobalNavigation';
 
-// Import only essential pages initially
-import HomePage from './pages/HomePage';
-import AboutUsPage from './pages/AboutUsPage';
-import HowItWorksPage from './pages/HowItWorksPage';
+// Import page components from their new location
+import HomePage from './components/HomePage';
+import AboutUsPage from './components/AboutUsPage';
+import HowItWorksPage from './components/HowItWorksPage';
 
 function App() {
   return (
