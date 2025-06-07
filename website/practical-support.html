@@ -3,225 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practical Support | Digital Companion™</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Practical Support | Digital Companion</title>
+    <link rel="stylesheet" href="styles.css">
     <!-- Mobile improvements integration script -->
     <script src="/mobile_improvements/integration.js"></script>
     <!-- URL redirects for extensionless URLs -->
     <script src="/js/redirects.js"></script>
-    <meta name="description" content="Digital Companion™ provides practical support to help you navigate administrative tasks and paperwork during the grief process.">
+    <style>
+        :root {
+            --primary-color: #6B5B95;
+            --secondary-color: #6B5B95;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #555;
+            --border-color: #ddd;
+            --hover-color: #f0edf6;
+        }
+        
+        /* Coming Soon Banner */
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+        
+        /* Navigation Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+        }
+        
+        /* Feature Sections */
+        .feature-section {
+            padding: 4rem 0;
+        }
+        
+        .feature-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-style: italic;
+            color: var(--light-text);
+            margin-top: 1rem;
+        }
+        
+        /* Country Guidance Grid */
+        .country-guidance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-button span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark-text);
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+            }
+            
+            .country-guidance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="announcement-bar">
-            <p>Coming Soon - Full Service Launching Shortly!</p>
+            <p>Coming Soon - Join our Beta Program!</p>
         </div>
         <nav class="desktop-nav">
             <div class="logo">
                 <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
             </div>
             <ul>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/practical-support.html" class="active">Practical Support</a></li>
-                <li><a href="/emotional-support.html">Emotional Support</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
-                <li><a href="/survey/form/index.html" class="cta-button">Help Shape Digital Companion™</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Digital Companion Platform ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/platform/tasks.html">Tasks Management</a>
+                        <a href="/platform/estate.html">Estate</a>
+                        <a href="/platform/journal.html">Journal</a>
+                        <a href="/platform/meditation.html">Meditation</a>
+                        <a href="/platform/memory.html">Memory</a>
+                        <a href="/platform/practical-guides.html">Practical Guides</a>
+                        <a href="/platform/emotional-support.html">Emotional Support Resources</a>
+                        <a href="/platform/services.html">Services</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                <li><a href="/platform/estate.html">Estate</a></li>
+                <li><a href="/platform/journal.html">Journal</a></li>
+                <li><a href="/platform/meditation.html">Meditation</a></li>
+                <li><a href="/platform/memory.html">Memory</a></li>
+                <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                <li><a href="/platform/emotional-support.html">Emotional Support Resources</a></li>
+                <li><a href="/platform/services.html">Services</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="main-content">
+            <div class="hero-content">
                 <h1>Practical Support When You Need It Most</h1>
-                <p class="lead">Simplifying the administrative burden during life's most challenging transitions</p>
+                <p>We simplify the administrative burden that comes with loss. From managing accounts and documents to navigating legal processes, our tools make complex tasks manageable.</p>
             </div>
         </section>
 
-        <section class="challenges-section">
+        <!-- Administrative Dashboard Section -->
+        <section class="feature-section">
             <div class="container">
-                <h2>Understanding the Practical Challenges</h2>
-                <p>When facing loss, practical matters can feel overwhelming. Digital Companion™ helps you navigate these challenges with compassion and clarity:</p>
-                
-                <div class="challenges-grid">
-                    <div class="challenge-card">
-                        <h3>Administrative Overload</h3>
-                        <p>Dealing with numerous institutions, forms, and requirements while grieving can be exhausting.</p>
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Administrative Dashboard</h2>
+                        <p>Our intuitive dashboard brings organization to a chaotic time, giving you a clear overview of all tasks, documents, and progress in one place.</p>
+                        <p>The dashboard features:</p>
+                        <ul>
+                            <li>Personalized task checklist with progress tracking</li>
+                            <li>Priority indicators for time-sensitive tasks</li>
+                            <li>Document organization and storage</li>
+                            <li>Calendar with important dates and reminders</li>
+                            <li>Contact management for important communications</li>
+                        </ul>
+                        <p>Everything is designed to be simple and accessible, even during times of emotional stress. You can access your dashboard from any device, ensuring you have guidance wherever you are.</p>
                     </div>
-                    
-                    <div class="challenge-card">
-                        <h3>Complex Processes</h3>
-                        <p>Legal and financial procedures often involve unfamiliar terminology and complicated steps.</p>
-                    </div>
-                    
-                    <div class="challenge-card">
-                        <h3>Time Pressure</h3>
-                        <p>Many tasks have deadlines, creating additional stress during an already difficult time.</p>
-                    </div>
-                    
-                    <div class="challenge-card">
-                        <h3>Information Management</h3>
-                        <p>Keeping track of documents, contacts, and communications becomes increasingly difficult.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Organized & Accessible</h3>
+                        <p>"The dashboard made an overwhelming list of tasks feel manageable. I could see exactly what needed to be done, what was in progress, and what I'd already completed. It gave me a sense of control during a time when everything felt chaotic."</p>
+                        <p class="testimonial-author">— Rebecca M., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="features-section">
+        <!-- Document Vault Section -->
+        <section class="feature-section bg-light">
             <div class="container">
-                <h2>How Digital Companion™ Helps</h2>
-                <p>Our practical support features are designed to simplify administrative tasks and provide clear guidance:</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📋</div>
-                        <h3>Personalized Task Lists</h3>
-                        <p>Receive customized checklists based on your specific situation, with step-by-step guidance for each task.</p>
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h2>Secure Document Vault</h2>
+                        <p>Keep all important documents organized, secure, and accessible when you need them most. Our document vault provides bank-level security with the simplicity of a digital filing cabinet.</p>
+                        <p>The document vault includes:</p>
+                        <ul>
+                            <li>Secure storage for death certificates, wills, and other important documents</li>
+                            <li>Document categorization and tagging for easy retrieval</li>
+                            <li>Ability to share specific documents with family members or professionals</li>
+                            <li>Document templates for common letters and forms</li>
+                            <li>Automatic reminders for document submission deadlines</li>
+                        </ul>
+                        <p>All documents are encrypted and protected, giving you peace of mind that sensitive information remains secure while still being accessible when needed.</p>
                     </div>
-                    
                     <div class="feature-card">
-                        <div class="feature-icon">📁</div>
-                        <h3>Document Organization</h3>
-                        <p>Securely store and organize important documents in one place, with reminders about what you'll need for each process.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">⏰</div>
-                        <h3>Timeline & Reminders</h3>
-                        <p>Keep track of important deadlines with a visual timeline and timely notifications for upcoming tasks.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">📝</div>
-                        <h3>Form Guidance</h3>
-                        <p>Get clear explanations and assistance with completing necessary forms and applications.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">👥</div>
-                        <h3>Contact Management</h3>
-                        <p>Maintain a centralized list of important contacts and communication history with institutions.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">📚</div>
-                        <h3>Resource Library</h3>
-                        <p>Access guides, templates, and information specific to your needs, available whenever you need them.</p>
+                        <div class="feature-icon">
+                            <i class="fas fa-file-shield"></i>
+                        </div>
+                        <h3>Everything in One Place</h3>
+                        <p>"I needed to access the death certificate multiple times for different organizations. Having it securely stored in the vault meant I could retrieve it instantly without having to search through physical papers each time. The document templates also saved me hours of writing formal letters."</p>
+                        <p class="testimonial-author">— Thomas K., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="case-study-section">
+        <!-- Account Management Section -->
+        <section class="feature-section">
             <div class="container">
-                <h2>How It Works: A Practical Example</h2>
-                
-                <div class="case-study">
-                    <h3>Sarah's Journey</h3>
-                    <p>After losing her father, Sarah was overwhelmed by the administrative tasks ahead. Here's how Digital Companion™ helped:</p>
-                    
-                    <div class="case-study-steps">
-                        <div class="case-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Initial Assessment</h4>
-                                <p>Sarah completed a brief questionnaire about her situation, which helped Digital Companion™ understand her specific needs.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="case-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Personalized Dashboard</h4>
-                                <p>Digital Companion™ created a customized dashboard with prioritized tasks, document checklists, and relevant resources.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="case-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Guided Process</h4>
-                                <p>Step-by-step guidance helped Sarah navigate death certificates, financial institutions, and insurance claims with clarity.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="case-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Document Management</h4>
-                                <p>Sarah securely stored important documents and information, making it easy to access what she needed for each task.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="case-step">
-                            <div class="step-number">5</div>
-                            <div class="step-content">
-                                <h4>Ongoing Support</h4>
-                                <p>As Sarah completed immediate tasks, Digital Companion™ adapted to provide guidance for longer-term considerations.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="case-study-quote">"Digital Companion™ turned an overwhelming mountain of tasks into manageable steps. Having everything organized in one place gave me peace of mind during a difficult time."</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="resources-section">
-            <div class="container">
-                <h2>Available Resources</h2>
-                <p>Digital Companion™ provides a comprehensive library of practical resources, including:</p>
-                
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <h3>Checklists & Guides</h3>
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Account Management</h2>
+                        <p>Simplify the process of notifying organizations and managing accounts after a loss. Our account management tools help you track, notify, and close accounts efficiently.</p>
+                        <p>Account management features include:</p>
                         <ul>
-                            <li>First steps after loss</li>
-                            <li>Death certificate process</li>
-                            <li>Financial institution notifications</li>
-                            <li>Estate administration basics</li>
+                            <li>Comprehensive checklist of organizations to notify</li>
+                            <li>Tracking system for account notifications and closures</li>
+                            <li>Template notification letters for different types of accounts</li>
+                            <li>Guidance on required documentation for each organization</li>
+                            <li>Secure record-keeping of all communications</li>
                         </ul>
+                        <p>We provide specific guidance for different types of accounts, from utilities and banking to social media and subscription services, ensuring nothing is overlooked.</p>
                     </div>
-                    
-                    <div class="resource-card">
-                        <h3>Document Templates</h3>
-                        <ul>
-                            <li>Notification letters</li>
-                            <li>Account closure requests</li>
-                            <li>Information gathering forms</li>
-                            <li>Authorization letters</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <h3>Information Guides</h3>
-                        <ul>
-                            <li>Understanding probate</li>
-                            <li>Insurance claim processes</li>
-                            <li>Government benefits overview</li>
-                            <li>Digital account management</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <h3>Planning Tools</h3>
-                        <ul>
-                            <li>Memorial service planning</li>
-                            <li>Financial planning worksheets</li>
-                            <li>Future planning documents</li>
-                            <li>Legacy preservation guides</li>
-                        </ul>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>Simplified Notifications</h3>
+                        <p>"I had no idea how many organizations needed to be notified after my father passed away. The account management system gave me a complete list and helped me track which ones I'd contacted and which still needed attention. It was one less thing to worry about."</p>
+                        <p class="testimonial-author">— Jennifer P., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <!-- Legal Guidance Section -->
+        <section class="feature-section bg-light">
             <div class="container">
-                <h2>Help Us Build Better Practical Support</h2>
-                <p>We're developing Digital Companion™ with input from people who have navigated these challenges. Your experiences can help us create more effective practical support tools.</p>
-                <a href="/survey" class="button primary-button">Share Your Insights</a>
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h2>Legal Guidance</h2>
+                        <p>Navigate complex legal processes with clear, step-by-step guidance tailored to your specific situation and location. Our legal guidance simplifies probate, estate administration, and other legal requirements.</p>
+                        <p>Legal guidance includes:</p>
+                        <ul>
+                            <li>Location-specific information about probate and estate administration</li>
+                            <li>Explanations of legal terms and processes in plain language</li>
+                            <li>Checklists for required legal documents and deadlines</li>
+                            <li>Guidance on when to seek professional legal advice</li>
+                            <li>Resources for finding qualified legal professionals</li>
+                        </ul>
+                        <p>While we don't provide legal advice, we offer clear explanations and structured guidance to help you understand and navigate legal requirements during this challenging time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-scale-balanced"></i>
+                        </div>
+                        <h3>Clear Direction</h3>
+                        <p>"The legal guidance demystified the probate process for me. Instead of legal jargon, I got clear explanations and a step-by-step approach. It helped me understand what I could handle myself and when I needed to consult with a solicitor."</p>
+                        <p class="testimonial-author">— David W., using Digital Companion since 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Tools Section -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h2>Financial Tools</h2>
+                        <p>Manage financial matters with confidence using our specialized tools designed to help you track expenses, identify benefits, and organize financial information.</p>
+                        <p>Financial tools include:</p>
+                        <ul>
+                            <li>Expense tracker for funeral and estate administration costs</li>
+                            <li>Benefits eligibility checker for bereavement support</li>
+                            <li>Asset and liability inventory system</li>
+                            <li>Financial document organizer</li>
+                            <li>Guidance on handling joint accounts and transferring assets</li>
+                        </ul>
+                        <p>Our financial tools help bring clarity to financial matters during a time when managing money may be the last thing on your mind, but still requires attention.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Financial Clarity</h3>
+                        <p>"The expense tracker was invaluable for keeping all the funeral and estate costs organized. I also wouldn't have known about the bereavement benefits I was eligible for if not for the benefits checker. It made a real difference during a financially stressful time."</p>
+                        <p class="testimonial-author">— Michelle S., using Digital Companion since 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Country-Specific Guidance Section -->
+        <section class="feature-section bg-light">
+            <div class="container">
+                <h2 class="section-title">Country-Specific Guidance</h2>
+                <div class="country-guidance-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-europe"></i>
+                        </div>
+                        <h3>United Kingdom</h3>
+                        <p>Our UK-specific guidance covers the Tell Us Once service, registering the death with local authorities, understanding inheritance tax, and navigating the probate process in England, Wales, Scotland, and Northern Ireland.</p>
+                        <a href="#" class="feature-link">View UK Guidance</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-flag-usa"></i>
+                        </div>
+                        <h3>United States</h3>
+                        <p>For those in the US, we provide state-specific information on death certificates, Social Security notifications, estate administration, and understanding the probate process across different jurisdictions.</p>
+                        <a href="#" class="feature-link">View US Guidance</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Canada</h3>
+                        <p>Our Canadian guidance covers provincial differences in estate administration, CPP death benefits, tax considerations, and the specific steps required when notifying government agencies.</p>
+                        <a href="#" class="feature-link">View Canadian Guidance</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h3>Australia</h3>
+                        <p>For Australian users, we provide guidance on dealing with Centrelink, understanding the probate process in different states and territories, and managing superannuation accounts after a loss.</p>
+                        <a href="#" class="feature-link">View Australian Guidance</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Begin Your Practical Support Journey</h2>
+            <p>Take the first step toward simplifying the administrative aspects of loss. Our practical tools and guidance are designed to reduce your burden during this challenging time.</p>
+            <div class="cta-buttons">
+                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
             </div>
         </section>
     </main>
@@ -235,34 +435,56 @@
             <div class="footer-section">
                 <h5>Company</h5>
                 <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/team">Our Team</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Services</h5>
+                <h5>Platform</h5>
                 <ul>
-                    <li><a href="/practical-support">Practical Support</a></li>
-                    <li><a href="/emotional-support">Emotional Support</a></li>
-                    <li><a href="/pricing">Pricing</a></li>
-                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                    <li><a href="/platform/estate.html">Estate</a></li>
+                    <li><a href="/platform/journal.html">Journal</a></li>
+                    <li><a href="/platform/meditation.html">Meditation</a></li>
+                    <li><a href="/platform/memory.html">Memory</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h5>Stay Connected</h5>
-                <p>Subscribe to our newsletter for helpful resources and updates.</p>
-                <!-- Newsletter signup form here -->
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/resources.html">Resource Library</a></li>
+                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
             <div class="footer-links">
-                <a href="/terms.html">Terms and Conditions</a>
-                <a href="/privacy">Privacy Policy</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
             </div>
         </div>
     </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Mobile menu script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            if (mobileMenuButton && mobileNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
