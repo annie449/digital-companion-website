@@ -1,3 +1,22 @@
+:root {
+  --primary-color: #6B5B95;
+  --secondary-color: #6B5B95;
+  --light-bg: #f8f9fa;
+  --dark-text: #333;
+  --light-text: #555;
+  --border-color: #ddd;
+  --hover-color: #f0edf6;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-text);
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -16,4 +35,13 @@
   background-color: #f5f5f5;
   padding: 1rem;
   text-align: center;
+  color: var(--light-text);
+  border-top: 1px solid var(--border-color);
+}
+
+.not-found {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
