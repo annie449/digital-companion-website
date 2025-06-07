@@ -79,12 +79,12 @@ function createMobileNavigation() {
     // Fallback navigation if desktop nav not found
     const navItems = [
       { text: 'Digital Companion™', href: '/' },
-      { text: 'How It Works', href: '/how-it-works.html' },
-      { text: 'Practical Support', href: '/practical-support.html' },
-      { text: 'Emotional Support', href: '/emotional-support.html' },
-      { text: 'Pricing', href: '/pricing.html' },
-      { text: 'About Us', href: '/about.html' },
-      { text: 'Notify Me When Launched', href: '/survey/form/index.html' }
+      { text: 'How It Works', href: '/how-it-works' },
+      { text: 'Practical Support', href: '/practical-support' },
+      { text: 'Emotional Support', href: '/emotional-support' },
+      { text: 'Pricing', href: '/pricing' },
+      { text: 'About Us', href: '/about' },
+      { text: 'Notify Me When Launched', href: '/notify' }
     ];
     
     navItems.forEach(item => {
