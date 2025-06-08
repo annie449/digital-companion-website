@@ -395,16 +395,23 @@
                 <ul>
                     <li><a href="/platform/tasks.html">Tasks Management</a></li>
                     <li><a href="/platform/estate.html">Estate</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
+                    <li><a href="/platform/journal.html">Journal</a></li>
+                    <li><a href="/platform/meditation.html">Meditation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Resources</h5>
+                <ul>
                     <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
                     <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/resources.html">Resource Library</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="/terms.html">Terms and Conditions</a></li>
                     <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
@@ -415,8 +422,15 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            document.querySelector('.mobile-nav').classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            if (mobileMenuButton && mobileNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+            }
         });
     </script>
 </body>

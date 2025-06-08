@@ -110,6 +110,20 @@
             gap: 2rem;
         }
         
+        /* Feature List */
+        .feature-list p {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list p:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary-color);
+        }
+        
         /* Mobile Menu */
         .mobile-menu-button {
             display: none;
@@ -238,13 +252,13 @@
                         <h2>Supportive Community</h2>
                         <p>Find connection and understanding in our compassionate community of people who truly understand what you're going through.</p>
                         <p>Our community features:</p>
-                        <ul>
-                            <li>Moderated discussion forums organized by type of loss</li>
-                            <li>Small, private support groups led by trained facilitators</li>
-                            <li>One-to-one peer connections with others on similar journeys</li>
-                            <li>Virtual events and commemorations</li>
-                            <li>Shared resources and personal stories</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Moderated discussion forums organized by type of loss</p>
+                            <p>Small, private support groups led by trained facilitators</p>
+                            <p>One-to-one peer connections with others on similar journeys</p>
+                            <p>Virtual events and commemorations</p>
+                            <p>Shared resources and personal stories</p>
+                        </div>
                         <p>All community spaces are carefully moderated to ensure they remain safe, supportive environments where you can express yourself honestly and find genuine connection.</p>
                     </div>
                     <div class="feature-card">
@@ -267,13 +281,13 @@
                         <h2>Professional Connections</h2>
                         <p>Access a network of qualified grief counselors, therapists, and support specialists who can provide professional guidance when you need it most.</p>
                         <p>Professional support includes:</p>
-                        <ul>
-                            <li>Directory of verified grief counselors and therapists</li>
-                            <li>Filtering options to find professionals who specialize in your type of loss</li>
-                            <li>Secure messaging platform for initial consultations</li>
-                            <li>Resources for understanding different therapeutic approaches</li>
-                            <li>Guidance on finding the right professional match for your needs</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Directory of verified grief counselors and therapists</p>
+                            <p>Filtering options to find professionals who specialize in your type of loss</p>
+                            <p>Secure messaging platform for initial consultations</p>
+                            <p>Resources for understanding different therapeutic approaches</p>
+                            <p>Guidance on finding the right professional match for your needs</p>
+                        </div>
                         <p>We carefully vet all professionals in our network to ensure they have appropriate qualifications and specialized experience in grief and bereavement support.</p>
                     </div>
                     <div class="feature-card">
@@ -296,13 +310,13 @@
                         <h2>Personalized Resources</h2>
                         <p>Access a curated library of resources tailored to your specific situation, type of loss, and current stage in your grief journey.</p>
                         <p>Our resource library includes:</p>
-                        <ul>
-                            <li>Articles and guides written by grief experts</li>
-                            <li>Book recommendations for different types of loss</li>
-                            <li>Guided meditations and mindfulness exercises</li>
-                            <li>Video content featuring expert insights</li>
-                            <li>Interactive tools for processing emotions</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Articles and guides written by grief experts</p>
+                            <p>Book recommendations for different types of loss</p>
+                            <p>Guided meditations and mindfulness exercises</p>
+                            <p>Video content featuring expert insights</p>
+                            <p>Interactive tools for processing emotions</p>
+                        </div>
                         <p>As you progress through your journey, our system adapts to recommend resources that align with your current needs and experiences, providing the right support at the right time.</p>
                     </div>
                     <div class="feature-card">
@@ -325,13 +339,13 @@
                         <h2>Ritual Creation</h2>
                         <p>Create meaningful rituals and commemorations that honor your loved one and provide structure to your grief journey.</p>
                         <p>Ritual creation tools include:</p>
-                        <ul>
-                            <li>Ideas for personal rituals based on your relationship and values</li>
-                            <li>Guidance for marking important dates and anniversaries</li>
-                            <li>Templates for memorial services and gatherings</li>
-                            <li>Suggestions for creative expressions of grief</li>
-                            <li>Community ritual sharing for inspiration</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Ideas for personal rituals based on your relationship and values</p>
+                            <p>Guidance for marking important dates and anniversaries</p>
+                            <p>Templates for memorial services and gatherings</p>
+                            <p>Suggestions for creative expressions of grief</p>
+                            <p>Community ritual sharing for inspiration</p>
+                        </div>
                         <p>Rituals can provide comfort, meaning, and a sense of connection during the grief journey. Our tools help you create practices that feel authentic and meaningful to you and your relationship with the person you've lost.</p>
                     </div>
                     <div class="feature-card">
@@ -352,86 +366,175 @@
                 <div class="feature-row">
                     <div class="feature-content">
                         <h2>Legacy Preservation</h2>
-                        <p>Create lasting tributes that capture the essence of your loved one's life and preserve their memory for future generations.</p>
-                        <p>Legacy preservation features include:</p>
-                        <ul>
-                            <li>Digital memorial creation with photos, stories, and timeline</li>
-                            <li>Memory collection tools to gather stories from friends and family</li>
-                            <li>Audio and video recording capabilities for oral histories</li>
-                            <li>Legacy projects that honor your loved one's values and passions</li>
-                            <li>Options for sharing memorials publicly or keeping them private</li>
-                        </ul>
-                        <p>Preserving your loved one's legacy can be a healing part of the grief journey, allowing you to celebrate their life while acknowledging your loss. Our tools make this process accessible and meaningful.</p>
+                        <p>Create and preserve meaningful memories and stories that celebrate the life and legacy of your loved one.</p>
+                        <p>Legacy preservation tools include:</p>
+                        <div class="feature-list">
+                            <p>Digital memory books with photos, stories, and tributes</p>
+                            <p>Audio and video recording capabilities for capturing memories</p>
+                            <p>Collaborative memory sharing with family and friends</p>
+                            <p>Timeline creation to document important life moments</p>
+                            <p>Legacy projects that honor your loved one's values and passions</p>
+                        </div>
+                        <p>Preserving and sharing memories can be a healing part of the grief process, helping to ensure that your loved one's story and impact continue to be honored and remembered.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-book"></i>
                         </div>
-                        <h3>Lasting Tributes</h3>
-                        <p>"Creating my husband's digital memorial became a healing project for our whole family. Collecting photos and stories helped us remember the joy alongside the grief. Now we have a beautiful tribute that our grandchildren can visit to learn about the grandfather they never met."</p>
-                        <p class="testimonial-author">— Eleanor W., using Digital Companion since 2024</p>
+                        <h3>Preserving Memories</h3>
+                        <p>"Creating my father's digital memory book became a healing project for our whole family. We shared stories I'd never heard before, found photos I'd forgotten existed, and created something beautiful that captures who he really was. It's a treasure I'll have forever."</p>
+                        <p class="testimonial-author">— Daniel K., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Specialized Support Pathways Section -->
+        <!-- Support Pathways Section -->
         <section class="feature-section bg-light">
             <div class="container">
-                <h2 class="section-title">Specialized Support Pathways</h2>
+                <h2>Support Pathways for Different Needs</h2>
+                <p class="section-intro">We recognize that grief is unique and personal. Our platform offers different pathways of support to meet you where you are.</p>
+                
                 <div class="support-pathways-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-rings-wedding"></i>
+                        <h3>For Those in Early Grief</h3>
+                        <p>In the early days after a loss, you may need immediate support and guidance. Our early grief pathway provides:</p>
+                        <div class="feature-list">
+                            <p>Crisis resources and immediate support connections</p>
+                            <p>Simple, clear guidance for navigating the first days and weeks</p>
+                            <p>Gentle coping strategies for overwhelming emotions</p>
+                            <p>Connection to others who understand acute grief</p>
                         </div>
-                        <h3>Loss of a Partner</h3>
-                        <p>Specialized support for those navigating the unique challenges of losing a spouse or partner, including resources for adjusting to solo living, managing shared responsibilities, and rebuilding identity.</p>
                     </div>
+                    
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-child"></i>
+                        <h3>For Those Navigating Complex Grief</h3>
+                        <p>If your grief feels particularly intense or prolonged, our complex grief pathway offers:</p>
+                        <div class="feature-list">
+                            <p>Specialized resources for complicated grief</p>
+                            <p>Connection to therapists with expertise in trauma and complex grief</p>
+                            <p>Structured support programs with additional guidance</p>
+                            <p>Community spaces for those with similar experiences</p>
                         </div>
-                        <h3>Loss of a Child</h3>
-                        <p>Compassionate support for the profound grief of losing a child at any age, with resources for coping with this particular type of loss, supporting siblings, and preserving memories.</p>
                     </div>
+                    
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-user-friends"></i>
+                        <h3>For Those Supporting Others</h3>
+                        <p>If you're supporting someone who is grieving, our supporter pathway provides:</p>
+                        <div class="feature-list">
+                            <p>Guidance on how to be present for someone in grief</p>
+                            <p>Practical suggestions for meaningful support</p>
+                            <p>Resources for understanding different grief responses</p>
+                            <p>Self-care strategies for supporters</p>
                         </div>
-                        <h3>Loss of a Parent</h3>
-                        <p>Guidance for those who have lost a parent, including resources for processing this fundamental loss, managing family dynamics, and carrying forward family legacies.</p>
                     </div>
+                    
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-paw"></i>
+                        <h3>For Those in Long-term Grief</h3>
+                        <p>As you move through your grief journey over time, our continuing bonds pathway offers:</p>
+                        <div class="feature-list">
+                            <p>Resources for integrating loss into your ongoing life</p>
+                            <p>Meaning-making and post-traumatic growth exploration</p>
+                            <p>Legacy projects and remembrance practices</p>
+                            <p>Community connection with others in similar phases</p>
                         </div>
-                        <h3>Pet Loss</h3>
-                        <p>Support for the often underrecognized grief of losing a beloved pet, with resources that validate this significant loss and provide ways to honor your animal companion's memory.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-skull"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2>Simple, Transparent Pricing</h2>
+                <p class="section-intro">We believe emotional support should be accessible to everyone navigating loss.</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Basic</h3>
+                            <div class="price">£19.99<span>/month</span></div>
                         </div>
-                        <h3>Traumatic Loss</h3>
-                        <p>Specialized support for those dealing with sudden, unexpected, or traumatic losses, including resources for processing trauma alongside grief and finding stability during acute distress.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-baby"></i>
+                        <div class="pricing-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Community Forum Access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Resource Library Access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Basic Ritual Creation Tools</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Professional Directory Access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Estate Management Tools</span>
+                            </div>
                         </div>
-                        <h3>Pregnancy & Infant Loss</h3>
-                        <p>Compassionate support for those experiencing miscarriage, stillbirth, or infant loss, with resources that acknowledge the unique nature of this grief and provide ways to honor these profound losses.</p>
+                        <a href="/survey/form/index.html" class="button secondary-button">Join Beta Program</a>
                     </div>
+                    
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3>Complete</h3>
+                            <div class="price">£29.99<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Everything in Basic</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Private Support Groups</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Advanced Legacy Preservation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Guided Meditation Library</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Journal Feature</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Memory Feature</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Professional Consultation Discount</span>
+                            </div>
+                        </div>
+                        <a href="/survey/form/index.html" class="button primary-button">Join Beta Program</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-note">
+                    <p>We offer a 30-day money-back guarantee on all plans. No long-term contracts required.</p>
+                    <p>Need something different? <a href="/contact.html">Contact us</a> about custom plans for organizations.</p>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta">
-            <h2>Begin Your Emotional Support Journey</h2>
-            <p>Take the first step toward finding the emotional support you need during this challenging time. Our compassionate community and resources are here for you.</p>
-            <div class="cta-buttons">
-                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
+        <section class="cta-section">
+            <div class="container">
+                <h2>You Don't Have to Face Grief Alone</h2>
+                <p>Join our Beta Program today and experience the difference that compassionate, personalized support can make on your grief journey.</p>
+                <div class="cta-buttons">
+                    <a href="/survey/form/index.html" class="button primary-button">Join our Beta Program</a>
+                    <a href="/contact.html" class="button secondary-button">Contact Us</a>
+                </div>
             </div>
         </section>
     </main>
@@ -458,7 +561,6 @@
                     <li><a href="/platform/estate.html">Estate</a></li>
                     <li><a href="/platform/journal.html">Journal</a></li>
                     <li><a href="/platform/meditation.html">Meditation</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -467,24 +569,23 @@
                     <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
                     <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
                     <li><a href="/resources.html">Resource Library</a></li>
-                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-            </div>
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- Mobile menu script -->
     <script>
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.querySelector('.mobile-menu-button');
             const mobileNav = document.querySelector('.mobile-nav');

@@ -129,20 +129,30 @@
             color: var(--light-text);
         }
         
-        .pricing-features {
-            list-style: none;
-            padding: 0;
+        /* Feature List */
+        .feature-list {
             margin-bottom: 2rem;
             flex-grow: 1;
+            text-align: left;
         }
         
-        .pricing-features li {
-            padding: 0.5rem 0;
+        .feature-list p {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
             border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
         }
         
-        .pricing-features li:last-child {
+        .feature-list p:last-child {
             border-bottom: none;
+        }
+        
+        .feature-list p:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary-color);
         }
         
         /* FAQ Section */
@@ -342,15 +352,15 @@
                         <div class="pricing-price">
                             £19.99<span class="pricing-period">/month</span>
                         </div>
-                        <ul class="pricing-features">
-                            <li>Personalized Care Plan</li>
-                            <li>Document Storage (5GB)</li>
-                            <li>Estate Management Tools</li>
-                            <li>Account Closure Tools</li>
-                            <li>Community Forum Access</li>
-                            <li>Resource Library</li>
-                            <li>Email Support</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Personalized Care Plan</p>
+                            <p>Document Storage (5GB)</p>
+                            <p>Estate Management Tools</p>
+                            <p>Account Closure Tools</p>
+                            <p>Community Forum Access</p>
+                            <p>Resource Library</p>
+                            <p>Email Support</p>
+                        </div>
                         <a href="/survey/form/index.html" class="secondary-button">Join our Beta Program</a>
                     </div>
                     
@@ -359,17 +369,17 @@
                         <div class="pricing-price">
                             £29.99<span class="pricing-period">/month</span>
                         </div>
-                        <ul class="pricing-features">
-                            <li>Everything in Basic</li>
-                            <li>Unlimited Document Storage</li>
-                            <li>Advanced Estate Management</li>
-                            <li>Priority Support</li>
-                            <li>Monthly Support Group Sessions</li>
-                            <li>Legal Document Templates</li>
-                            <li>Legacy Planning Tools</li>
-                            <li>Journal & Memory Features</li>
-                            <li>Meditation Resources</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Everything in Basic</p>
+                            <p>Unlimited Document Storage</p>
+                            <p>Advanced Estate Management</p>
+                            <p>Priority Support</p>
+                            <p>Monthly Support Group Sessions</p>
+                            <p>Legal Document Templates</p>
+                            <p>Legacy Planning Tools</p>
+                            <p>Journal & Memory Features</p>
+                            <p>Meditation Resources</p>
+                        </div>
                         <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
                     </div>
                 </div>
@@ -430,7 +440,7 @@
                     
                     <div class="testimonial-card">
                         <div class="testimonial-text">
-                            I started with the Basic plan and it had everything I needed to get organized after my loss. The document storage and personalized care plan were exactly what I needed to start making sense of everything.
+                            I started with the Basic plan and it had everything I needed to organize documents and notify accounts. The interface is intuitive even when you're emotionally overwhelmed. I appreciate how thoughtfully designed everything is.
                         </div>
                         <div class="testimonial-author">
                             — Sarah T., Basic Plan
@@ -439,53 +449,140 @@
                     
                     <div class="testimonial-card">
                         <div class="testimonial-text">
-                            The meditation resources and journal features in the Complete plan have been essential for my emotional wellbeing. Combined with the practical support, it's truly a comprehensive solution during a difficult time.
+                            The meditation resources in the Complete plan have been a lifeline for me. Having practical support and emotional care in one platform has made all the difference in my grief journey.
                         </div>
                         <div class="testimonial-author">
-                            — Michael L., Complete Plan
+                            — Michael D., Complete Plan
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Enterprise Section -->
+        <!-- Compare Plans Section -->
         <section class="feature-section">
+            <div class="container">
+                <h2 class="section-title">Compare Plans in Detail</h2>
+                <p class="section-intro">See exactly what's included in each plan to make the right choice for your needs.</p>
+                
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Basic (£19.99/month)</th>
+                            <th>Complete (£29.99/month)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Personalized Care Plan</td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Document Storage</td>
+                            <td>5GB</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Estate Management</td>
+                            <td>Basic Tools</td>
+                            <td>Advanced Tools</td>
+                        </tr>
+                        <tr>
+                            <td>Account Closure Tools</td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Community Forum Access</td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Resource Library</td>
+                            <td>Basic Access</td>
+                            <td>Full Access</td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td>Email</td>
+                            <td>Priority Email & Chat</td>
+                        </tr>
+                        <tr>
+                            <td>Support Group Sessions</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td>Monthly</td>
+                        </tr>
+                        <tr>
+                            <td>Legal Document Templates</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Legacy Planning Tools</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Journal & Memory Features</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Meditation Resources</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Enterprise Section -->
+        <section class="feature-section bg-light">
             <div class="container">
                 <div class="feature-row">
                     <div class="feature-content">
                         <h2>Enterprise Solutions</h2>
-                        <p>Digital Companion offers customized solutions for organizations looking to provide grief and loss support to their members, employees, or clients.</p>
-                        <p>Our enterprise packages include:</p>
-                        <ul>
-                            <li>Customized platform with your branding</li>
-                            <li>Bulk user management</li>
-                            <li>Dedicated account manager</li>
-                            <li>Usage analytics and reporting</li>
-                            <li>API integration options</li>
-                            <li>Staff training and resources</li>
-                        </ul>
-                        <p>Perfect for:</p>
-                        <ul>
-                            <li>Employee assistance programs</li>
-                            <li>Healthcare organizations</li>
-                            <li>Insurance providers</li>
-                            <li>Funeral service networks</li>
-                            <li>Religious and community organizations</li>
-                        </ul>
-                        <a href="contact.html" class="primary-button">Contact Us for Enterprise Pricing</a>
+                        <p>Digital Companion offers customized solutions for organizations that want to provide bereavement support to their members, employees, or clients.</p>
+                        <div class="feature-list">
+                            <p>Custom branding and integration options</p>
+                            <p>Volume discounts for multiple users</p>
+                            <p>Dedicated account management</p>
+                            <p>Advanced analytics and reporting</p>
+                            <p>API access for seamless integration</p>
+                            <p>Custom feature development</p>
+                        </div>
+                        <p>Our enterprise clients include healthcare organizations, employee assistance programs, funeral homes, and community support groups.</p>
+                        <a href="/contact.html" class="primary-button">Contact Us for Enterprise Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Money Back Guarantee Section -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h2>30-Day Money Back Guarantee</h2>
+                        <p>We're confident that Digital Companion will provide valuable support during your time of need. If you're not completely satisfied within the first 30 days of your paid subscription, we'll refund your payment in full—no questions asked.</p>
+                        <p>Our goal is to provide genuine support, not to lock you into a service that isn't helping. Your trust means everything to us.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta">
-            <h2>Ready to Get Started?</h2>
-            <p>Join our beta program today and be among the first to experience Digital Companion when we launch.</p>
-            <div class="cta-buttons">
-                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
-                <a href="/how-it-works.html" class="secondary-button">Learn More</a>
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Get Started?</h2>
+                <p>Join our Beta Program today and be among the first to experience Digital Companion. No credit card required.</p>
+                <div class="cta-buttons">
+                    <a href="/survey/form/index.html" class="button primary-button">Join our Beta Program</a>
+                    <a href="/contact.html" class="button secondary-button">Contact Us</a>
+                </div>
             </div>
         </section>
     </main>
@@ -512,7 +609,6 @@
                     <li><a href="/platform/estate.html">Estate</a></li>
                     <li><a href="/platform/journal.html">Journal</a></li>
                     <li><a href="/platform/meditation.html">Meditation</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -521,24 +617,23 @@
                     <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
                     <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
                     <li><a href="/resources.html">Resource Library</a></li>
-                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-            </div>
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- Mobile menu script -->
     <script>
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.querySelector('.mobile-menu-button');
             const mobileNav = document.querySelector('.mobile-nav');

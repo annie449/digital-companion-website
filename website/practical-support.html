@@ -103,6 +103,20 @@
             margin-top: 1rem;
         }
         
+        /* Feature List */
+        .feature-list p {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list p:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary-color);
+        }
+        
         /* Country Guidance Grid */
         .country-guidance-grid {
             display: grid;
@@ -238,13 +252,13 @@
                         <h2>Administrative Dashboard</h2>
                         <p>Our intuitive dashboard brings organization to a chaotic time, giving you a clear overview of all tasks, documents, and progress in one place.</p>
                         <p>The dashboard features:</p>
-                        <ul>
-                            <li>Personalized task checklist with progress tracking</li>
-                            <li>Priority indicators for time-sensitive tasks</li>
-                            <li>Document organization and storage</li>
-                            <li>Calendar with important dates and reminders</li>
-                            <li>Contact management for important communications</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Personalized task checklist with progress tracking</p>
+                            <p>Priority indicators for time-sensitive tasks</p>
+                            <p>Document organization and storage</p>
+                            <p>Calendar with important dates and reminders</p>
+                            <p>Contact management for important communications</p>
+                        </div>
                         <p>Everything is designed to be simple and accessible, even during times of emotional stress. You can access your dashboard from any device, ensuring you have guidance wherever you are.</p>
                     </div>
                     <div class="feature-card">
@@ -267,13 +281,13 @@
                         <h2>Secure Document Vault</h2>
                         <p>Keep all important documents organized, secure, and accessible when you need them most. Our document vault provides bank-level security with the simplicity of a digital filing cabinet.</p>
                         <p>The document vault includes:</p>
-                        <ul>
-                            <li>Secure storage for death certificates, wills, and other important documents</li>
-                            <li>Document categorization and tagging for easy retrieval</li>
-                            <li>Ability to share specific documents with family members or professionals</li>
-                            <li>Document templates for common letters and forms</li>
-                            <li>Automatic reminders for document submission deadlines</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Secure storage for death certificates, wills, and other important documents</p>
+                            <p>Document categorization and tagging for easy retrieval</p>
+                            <p>Ability to share specific documents with family members or professionals</p>
+                            <p>Document templates for common letters and forms</p>
+                            <p>Automatic reminders for document submission deadlines</p>
+                        </div>
                         <p>All documents are encrypted and protected, giving you peace of mind that sensitive information remains secure while still being accessible when needed.</p>
                     </div>
                     <div class="feature-card">
@@ -296,13 +310,13 @@
                         <h2>Account Management</h2>
                         <p>Simplify the process of notifying organizations and managing accounts after a loss. Our account management tools help you track, notify, and close accounts efficiently.</p>
                         <p>Account management features include:</p>
-                        <ul>
-                            <li>Comprehensive checklist of organizations to notify</li>
-                            <li>Tracking system for account notifications and closures</li>
-                            <li>Template notification letters for different types of accounts</li>
-                            <li>Guidance on required documentation for each organization</li>
-                            <li>Secure record-keeping of all communications</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Comprehensive checklist of organizations to notify</p>
+                            <p>Tracking system for account notifications and closures</p>
+                            <p>Template notification letters for different types of accounts</p>
+                            <p>Guidance on required documentation for each organization</p>
+                            <p>Secure record-keeping of all communications</p>
+                        </div>
                         <p>We provide specific guidance for different types of accounts, from utilities and banking to social media and subscription services, ensuring nothing is overlooked.</p>
                     </div>
                     <div class="feature-card">
@@ -325,13 +339,13 @@
                         <h2>Legal Guidance</h2>
                         <p>Navigate complex legal processes with clear, step-by-step guidance tailored to your specific situation and location. Our legal guidance simplifies probate, estate administration, and other legal requirements.</p>
                         <p>Legal guidance includes:</p>
-                        <ul>
-                            <li>Location-specific information about probate and estate administration</li>
-                            <li>Explanations of legal terms and processes in plain language</li>
-                            <li>Checklists for required legal documents and deadlines</li>
-                            <li>Guidance on when to seek professional legal advice</li>
-                            <li>Resources for finding qualified legal professionals</li>
-                        </ul>
+                        <div class="feature-list">
+                            <p>Location-specific information about probate and estate administration</p>
+                            <p>Explanations of legal terms and processes in plain language</p>
+                            <p>Checklists for required legal documents and deadlines</p>
+                            <p>Guidance on when to seek professional legal advice</p>
+                            <p>Resources for finding qualified legal professionals</p>
+                        </div>
                         <p>While we don't provide legal advice, we offer clear explanations and structured guidance to help you understand and navigate legal requirements during this challenging time.</p>
                     </div>
                     <div class="feature-card">
@@ -346,30 +360,30 @@
             </div>
         </section>
 
-        <!-- Financial Tools Section -->
+        <!-- Financial Management Section -->
         <section class="feature-section">
             <div class="container">
                 <div class="feature-row">
                     <div class="feature-content">
-                        <h2>Financial Tools</h2>
-                        <p>Manage financial matters with confidence using our specialized tools designed to help you track expenses, identify benefits, and organize financial information.</p>
-                        <p>Financial tools include:</p>
-                        <ul>
-                            <li>Expense tracker for funeral and estate administration costs</li>
-                            <li>Benefits eligibility checker for bereavement support</li>
-                            <li>Asset and liability inventory system</li>
-                            <li>Financial document organizer</li>
-                            <li>Guidance on handling joint accounts and transferring assets</li>
-                        </ul>
-                        <p>Our financial tools help bring clarity to financial matters during a time when managing money may be the last thing on your mind, but still requires attention.</p>
+                        <h2>Financial Management</h2>
+                        <p>Keep track of estate finances, insurance claims, and benefit applications with our comprehensive financial management tools.</p>
+                        <p>Financial management features include:</p>
+                        <div class="feature-list">
+                            <p>Estate asset and liability tracking</p>
+                            <p>Insurance claim status monitoring</p>
+                            <p>Benefit application guidance and tracking</p>
+                            <p>Expense recording for estate administration</p>
+                            <p>Financial document organization</p>
+                        </div>
+                        <p>Our tools help you maintain a clear overview of the financial aspects of estate administration, ensuring nothing is overlooked and all financial matters are handled appropriately.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-calculator"></i>
                         </div>
                         <h3>Financial Clarity</h3>
-                        <p>"The expense tracker was invaluable for keeping all the funeral and estate costs organized. I also wouldn't have known about the bereavement benefits I was eligible for if not for the benefits checker. It made a real difference during a financially stressful time."</p>
-                        <p class="testimonial-author">— Michelle S., using Digital Companion since 2024</p>
+                        <p>"Keeping track of all the financial aspects was overwhelming until I started using the financial management tools. Being able to see everything in one place—from insurance claims to estate expenses—made it so much easier to stay organized and ensure nothing fell through the cracks."</p>
+                        <p class="testimonial-author">— Michael R., using Digital Companion since 2024</p>
                     </div>
                 </div>
             </div>
@@ -378,50 +392,155 @@
         <!-- Country-Specific Guidance Section -->
         <section class="feature-section bg-light">
             <div class="container">
-                <h2 class="section-title">Country-Specific Guidance</h2>
+                <h2>Country-Specific Guidance</h2>
+                <p class="section-intro">We provide tailored guidance for different countries, recognizing that processes and requirements vary significantly by location.</p>
+                
                 <div class="country-guidance-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe-europe"></i>
-                        </div>
                         <h3>United Kingdom</h3>
-                        <p>Our UK-specific guidance covers the Tell Us Once service, registering the death with local authorities, understanding inheritance tax, and navigating the probate process in England, Wales, Scotland, and Northern Ireland.</p>
-                        <a href="#" class="feature-link">View UK Guidance</a>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-flag-usa"></i>
+                        <p>Our UK guidance includes:</p>
+                        <div class="feature-list">
+                            <p>Tell Us Once service information</p>
+                            <p>Probate application process</p>
+                            <p>Inheritance tax considerations</p>
+                            <p>UK-specific bereavement benefits</p>
+                            <p>Funeral payment assistance options</p>
                         </div>
+                    </div>
+                    
+                    <div class="feature-card">
                         <h3>United States</h3>
-                        <p>For those in the US, we provide state-specific information on death certificates, Social Security notifications, estate administration, and understanding the probate process across different jurisdictions.</p>
-                        <a href="#" class="feature-link">View US Guidance</a>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe-americas"></i>
+                        <p>Our US guidance includes:</p>
+                        <div class="feature-list">
+                            <p>State-specific probate processes</p>
+                            <p>Social Security death benefits</p>
+                            <p>Veterans benefits information</p>
+                            <p>Estate tax considerations</p>
+                            <p>Life insurance claim processes</p>
                         </div>
+                    </div>
+                    
+                    <div class="feature-card">
                         <h3>Canada</h3>
-                        <p>Our Canadian guidance covers provincial differences in estate administration, CPP death benefits, tax considerations, and the specific steps required when notifying government agencies.</p>
-                        <a href="#" class="feature-link">View Canadian Guidance</a>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe-asia"></i>
+                        <p>Our Canadian guidance includes:</p>
+                        <div class="feature-list">
+                            <p>Provincial probate processes</p>
+                            <p>Canada Pension Plan death benefits</p>
+                            <p>Tax considerations for estates</p>
+                            <p>Service Canada notification procedures</p>
+                            <p>Indigenous considerations and resources</p>
                         </div>
-                        <h3>Australia</h3>
-                        <p>For Australian users, we provide guidance on dealing with Centrelink, understanding the probate process in different states and territories, and managing superannuation accounts after a loss.</p>
-                        <a href="#" class="feature-link">View Australian Guidance</a>
                     </div>
+                    
+                    <div class="feature-card">
+                        <h3>Australia</h3>
+                        <p>Our Australian guidance includes:</p>
+                        <div class="feature-list">
+                            <p>State-specific probate processes</p>
+                            <p>Centrelink bereavement payments</p>
+                            <p>Superannuation death benefits</p>
+                            <p>Australian Taxation Office requirements</p>
+                            <p>Indigenous considerations and resources</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="section-outro">We're continuously expanding our country-specific guidance to better serve our global community. If you need support for a country not listed here, please <a href="/contact.html">contact us</a>.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2>Simple, Transparent Pricing</h2>
+                <p class="section-intro">We believe practical support should be accessible to everyone navigating loss.</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Basic</h3>
+                            <div class="price">£19.99<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Administrative Dashboard</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Document Storage (5GB)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Account Notification Tracking</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Basic Legal Guidance</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Estate Management Tools</span>
+                            </div>
+                        </div>
+                        <a href="/survey/form/index.html" class="button secondary-button">Join Beta Program</a>
+                    </div>
+                    
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3>Complete</h3>
+                            <div class="price">£29.99<span>/month</span></div>
+                        </div>
+                        <div class="pricing-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Everything in Basic</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Expanded Document Storage (20GB)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Advanced Legal Guidance</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Financial Management Tools</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Document Templates Library</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Priority Support</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Advanced Estate Management</span>
+                            </div>
+                        </div>
+                        <a href="/survey/form/index.html" class="button primary-button">Join Beta Program</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-note">
+                    <p>We offer a 30-day money-back guarantee on all plans. No long-term contracts required.</p>
+                    <p>Need something different? <a href="/contact.html">Contact us</a> about custom plans for organizations.</p>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta">
-            <h2>Begin Your Practical Support Journey</h2>
-            <p>Take the first step toward simplifying the administrative aspects of loss. Our practical tools and guidance are designed to reduce your burden during this challenging time.</p>
-            <div class="cta-buttons">
-                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
+        <section class="cta-section">
+            <div class="container">
+                <h2>Simplify the Administrative Burden</h2>
+                <p>Join our Beta Program today and experience how our practical support tools can help you navigate the administrative aspects of loss with greater ease and confidence.</p>
+                <div class="cta-buttons">
+                    <a href="/survey/form/index.html" class="button primary-button">Join our Beta Program</a>
+                    <a href="/contact.html" class="button secondary-button">Contact Us</a>
+                </div>
             </div>
         </section>
     </main>
@@ -448,7 +567,6 @@
                     <li><a href="/platform/estate.html">Estate</a></li>
                     <li><a href="/platform/journal.html">Journal</a></li>
                     <li><a href="/platform/meditation.html">Meditation</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -457,24 +575,23 @@
                     <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
                     <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
                     <li><a href="/resources.html">Resource Library</a></li>
-                    <li><a href="/platform/services.html">Professional Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-            </div>
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- Mobile menu script -->
     <script>
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.querySelector('.mobile-menu-button');
             const mobileNav = document.querySelector('.mobile-nav');

@@ -136,27 +136,26 @@
         }
         
         .resource-features {
-            list-style: none;
-            padding: 0;
             margin: 1rem 0;
             flex-grow: 1;
         }
         
-        .resource-features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border-color);
+        .resource-features p {
+            margin-bottom: 0.5rem;
             position: relative;
             padding-left: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
         }
         
-        .resource-features li:before {
+        .resource-features p:before {
             content: "✓";
             position: absolute;
             left: 0;
             color: var(--primary-color);
         }
         
-        .resource-features li:last-child {
+        .resource-features p:last-child {
             border-bottom: none;
         }
         
@@ -258,19 +257,31 @@
         }
         
         .organization-contact {
-            list-style: none;
-            padding: 0;
             margin-bottom: 1rem;
         }
         
-        .organization-contact li {
+        .organization-contact p {
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
         }
         
-        .organization-contact li i {
+        .organization-contact p i {
             margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* Feature List */
+        .feature-list p {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list p:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
             color: var(--primary-color);
         }
         
@@ -447,14 +458,14 @@
                             <h3>UK Bereavement Task List</h3>
                         </div>
                         <p>A comprehensive checklist of tasks to complete following a death in the United Kingdom, from immediate steps to longer-term considerations.</p>
-                        <ul class="resource-features">
-                            <li>Immediate steps after death</li>
-                            <li>Registering the death</li>
-                            <li>Funeral arrangements</li>
-                            <li>Notifying organizations</li>
-                            <li>Dealing with the estate</li>
-                            <li>Important contact information</li>
-                        </ul>
+                        <div class="resource-features">
+                            <p>Immediate steps after death</p>
+                            <p>Registering the death</p>
+                            <p>Funeral arrangements</p>
+                            <p>Notifying organizations</p>
+                            <p>Dealing with the estate</p>
+                            <p>Important contact information</p>
+                        </div>
                         <div class="resource-footer">
                             <a href="uk_bereavement_task_list.html" class="primary-button">Download PDF</a>
                             <span class="resource-meta">Updated: April 2025</span>
@@ -464,21 +475,21 @@
                     <div class="resource-card">
                         <div class="resource-header">
                             <div class="resource-icon">
-                                <i class="fas fa-flag-usa"></i>
+                                <i class="fas fa-file-alt"></i>
                             </div>
-                            <h3>US Bereavement Task List</h3>
+                            <h3>Estate Administration Guide</h3>
                         </div>
-                        <p>A state-by-state guide to managing administrative tasks after a death in the United States, including federal and state-specific requirements.</p>
-                        <ul class="resource-features">
-                            <li>Obtaining death certificates</li>
-                            <li>Social Security notifications</li>
-                            <li>Probate process overview</li>
-                            <li>Veterans benefits information</li>
-                            <li>State-specific requirements</li>
-                            <li>Federal tax considerations</li>
-                        </ul>
+                        <p>A detailed guide to managing and administering an estate, including legal requirements, financial considerations, and practical steps.</p>
+                        <div class="resource-features">
+                            <p>Understanding probate</p>
+                            <p>Executor responsibilities</p>
+                            <p>Asset inventory templates</p>
+                            <p>Tax considerations</p>
+                            <p>Distribution of assets</p>
+                            <p>Common challenges and solutions</p>
+                        </div>
                         <div class="resource-footer">
-                            <a href="us_bereavement_task_list.html" class="primary-button">Download PDF</a>
+                            <a href="estate_administration_guide.html" class="primary-button">Download PDF</a>
                             <span class="resource-meta">Updated: March 2025</span>
                         </div>
                     </div>
@@ -486,58 +497,32 @@
                     <div class="resource-card">
                         <div class="resource-header">
                             <div class="resource-icon">
-                                <i class="fas fa-file-signature"></i>
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            <h3>Notification Letter Templates</h3>
+                            <h3>Notification Templates</h3>
                         </div>
-                        <p>Ready-to-use templates for notifying various organizations and institutions about a death, with guidance on what information to include.</p>
-                        <ul class="resource-features">
-                            <li>Banks and financial institutions</li>
-                            <li>Government agencies</li>
-                            <li>Utility companies</li>
-                            <li>Insurance providers</li>
-                            <li>Subscription services</li>
-                            <li>Employers and professional organizations</li>
-                        </ul>
+                        <p>Pre-written templates for notifying various organizations and institutions about a death, saving you time and emotional energy.</p>
+                        <div class="resource-features">
+                            <p>Government departments</p>
+                            <p>Financial institutions</p>
+                            <p>Utility companies</p>
+                            <p>Insurance providers</p>
+                            <p>Employers and pension providers</p>
+                            <p>Subscription services</p>
+                        </div>
                         <div class="resource-footer">
                             <a href="notification_templates.html" class="primary-button">Download Templates</a>
                             <span class="resource-meta">Updated: February 2025</span>
                         </div>
                     </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-header">
-                            <div class="resource-icon">
-                                <i class="fas fa-laptop-file"></i>
-                            </div>
-                            <h3>Digital Legacy Guide</h3>
-                        </div>
-                        <p>A comprehensive guide to managing digital accounts and assets after someone dies, with platform-specific instructions and considerations.</p>
-                        <ul class="resource-features">
-                            <li>Social media account management</li>
-                            <li>Email account procedures</li>
-                            <li>Digital subscription services</li>
-                            <li>Online financial accounts</li>
-                            <li>Digital asset preservation</li>
-                            <li>Legal considerations</li>
-                        </ul>
-                        <div class="resource-footer">
-                            <a href="digital_legacy_guide.html" class="primary-button">Download Guide</a>
-                            <span class="resource-meta">Updated: April 2025</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center">
-                    <a href="#" class="secondary-button">View All Practical Guides</a>
                 </div>
             </div>
         </section>
 
-        <!-- Emotional Support Resources Section -->
+        <!-- Emotional Support Section -->
         <section class="feature-section" id="emotional-support">
             <div class="container">
-                <h2 class="section-title">Emotional Support Resources</h2>
+                <h2 class="section-title">Emotional Support</h2>
                 
                 <div class="resource-grid">
                     <div class="resource-card">
@@ -547,83 +532,64 @@
                             </div>
                             <h3>Understanding Grief</h3>
                         </div>
-                        <p>An accessible guide to the emotional, physical, and cognitive aspects of grief, with insights from contemporary grief research.</p>
-                        <ul class="resource-features">
-                            <li>Common grief reactions</li>
-                            <li>Myths and realities about grief</li>
-                            <li>Different grief models explained</li>
-                            <li>Physical symptoms of grief</li>
-                            <li>Cognitive effects and coping strategies</li>
-                        </ul>
+                        <p>An accessible guide to the grief process, common experiences, and coping strategies, based on current research and expert insights.</p>
+                        <div class="resource-features">
+                            <p>The grief journey explained</p>
+                            <p>Common emotional responses</p>
+                            <p>Physical symptoms of grief</p>
+                            <p>Coping strategies and self-care</p>
+                            <p>Supporting others through grief</p>
+                            <p>When to seek professional help</p>
+                        </div>
                         <div class="resource-footer">
                             <a href="understanding_grief.html" class="primary-button">Read Guide</a>
+                            <span class="resource-meta">Updated: May 2025</span>
                         </div>
                     </div>
                     
                     <div class="resource-card">
                         <div class="resource-header">
                             <div class="resource-icon">
-                                <i class="fas fa-hand-holding-heart"></i>
+                                <i class="fas fa-headphones"></i>
                             </div>
-                            <h3>Self-Care During Grief</h3>
+                            <h3>Guided Meditations</h3>
                         </div>
-                        <p>Practical strategies for taking care of yourself during the grief journey, with emphasis on physical, emotional, and social well-being.</p>
-                        <ul class="resource-features">
-                            <li>Daily self-care practices</li>
-                            <li>Managing sleep disruptions</li>
-                            <li>Nutrition during grief</li>
-                            <li>Physical activity recommendations</li>
-                            <li>Setting boundaries</li>
-                            <li>Asking for and accepting help</li>
-                        </ul>
+                        <p>A collection of audio meditations specifically designed to support emotional wellbeing during grief, created in collaboration with grief counselors.</p>
+                        <div class="resource-features">
+                            <p>Grounding exercises for overwhelming moments</p>
+                            <p>Sleep support meditations</p>
+                            <p>Guided visualizations for healing</p>
+                            <p>Breathing techniques for anxiety</p>
+                            <p>Meditations for connecting with memories</p>
+                            <p>Self-compassion practices</p>
+                        </div>
                         <div class="resource-footer">
-                            <a href="self_care_guide.html" class="primary-button">Read Guide</a>
+                            <a href="guided_meditations.html" class="primary-button">Access Meditations</a>
+                            <span class="resource-meta">Updated: April 2025</span>
                         </div>
                     </div>
                     
                     <div class="resource-card">
                         <div class="resource-header">
                             <div class="resource-icon">
-                                <i class="fas fa-calendar-day"></i>
+                                <i class="fas fa-pen"></i>
                             </div>
-                            <h3>Navigating Special Days</h3>
+                            <h3>Journal Prompts</h3>
                         </div>
-                        <p>Guidance for managing holidays, anniversaries, birthdays, and other significant dates after experiencing a loss.</p>
-                        <ul class="resource-features">
-                            <li>Preparing for significant dates</li>
-                            <li>Creating new traditions</li>
-                            <li>Honoring your loved one</li>
-                            <li>Communicating your needs to others</li>
-                            <li>Self-care during difficult days</li>
-                        </ul>
+                        <p>Thoughtfully crafted writing prompts to encourage reflection, emotional processing, and meaning-making during your grief journey.</p>
+                        <div class="resource-features">
+                            <p>Memory exploration prompts</p>
+                            <p>Emotional expression exercises</p>
+                            <p>Gratitude and appreciation reflections</p>
+                            <p>Future-focused contemplations</p>
+                            <p>Identity and growth considerations</p>
+                            <p>Legacy and meaning prompts</p>
+                        </div>
                         <div class="resource-footer">
-                            <a href="special_days_guide.html" class="primary-button">Read Guide</a>
+                            <a href="journal_prompts.html" class="primary-button">Download Prompts</a>
+                            <span class="resource-meta">Updated: March 2025</span>
                         </div>
                     </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-header">
-                            <div class="resource-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <h3>Supporting Others in Grief</h3>
-                        </div>
-                        <p>Guidance for friends and family members on how to support someone who is grieving, with practical suggestions and communication tips.</p>
-                        <ul class="resource-features">
-                            <li>What to say (and what not to say)</li>
-                            <li>Practical ways to help</li>
-                            <li>Understanding different grief responses</li>
-                            <li>Supporting someone long-term</li>
-                            <li>Recognizing when professional help is needed</li>
-                        </ul>
-                        <div class="resource-footer">
-                            <a href="supporting_others.html" class="primary-button">Read Guide</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center">
-                    <a href="#" class="secondary-button">View All Emotional Support Resources</a>
                 </div>
             </div>
         </section>
@@ -631,72 +597,53 @@
         <!-- Reading Materials Section -->
         <section class="feature-section bg-light" id="reading-materials">
             <div class="container">
-                <h2 class="section-title">Recommended Reading</h2>
+                <h2 class="section-title">Reading Materials</h2>
+                <p class="section-description">Our team has curated a selection of books that many find helpful during the grief journey. These recommendations span different grief experiences and approaches to healing.</p>
                 
                 <div class="book-grid">
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="images/book_placeholder.jpg" alt="Book cover">
+                            <img src="/images/resources/book1.jpg" alt="Book cover">
                         </div>
                         <h3>It's OK That You're Not OK</h3>
-                        <p class="book-author">Megan Devine</p>
-                        <p class="book-description">A refreshingly honest approach to grief that rejects the idea that grief is something to "get over" and instead offers a path to living alongside loss.</p>
-                        <a href="#" class="feature-link">View Details</a>
+                        <p class="book-author">By Megan Devine</p>
+                        <p class="book-description">A refreshingly honest approach to grief that challenges conventional wisdom and offers practical guidance for living with loss.</p>
+                        <a href="#" class="text-link">Learn More</a>
                     </div>
                     
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="images/book_placeholder.jpg" alt="Book cover">
+                            <img src="/images/resources/book2.jpg" alt="Book cover">
                         </div>
                         <h3>The Year of Magical Thinking</h3>
-                        <p class="book-author">Joan Didion</p>
-                        <p class="book-description">A powerful memoir about the year following the death of the author's husband, exploring the irrational nature of grief and the human capacity for resilience.</p>
-                        <a href="#" class="feature-link">View Details</a>
+                        <p class="book-author">By Joan Didion</p>
+                        <p class="book-description">A powerful memoir about the year following the death of the author's husband, exploring grief, memory, and the mind's response to loss.</p>
+                        <a href="#" class="text-link">Learn More</a>
                     </div>
                     
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="images/book_placeholder.jpg" alt="Book cover">
+                            <img src="/images/resources/book3.jpg" alt="Book cover">
                         </div>
                         <h3>Option B</h3>
-                        <p class="book-author">Sheryl Sandberg & Adam Grant</p>
+                        <p class="book-author">By Sheryl Sandberg & Adam Grant</p>
                         <p class="book-description">Combining personal insights with research on finding strength in the face of adversity, this book offers practical strategies for building resilience.</p>
-                        <a href="#" class="feature-link">View Details</a>
+                        <a href="#" class="text-link">Learn More</a>
                     </div>
                     
                     <div class="book-card">
                         <div class="book-cover">
-                            <img src="images/book_placeholder.jpg" alt="Book cover">
+                            <img src="/images/resources/book4.jpg" alt="Book cover">
                         </div>
                         <h3>Bearing the Unbearable</h3>
-                        <p class="book-author">Joanne Cacciatore</p>
-                        <p class="book-description">A compassionate guide to navigating grief and loss, written by a bereaved mother and grief counselor who understands the terrain of loss firsthand.</p>
-                        <a href="#" class="feature-link">View Details</a>
-                    </div>
-                    
-                    <div class="book-card">
-                        <div class="book-cover">
-                            <img src="images/book_placeholder.jpg" alt="Book cover">
-                        </div>
-                        <h3>The Wild Edge of Sorrow</h3>
-                        <p class="book-author">Francis Weller</p>
-                        <p class="book-description">Explores the sacred work of grief, offering a new vision of grief and sorrow as a pathway to a deeper connection with ourselves and the world.</p>
-                        <a href="#" class="feature-link">View Details</a>
-                    </div>
-                    
-                    <div class="book-card">
-                        <div class="book-cover">
-                            <img src="images/book_placeholder.jpg" alt="Book cover">
-                        </div>
-                        <h3>When Things Fall Apart</h3>
-                        <p class="book-author">Pema Chödrön</p>
-                        <p class="book-description">Drawing from Buddhist wisdom, this book offers guidance on how to use painful emotions to cultivate wisdom, compassion, and courage.</p>
-                        <a href="#" class="feature-link">View Details</a>
+                        <p class="book-author">By Joanne Cacciatore</p>
+                        <p class="book-description">A compassionate guide to navigating grief and loss, written by a bereaved mother and grief counselor who understands profound loss firsthand.</p>
+                        <a href="#" class="text-link">Learn More</a>
                     </div>
                 </div>
                 
                 <div class="text-center">
-                    <a href="#" class="secondary-button">View Complete Reading List</a>
+                    <a href="recommended_reading.html" class="secondary-button">View Full Reading List</a>
                 </div>
             </div>
         </section>
@@ -705,93 +652,65 @@
         <section class="feature-section" id="support-organizations">
             <div class="container">
                 <h2 class="section-title">Support Organizations</h2>
+                <p class="section-description">These organizations offer specialized support services for those experiencing grief and loss. Many provide free resources, helplines, and community connections.</p>
                 
                 <div class="organization-grid">
                     <div class="organization-card">
                         <div class="organization-logo">
-                            <img src="images/cruse_logo.png" alt="Cruse Bereavement Care logo">
+                            <img src="/images/resources/org1.png" alt="Cruse Bereavement Support logo">
                         </div>
-                        <h3>Cruse Bereavement Care</h3>
-                        <p>The UK's largest bereavement charity, providing free care and support to people experiencing grief.</p>
-                        <ul class="organization-contact">
-                            <li><i class="fas fa-globe"></i> <a href="https://www.cruse.org.uk/" target="_blank">www.cruse.org.uk</a></li>
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:helpline@cruse.org.uk">helpline@cruse.org.uk</a></li>
-                            <li><i class="fas fa-phone"></i> Helpline: 0808 808 1677</li>
-                        </ul>
-                        <p>Services: One-to-one support, local support groups, telephone support, resources for children and young people.</p>
+                        <h3>Cruse Bereavement Support</h3>
+                        <p>The UK's leading bereavement charity, providing free care and support to people experiencing grief.</p>
+                        <div class="organization-contact">
+                            <p><i class="fas fa-globe"></i> <a href="https://www.cruse.org.uk" target="_blank">www.cruse.org.uk</a></p>
+                            <p><i class="fas fa-phone"></i> Helpline: 0808 808 1677</p>
+                        </div>
+                        <div class="feature-list">
+                            <p>Free helpline support</p>
+                            <p>Local support groups</p>
+                            <p>Online resources</p>
+                            <p>Specialized support for children</p>
+                        </div>
                     </div>
                     
                     <div class="organization-card">
                         <div class="organization-logo">
-                            <img src="images/griefshare_logo.png" alt="GriefShare logo">
+                            <img src="/images/resources/org2.png" alt="The Good Grief Trust logo">
                         </div>
-                        <h3>GriefShare</h3>
-                        <p>A network of grief support groups meeting worldwide, with a structured program to help people move from mourning to joy.</p>
-                        <ul class="organization-contact">
-                            <li><i class="fas fa-globe"></i> <a href="https://www.griefshare.org/" target="_blank">www.griefshare.org</a></li>
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@griefshare.org">info@griefshare.org</a></li>
-                        </ul>
-                        <p>Services: Support groups, online community, daily email encouragement, video seminars.</p>
+                        <h3>The Good Grief Trust</h3>
+                        <p>Connecting the bereaved to local and national support services across the UK.</p>
+                        <div class="organization-contact">
+                            <p><i class="fas fa-globe"></i> <a href="https://www.thegoodgrieftrust.org" target="_blank">www.thegoodgrieftrust.org</a></p>
+                        </div>
+                        <div class="feature-list">
+                            <p>Support service directory</p>
+                            <p>Peer-to-peer support</p>
+                            <p>Pop-up Good Grief Cafes</p>
+                            <p>Resources for specific types of loss</p>
+                        </div>
                     </div>
                     
                     <div class="organization-card">
                         <div class="organization-logo">
-                            <img src="images/whatsyourgrief_logo.png" alt="What's Your Grief logo">
+                            <img src="/images/resources/org3.png" alt="Sue Ryder logo">
                         </div>
-                        <h3>What's Your Grief</h3>
-                        <p>An online resource promoting grief education, exploration, and expression in both practical and creative ways.</p>
-                        <ul class="organization-contact">
-                            <li><i class="fas fa-globe"></i> <a href="https://whatsyourgrief.com/" target="_blank">whatsyourgrief.com</a></li>
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:whatsyourgrief@gmail.com">whatsyourgrief@gmail.com</a></li>
-                        </ul>
-                        <p>Services: Articles, podcasts, online courses, webinars, resources for professionals.</p>
-                    </div>
-                    
-                    <div class="organization-card">
-                        <div class="organization-logo">
-                            <img src="images/tcf_logo.png" alt="The Compassionate Friends logo">
+                        <h3>Sue Ryder</h3>
+                        <p>Providing compassionate hospice and neurological care while offering bereavement support services.</p>
+                        <div class="organization-contact">
+                            <p><i class="fas fa-globe"></i> <a href="https://www.sueryder.org" target="_blank">www.sueryder.org</a></p>
+                            <p><i class="fas fa-phone"></i> Online bereavement support: 0800 477 9400</p>
                         </div>
-                        <h3>The Compassionate Friends</h3>
-                        <p>A peer support organization offering friendship and understanding to bereaved parents, siblings, and grandparents.</p>
-                        <ul class="organization-contact">
-                            <li><i class="fas fa-globe"></i> <a href="https://www.tcf.org.uk/" target="_blank">www.tcf.org.uk</a> (UK)</li>
-                            <li><i class="fas fa-globe"></i> <a href="https://www.compassionatefriends.org/" target="_blank">www.compassionatefriends.org</a> (US)</li>
-                            <li><i class="fas fa-phone"></i> UK Helpline: 0345 123 2304</li>
-                        </ul>
-                        <p>Services: Local support groups, online forums, retreats, memorial events, resources for different types of loss.</p>
-                    </div>
-                    
-                    <div class="organization-card">
-                        <div class="organization-logo">
-                            <img src="images/mind_logo.png" alt="Mind logo">
+                        <div class="feature-list">
+                            <p>Online bereavement counseling</p>
+                            <p>Bereavement support groups</p>
+                            <p>Online community forum</p>
+                            <p>Self-help resources</p>
                         </div>
-                        <h3>Mind</h3>
-                        <p>A mental health charity providing advice and support to anyone experiencing mental health problems, including grief-related issues.</p>
-                        <ul class="organization-contact">
-                            <li><i class="fas fa-globe"></i> <a href="https://www.mind.org.uk/" target="_blank">www.mind.org.uk</a></li>
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@mind.org.uk">info@mind.org.uk</a></li>
-                            <li><i class="fas fa-phone"></i> Infoline: 0300 123 3393</li>
-                        </ul>
-                        <p>Services: Information resources, local support services, online community, advocacy.</p>
-                    </div>
-                    
-                    <div class="organization-card">
-                        <div class="organization-logo">
-                            <img src="images/samaritans_logo.png" alt="Samaritans logo">
-                        </div>
-                        <h3>Samaritans</h3>
-                        <p>A charity providing emotional support to anyone in emotional distress or struggling to cope, including those experiencing grief.</p>
-                        <ul class="organization-contact">
-                            <li><i class="fas fa-globe"></i> <a href="https://www.samaritans.org/" target="_blank">www.samaritans.org</a></li>
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:jo@samaritans.org">jo@samaritans.org</a></li>
-                            <li><i class="fas fa-phone"></i> Helpline: 116 123 (UK)</li>
-                        </ul>
-                        <p>Services: 24/7 helpline, email support, self-help app, outreach programs.</p>
                     </div>
                 </div>
                 
                 <div class="text-center">
-                    <a href="#" class="secondary-button">View All Support Organizations</a>
+                    <a href="support_organizations.html" class="secondary-button">View All Organizations</a>
                 </div>
             </div>
         </section>
@@ -799,73 +718,48 @@
         <!-- CTA Section -->
         <section class="cta">
             <h2>Need Personalized Support?</h2>
-            <p>Digital Companion offers tailored guidance and resources based on your specific situation and needs.</p>
-            <div class="cta-buttons">
-                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
-                <a href="/contact.html" class="secondary-button">Contact Us</a>
-            </div>
+            <p>Join Digital Companion for access to our full suite of practical tools and emotional support resources.</p>
+            <a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h5>Digital Companion™</h5>
-                <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
+                <h3>Digital Companion</h3>
+                <p>Supporting you through your grief journey with practical tools and emotional resources.</p>
             </div>
+            
             <div class="footer-section">
-                <h5>Company</h5>
+                <h3>Quick Links</h3>
                 <ul>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/how-it-works.html">How It Works</a></li>
                     <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
-                <h5>Platform</h5>
-                <ul>
-                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
-                    <li><a href="/platform/estate.html">Estate</a></li>
-                    <li><a href="/platform/journal.html">Journal</a></li>
-                    <li><a href="/platform/meditation.html">Meditation</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
-                </ul>
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></p>
+                <p>Our team works remotely across the UK</p>
             </div>
+            
             <div class="footer-section">
-                <h5>Resources</h5>
+                <h3>Legal</h3>
                 <ul>
-                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
-                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
-                    <li><a href="/resources.html">Resource Library</a></li>
-                    <li><a href="/platform/services.html">Professional Services</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/cookies.html">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-            </div>
+            <p>&copy; 2025 Digital Companion. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- Mobile menu script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.querySelector('.mobile-menu-button');
-            const mobileNav = document.querySelector('.mobile-nav');
-            
-            if (mobileMenuButton && mobileNav) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileNav.classList.toggle('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>

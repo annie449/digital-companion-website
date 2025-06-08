@@ -323,7 +323,7 @@
                 
                 <div class="partners-placeholder">
                     <p>We're developing partnerships with grief support organizations, mental health professionals, and administrative service providers to enhance the support we offer.</p>
-                    <p>If you're interested in partnering with Digital Companion™, please contact us at <a href="mailto:partnerships@digitalcompanion.com">partnerships@digitalcompanion.com</a>.</p>
+                    <p>If you're interested in partnering with Digital Companion™, please contact us at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a>.</p>
                 </div>
             </div>
         </section>
@@ -338,17 +338,17 @@
                     <div class="contact-methods">
                         <div class="contact-method">
                             <h3>General Inquiries</h3>
-                            <p><a href="mailto:info@digitalcompanion.com">info@digitalcompanion.com</a></p>
+                            <p><a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></p>
                         </div>
                         
                         <div class="contact-method">
                             <h3>Support</h3>
-                            <p><a href="mailto:support@digitalcompanion.com">support@digitalcompanion.com</a></p>
+                            <p><a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></p>
                         </div>
                         
                         <div class="contact-method">
                             <h3>Partnerships</h3>
-                            <p><a href="mailto:partnerships@digitalcompanion.com">partnerships@digitalcompanion.com</a></p>
+                            <p><a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></p>
                         </div>
                     </div>
                 </div>
@@ -384,16 +384,23 @@
                 <ul>
                     <li><a href="/platform/tasks.html">Tasks Management</a></li>
                     <li><a href="/platform/estate.html">Estate</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
+                    <li><a href="/platform/journal.html">Journal</a></li>
+                    <li><a href="/platform/meditation.html">Meditation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Resources</h5>
+                <ul>
                     <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
                     <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                    <li><a href="/resources.html">Resource Library</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="/terms.html">Terms and Conditions</a></li>
                     <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
@@ -404,8 +411,15 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            document.querySelector('.mobile-nav').classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            if (mobileMenuButton && mobileNav) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+            }
         });
     </script>
 </body>

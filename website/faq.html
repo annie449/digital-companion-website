@@ -203,6 +203,20 @@
             background-color: white;
         }
         
+        /* Feature List */
+        .feature-list p {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list p:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary-color);
+        }
+        
         /* Mobile Menu */
         .mobile-menu-button {
             display: none;
@@ -392,14 +406,14 @@
                             <div class="accordion-body">
                                 <p>Digital Companion is a comprehensive platform designed to support people who have experienced the loss of a loved one. We combine practical administrative assistance with emotional support tools to help you navigate the complex journey of grief.</p>
                                 <p>Our platform offers:</p>
-                                <ul>
-                                    <li>Step-by-step guidance for managing administrative tasks after a death</li>
-                                    <li>Document storage and organization tools</li>
-                                    <li>Estate management features</li>
-                                    <li>Access to a supportive community of others experiencing grief</li>
-                                    <li>Resources for emotional well-being and healing</li>
-                                    <li>Personalized support based on your specific situation and needs</li>
-                                </ul>
+                                <div class="feature-list">
+                                    <p>Step-by-step guidance for managing administrative tasks after a death</p>
+                                    <p>Document storage and organization tools</p>
+                                    <p>Estate management features</p>
+                                    <p>Access to a supportive community of others experiencing grief</p>
+                                    <p>Resources for emotional well-being and healing</p>
+                                    <p>Personalized support based on your specific situation and needs</p>
+                                </div>
                                 <p>We believe in providing both the practical help needed to manage the logistics after a loss and the emotional support essential for healing.</p>
                             </div>
                         </div>
@@ -414,14 +428,15 @@
                         <div id="generalCollapse2" class="accordion-collapse collapse" aria-labelledby="general2" data-bs-parent="#generalAccordion">
                             <div class="accordion-body">
                                 <p>Digital Companion stands apart from other grief support services in several key ways:</p>
-                                <ul>
-                                    <li><strong>Comprehensive Support:</strong> We uniquely combine practical administrative assistance with emotional support, addressing the full spectrum of needs that arise after a loss.</li>
-                                    <li><strong>Personalized Approach:</strong> Our platform adapts to your specific situation, providing relevant guidance and resources based on your relationship to the deceased, the timeframe of your loss, and your individual needs.</li>
-                                    <li><strong>Technology-Enabled Care:</strong> We leverage technology to simplify complex processes while maintaining a deeply human, compassionate approach to support.</li>
-                                    <li><strong>Community Connection:</strong> Beyond just information, we facilitate meaningful connections with others who understand what you're going through.</li>
-                                    <li><strong>Ongoing Journey Support:</strong> We recognize that grief isn't linear and doesn't follow a fixed timeline. Our support adapts as your needs change over time.</li>
-                                </ul>
-                                <p>While many services focus exclusively on either the practical or emotional aspects of loss, Digital Companion recognizes that these needs are interconnected and provides holistic support for your entire grief journey.</p>
+                                <div class="feature-list">
+                                    <p><strong>Comprehensive approach:</strong> We combine practical administrative support with emotional resources, addressing both the logistical challenges and emotional impact of loss.</p>
+                                    <p><strong>Personalized guidance:</strong> Our platform adapts to your specific situation, providing relevant resources and task lists based on your unique circumstances.</p>
+                                    <p><strong>Digital organization:</strong> We help you centralize and organize important documents, contacts, and information in one secure location.</p>
+                                    <p><strong>Ongoing support:</strong> Unlike services that focus only on immediate needs, Digital Companion provides support throughout your entire grief journey.</p>
+                                    <p><strong>Community connection:</strong> We offer opportunities to connect with others who understand what you're going through, reducing isolation.</p>
+                                    <p><strong>Expert resources:</strong> Our content is developed in collaboration with grief counselors, estate planners, and legal professionals.</p>
+                                </div>
+                                <p>Our holistic approach ensures that you receive support for both the practical and emotional aspects of loss, making Digital Companion a truly comprehensive resource during a difficult time.</p>
                             </div>
                         </div>
                     </div>
@@ -429,36 +444,21 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="general3">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalCollapse3" aria-expanded="false" aria-controls="generalCollapse3">
-                                Is Digital Companion available in my country?
+                                Who can benefit from using Digital Companion?
                             </button>
                         </h3>
                         <div id="generalCollapse3" class="accordion-collapse collapse" aria-labelledby="general3" data-bs-parent="#generalAccordion">
                             <div class="accordion-body">
-                                <p>Digital Companion is currently available in the United Kingdom, with plans to expand to other countries in the future. Our platform is designed with UK-specific guidance for legal processes, account notifications, and support resources.</p>
-                                <p>While users from other countries can access our emotional support resources and community features, the practical guidance and administrative tools are optimized for UK processes and regulations.</p>
-                                <p>If you're interested in Digital Companion becoming available in your country, please let us know by contacting <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a>. Your interest helps us prioritize our international expansion.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="general4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalCollapse4" aria-expanded="false" aria-controls="generalCollapse4">
-                                Do I need to be tech-savvy to use Digital Companion?
-                            </button>
-                        </h3>
-                        <div id="generalCollapse4" class="accordion-collapse collapse" aria-labelledby="general4" data-bs-parent="#generalAccordion">
-                            <div class="accordion-body">
-                                <p>Not at all. Digital Companion is designed to be intuitive and accessible for users of all technical abilities. We've created a simple, straightforward interface that guides you through each step of the process.</p>
-                                <p>Features that make Digital Companion user-friendly include:</p>
-                                <ul>
-                                    <li>Clear, step-by-step instructions</li>
-                                    <li>Simple navigation</li>
-                                    <li>Helpful tooltips and explanations</li>
-                                    <li>Responsive design that works on computers, tablets, and smartphones</li>
-                                    <li>Support resources if you get stuck</li>
-                                </ul>
-                                <p>If you do encounter any difficulties, our support team is available to help you navigate the platform. Simply contact us at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a> for assistance.</p>
+                                <p>Digital Companion is designed to support a wide range of individuals affected by loss:</p>
+                                <div class="feature-list">
+                                    <p><strong>Recently bereaved individuals</strong> who need guidance on immediate tasks and emotional support</p>
+                                    <p><strong>Those managing an estate</strong> as an executor or administrator</p>
+                                    <p><strong>Family members</strong> helping with arrangements and administrative tasks</p>
+                                    <p><strong>Individuals planning ahead</strong> to organize their affairs for their loved ones</p>
+                                    <p><strong>People seeking emotional support</strong> during any stage of the grief journey</p>
+                                    <p><strong>Professional advisors</strong> such as solicitors, financial advisors, and funeral directors who want to provide additional resources to their clients</p>
+                                </div>
+                                <p>Whether you're dealing with a recent loss, managing long-term grief, or planning ahead to make things easier for your loved ones in the future, Digital Companion offers valuable tools and resources to support you.</p>
                             </div>
                         </div>
                     </div>
@@ -475,22 +475,22 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="practical1">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse1" aria-expanded="true" aria-controls="practicalCollapse1">
-                                What practical support does Digital Companion provide?
+                                What practical tools does Digital Companion offer?
                             </button>
                         </h3>
                         <div id="practicalCollapse1" class="accordion-collapse show" aria-labelledby="practical1" data-bs-parent="#practicalAccordion">
                             <div class="accordion-body">
-                                <p>Digital Companion offers a comprehensive range of practical support tools to help you manage the administrative aspects of loss:</p>
-                                <ul>
-                                    <li><strong>Personalized Task Checklist:</strong> A customized list of tasks based on your specific situation, with step-by-step guidance for each.</li>
-                                    <li><strong>Document Management:</strong> Secure storage for important documents like death certificates, wills, and financial records.</li>
-                                    <li><strong>Estate Management:</strong> Tools to help organize and manage estate affairs, including asset tracking and distribution planning.</li>
-                                    <li><strong>Account Notification System:</strong> Guidance on which organizations need to be notified, with templates for notification letters.</li>
-                                    <li><strong>Legal Process Guidance:</strong> Clear explanations of probate and other legal processes, with location-specific information.</li>
-                                    <li><strong>Financial Tools:</strong> Resources for managing financial matters, including inheritance, insurance claims, and benefit applications.</li>
-                                    <li><strong>Professional Referrals:</strong> Connections to vetted professionals when specialized assistance is needed.</li>
-                                </ul>
-                                <p>All practical support features are designed to simplify complex processes and reduce the administrative burden during an already difficult time.</p>
+                                <p>Digital Companion offers a comprehensive suite of practical tools to help you manage administrative tasks after a loss:</p>
+                                <div class="feature-list">
+                                    <p><strong>Task Manager:</strong> Personalized checklists of administrative tasks based on your specific situation</p>
+                                    <p><strong>Document Storage:</strong> Secure storage for important documents like wills, death certificates, and financial records</p>
+                                    <p><strong>Estate Management:</strong> Tools to inventory assets, track accounts, and manage the estate settlement process</p>
+                                    <p><strong>Notification Templates:</strong> Pre-written templates for notifying organizations and institutions about a death</p>
+                                    <p><strong>Contact Directory:</strong> Centralized storage for important contacts like solicitors, financial advisors, and government agencies</p>
+                                    <p><strong>Resource Library:</strong> Guides and articles on handling specific administrative tasks</p>
+                                    <p><strong>Progress Tracking:</strong> Visual indicators of your progress through necessary tasks</p>
+                                </div>
+                                <p>These tools are designed to simplify complex processes, ensure nothing is overlooked, and reduce the administrative burden during an already difficult time.</p>
                             </div>
                         </div>
                     </div>
@@ -498,64 +498,22 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="practical2">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse2" aria-expanded="false" aria-controls="practicalCollapse2">
-                                Is my information secure on Digital Companion?
+                                How does the Estate Management feature work?
                             </button>
                         </h3>
                         <div id="practicalCollapse2" class="accordion-collapse collapse" aria-labelledby="practical2" data-bs-parent="#practicalAccordion">
                             <div class="accordion-body">
-                                <p>Yes, security is a top priority at Digital Companion. We implement multiple layers of protection to ensure your sensitive information remains secure:</p>
-                                <ul>
-                                    <li><strong>Bank-Level Encryption:</strong> We use 256-bit encryption (the same level used by banks) to protect all data transmission and storage.</li>
-                                    <li><strong>Secure Document Storage:</strong> All documents are encrypted both in transit and at rest.</li>
-                                    <li><strong>Regular Security Audits:</strong> Our systems undergo regular security assessments and penetration testing.</li>
-                                    <li><strong>Data Privacy Compliance:</strong> We adhere to GDPR and other relevant data protection regulations.</li>
-                                    <li><strong>Limited Data Collection:</strong> We only collect information that's necessary to provide our services.</li>
-                                    <li><strong>No Data Selling:</strong> We never sell your personal information to third parties.</li>
-                                </ul>
-                                <p>You can review our complete <a href="privacy.html">Privacy Policy</a> for detailed information about how we handle your data.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="practical3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse3" aria-expanded="false" aria-controls="practicalCollapse3">
-                                Can Digital Companion help with estate management?
-                            </button>
-                        </h3>
-                        <div id="practicalCollapse3" class="accordion-collapse collapse" aria-labelledby="practical3" data-bs-parent="#practicalAccordion">
-                            <div class="accordion-body">
-                                <p>Yes, estate management is a core feature of Digital Companion. Our estate management tools help you organize, track, and manage the estate of your loved one:</p>
-                                <ul>
-                                    <li><strong>Asset Inventory:</strong> Tools to catalog and track all assets, including property, accounts, investments, and personal possessions.</li>
-                                    <li><strong>Liability Management:</strong> Systems to identify and manage outstanding debts and financial obligations.</li>
-                                    <li><strong>Beneficiary Tracking:</strong> Features to record beneficiary information and track distributions.</li>
-                                    <li><strong>Document Organization:</strong> Secure storage for wills, trusts, property deeds, and other important estate documents.</li>
-                                    <li><strong>Probate Guidance:</strong> Step-by-step assistance through the probate process, with UK-specific information.</li>
-                                    <li><strong>Executor Tools:</strong> Resources specifically designed to help executors fulfill their responsibilities.</li>
-                                </ul>
-                                <p>Our Basic plan includes essential estate management tools, while our Complete plan offers advanced features for more complex estates. Both plans provide structured guidance to help simplify what can often be an overwhelming process.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="practical4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#practicalCollapse4" aria-expanded="false" aria-controls="practicalCollapse4">
-                                Does Digital Companion provide legal advice?
-                            </button>
-                        </h3>
-                        <div id="practicalCollapse4" class="accordion-collapse collapse" aria-labelledby="practical4" data-bs-parent="#practicalAccordion">
-                            <div class="accordion-body">
-                                <p>Digital Companion provides general legal information and guidance, but we do not provide personalized legal advice. Our platform offers:</p>
-                                <ul>
-                                    <li>Explanations of common legal processes in plain language</li>
-                                    <li>Checklists for legal procedures like probate</li>
-                                    <li>Document templates for standard legal communications</li>
-                                    <li>Information about when legal assistance may be necessary</li>
-                                    <li>Guidance on finding qualified legal professionals</li>
-                                </ul>
-                                <p>For specific legal advice tailored to your situation, we recommend consulting with a qualified solicitor. Our platform can help you prepare for legal consultations by organizing relevant information and documents, potentially making those consultations more efficient and cost-effective.</p>
+                                <p>Our Estate Management feature provides a structured system for organizing and managing all aspects of an estate:</p>
+                                <div class="feature-list">
+                                    <p><strong>Asset Inventory:</strong> Create a comprehensive inventory of all assets, including property, vehicles, investments, and personal possessions</p>
+                                    <p><strong>Account Tracking:</strong> Log all financial accounts, insurance policies, and subscriptions that need to be managed or closed</p>
+                                    <p><strong>Document Organization:</strong> Store and categorize important documents like wills, property deeds, and insurance policies</p>
+                                    <p><strong>Beneficiary Management:</strong> Track beneficiaries and their allocated assets</p>
+                                    <p><strong>Task Assignment:</strong> Assign specific estate-related tasks to family members or professionals</p>
+                                    <p><strong>Progress Monitoring:</strong> Track the status of estate settlement with visual progress indicators</p>
+                                    <p><strong>Deadline Reminders:</strong> Receive notifications about important deadlines for tax filings and claim submissions</p>
+                                </div>
+                                <p>The Estate Management feature simplifies the complex process of estate administration by providing a centralized system for tracking all relevant information and tasks. This helps ensure nothing is overlooked and reduces the stress of managing an estate during a difficult time.</p>
                             </div>
                         </div>
                     </div>
@@ -572,22 +530,22 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="emotional1">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse1" aria-expanded="true" aria-controls="emotionalCollapse1">
-                                What emotional support resources does Digital Companion offer?
+                                What emotional support resources does Digital Companion provide?
                             </button>
                         </h3>
                         <div id="emotionalCollapse1" class="accordion-collapse show" aria-labelledby="emotional1" data-bs-parent="#emotionalAccordion">
                             <div class="accordion-body">
                                 <p>Digital Companion offers a variety of emotional support resources to help you navigate the grief journey:</p>
-                                <ul>
-                                    <li><strong>Community Forums:</strong> Connect with others who understand what you're going through in our moderated discussion spaces.</li>
-                                    <li><strong>Grief Education:</strong> Access articles, videos, and resources about grief, written by experts in bereavement support.</li>
-                                    <li><strong>Guided Journaling:</strong> Structured journaling prompts to help process emotions and preserve memories.</li>
-                                    <li><strong>Meditation Resources:</strong> Guided meditations specifically designed for grief and healing.</li>
-                                    <li><strong>Memory Preservation:</strong> Tools to create tributes and memory collections honoring your loved one.</li>
-                                    <li><strong>Ritual Creation:</strong> Guidance for creating meaningful rituals and commemorations.</li>
-                                    <li><strong>Professional Resources:</strong> Information about grief counseling and therapy, with guidance on finding the right support.</li>
-                                </ul>
-                                <p>Our emotional support resources are designed to complement, not replace, professional mental health services. If you're experiencing severe or persistent emotional distress, we encourage seeking help from a qualified mental health professional.</p>
+                                <div class="feature-list">
+                                    <p><strong>Grief Education:</strong> Articles and guides about the grief process, common experiences, and coping strategies</p>
+                                    <p><strong>Guided Meditations:</strong> Audio meditations specifically designed for grief and healing</p>
+                                    <p><strong>Journal Prompts:</strong> Thoughtful prompts to encourage reflection and emotional processing</p>
+                                    <p><strong>Memory Preservation:</strong> Tools for creating and storing meaningful memories of your loved one</p>
+                                    <p><strong>Community Forums:</strong> Moderated spaces to connect with others who understand what you're going through</p>
+                                    <p><strong>Resource Directory:</strong> Curated lists of books, podcasts, and other external resources for grief support</p>
+                                    <p><strong>Professional Referrals:</strong> Help finding qualified grief counselors and therapists in your area</p>
+                                </div>
+                                <p>Our emotional support resources are developed in collaboration with grief counselors and mental health professionals to ensure they provide meaningful, evidence-based support during your grief journey.</p>
                             </div>
                         </div>
                     </div>
@@ -595,63 +553,22 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="emotional2">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse2" aria-expanded="false" aria-controls="emotionalCollapse2">
-                                How does the community support work?
+                                How does the Memory Preservation feature work?
                             </button>
                         </h3>
                         <div id="emotionalCollapse2" class="accordion-collapse collapse" aria-labelledby="emotional2" data-bs-parent="#emotionalAccordion">
                             <div class="accordion-body">
-                                <p>Our community support features are designed to connect you with others who understand the grief experience, reducing isolation and providing peer support:</p>
-                                <ul>
-                                    <li><strong>Moderated Forums:</strong> Discussion spaces organized by type of loss and relationship, all carefully moderated to ensure a safe, supportive environment.</li>
-                                    <li><strong>Small Support Groups:</strong> Optional small group connections with others in similar situations, facilitated by trained moderators.</li>
-                                    <li><strong>Resource Sharing:</strong> Community spaces for sharing helpful resources, articles, and coping strategies.</li>
-                                    <li><strong>Memorial Sharing:</strong> Optional spaces to share memories and tributes to loved ones.</li>
-                                    <li><strong>Virtual Events:</strong> Online gatherings for commemoration, education, and connection.</li>
-                                </ul>
-                                <p>All community spaces adhere to strict guidelines to ensure they remain supportive, respectful, and safe. Participation is always optional, and you can choose your level of engagement based on your comfort and needs.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="emotional3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse3" aria-expanded="false" aria-controls="emotionalCollapse3">
-                                Does Digital Companion offer grief counseling?
-                            </button>
-                        </h3>
-                        <div id="emotionalCollapse3" class="accordion-collapse collapse" aria-labelledby="emotional3" data-bs-parent="#emotionalAccordion">
-                            <div class="accordion-body">
-                                <p>Digital Companion does not directly provide grief counseling or therapy services. Instead, we offer:</p>
-                                <ul>
-                                    <li>Information about different types of grief support and therapy</li>
-                                    <li>Guidance on when professional support might be beneficial</li>
-                                    <li>Resources for finding qualified grief counselors and therapists</li>
-                                    <li>Tools to help you prepare for and get the most from professional support</li>
-                                </ul>
-                                <p>Our Complete plan includes access to a network of verified grief support professionals, making it easier to find qualified help when needed. We carefully vet all professionals in our network to ensure they have appropriate qualifications and specialized experience in grief and bereavement support.</p>
-                                <p>If you're experiencing severe emotional distress, please contact a crisis support service or mental health professional directly. In the UK, you can contact the Samaritans at 116 123 for immediate emotional support.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="emotional4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emotionalCollapse4" aria-expanded="false" aria-controls="emotionalCollapse4">
-                                How does Digital Companion's approach to grief differ from others?
-                            </button>
-                        </h3>
-                        <div id="emotionalCollapse4" class="accordion-collapse collapse" aria-labelledby="emotional4" data-bs-parent="#emotionalAccordion">
-                            <div class="accordion-body">
-                                <p>Digital Companion's approach to grief is distinguished by several key principles:</p>
-                                <ul>
-                                    <li><strong>Personalized Support:</strong> We recognize that every grief journey is unique and provide resources tailored to your specific situation and needs.</li>
-                                    <li><strong>Non-Linear Understanding:</strong> We acknowledge that grief doesn't follow a predictable timeline or set of stages, and our support adapts accordingly.</li>
-                                    <li><strong>Holistic Perspective:</strong> We address both the practical and emotional aspects of loss, recognizing how they interconnect and influence each other.</li>
-                                    <li><strong>Continuing Bonds:</strong> We embrace the understanding that maintaining a connection with your loved one can be a healthy part of grief, rather than focusing solely on "moving on."</li>
-                                    <li><strong>Cultural Sensitivity:</strong> We respect diverse cultural and religious approaches to grief and loss.</li>
-                                    <li><strong>Evidence-Based Resources:</strong> Our educational content and support tools are grounded in current grief research and best practices.</li>
-                                </ul>
-                                <p>Rather than prescribing a single approach to grief, we provide a variety of resources and tools, allowing you to find what resonates with your personal experience and needs.</p>
+                                <p>Our Memory Preservation feature provides a dedicated space to honor and remember your loved one:</p>
+                                <div class="feature-list">
+                                    <p><strong>Digital Memorial:</strong> Create a personalized memorial page with photos, stories, and important information about your loved one</p>
+                                    <p><strong>Photo Albums:</strong> Upload and organize photos with captions and dates</p>
+                                    <p><strong>Story Collection:</strong> Record meaningful stories and memories in text, audio, or video format</p>
+                                    <p><strong>Timeline Creation:</strong> Build a visual timeline of your loved one's life with key events and milestones</p>
+                                    <p><strong>Legacy Projects:</strong> Ideas and templates for creating meaningful legacy projects</p>
+                                    <p><strong>Sharing Options:</strong> Choose whether to keep memories private or share them with selected family and friends</p>
+                                    <p><strong>Memory Prompts:</strong> Thoughtful prompts to help you recall and record important memories</p>
+                                </div>
+                                <p>The Memory Preservation feature helps you create a lasting tribute to your loved one while also providing a therapeutic outlet for processing grief through remembrance and storytelling.</p>
                             </div>
                         </div>
                     </div>
@@ -674,33 +591,25 @@
                         <div id="accountCollapse1" class="accordion-collapse show" aria-labelledby="account1" data-bs-parent="#accountAccordion">
                             <div class="accordion-body">
                                 <p>Digital Companion offers two subscription plans to meet different needs:</p>
-                                
-                                <h4>Basic Plan - £19.99/month</h4>
-                                <ul>
-                                    <li>Personalized Care Plan</li>
-                                    <li>Document Storage (5GB)</li>
-                                    <li>Estate Management Tools</li>
-                                    <li>Account Closure Tools</li>
-                                    <li>Community Forum Access</li>
-                                    <li>Resource Library</li>
-                                    <li>Email Support</li>
-                                </ul>
-                                
-                                <h4>Complete Plan - £29.99/month</h4>
-                                <ul>
-                                    <li>Everything in Basic</li>
-                                    <li>Unlimited Document Storage</li>
-                                    <li>Advanced Estate Management</li>
-                                    <li>Priority Support</li>
-                                    <li>Monthly Support Group Sessions</li>
-                                    <li>Legal Document Templates</li>
-                                    <li>Legacy Planning Tools</li>
-                                    <li>Journal & Memory Features</li>
-                                    <li>Meditation Resources</li>
-                                </ul>
-                                
-                                <p>Both plans include a 14-day free trial with no credit card required to start. You can also save 20% by choosing annual billing instead of monthly.</p>
-                                <p>For organizations looking to provide Digital Companion to their members, employees, or clients, we offer customized enterprise solutions. Please <a href="contact.html">contact us</a> for more information about enterprise pricing.</p>
+                                <div class="feature-list">
+                                    <p><strong>Basic Plan (£19.99/month):</strong></p>
+                                    <p>• Task management system</p>
+                                    <p>• Document storage (up to 5GB)</p>
+                                    <p>• Basic estate management tools</p>
+                                    <p>• Access to grief education resources</p>
+                                    <p>• Community forum access</p>
+                                </div>
+                                <div class="feature-list">
+                                    <p><strong>Complete Plan (£29.99/month):</strong></p>
+                                    <p>• All Basic Plan features</p>
+                                    <p>• Advanced estate management tools</p>
+                                    <p>• Expanded document storage (up to 20GB)</p>
+                                    <p>• Memory preservation features</p>
+                                    <p>• Guided meditation library</p>
+                                    <p>• Digital journal with prompts</p>
+                                    <p>• Priority support</p>
+                                </div>
+                                <p>Both plans include a 14-day free trial, and we offer a 30-day money-back guarantee if you're not satisfied with our service. We also provide discounted annual billing options for both plans.</p>
                             </div>
                         </div>
                     </div>
@@ -708,22 +617,22 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="account2">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse2" aria-expanded="false" aria-controls="accountCollapse2">
-                                How does the free trial work?
+                                How secure is my information on Digital Companion?
                             </button>
                         </h3>
                         <div id="accountCollapse2" class="accordion-collapse collapse" aria-labelledby="account2" data-bs-parent="#accountAccordion">
                             <div class="accordion-body">
-                                <p>Our free trial allows you to experience Digital Companion before committing to a subscription:</p>
-                                <ul>
-                                    <li>All plans include a 14-day free trial</li>
-                                    <li>No credit card is required to start the trial</li>
-                                    <li>Full access to all features of your selected plan during the trial period</li>
-                                    <li>Automatic reminder before the trial ends</li>
-                                    <li>Option to continue with a paid subscription or cancel at any time</li>
-                                    <li>No charges if you decide not to continue after the trial</li>
-                                </ul>
-                                <p>To start your free trial, simply sign up on our website and select the plan you'd like to try. You'll have immediate access to all features included in that plan for 14 days.</p>
-                                <p>If you decide Digital Companion isn't right for you, you can cancel anytime during the trial period with no charges. If you choose to continue, you'll be prompted to enter payment information at the end of the trial period.</p>
+                                <p>We take the security and privacy of your information extremely seriously. Our security measures include:</p>
+                                <div class="feature-list">
+                                    <p><strong>End-to-end encryption</strong> for all sensitive data</p>
+                                    <p><strong>Two-factor authentication</strong> to protect your account</p>
+                                    <p><strong>Regular security audits</strong> by independent cybersecurity firms</p>
+                                    <p><strong>Compliance with GDPR</strong> and other relevant data protection regulations</p>
+                                    <p><strong>Secure data centers</strong> with multiple redundancies</p>
+                                    <p><strong>Limited employee access</strong> to user data</p>
+                                    <p><strong>Regular data backups</strong> to prevent loss</p>
+                                </div>
+                                <p>We understand that you're trusting us with sensitive and personal information, and we're committed to maintaining the highest standards of security and privacy protection. You can review our detailed Privacy Policy and Terms of Service for more information about how we protect and use your data.</p>
                             </div>
                         </div>
                     </div>
@@ -731,57 +640,22 @@
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="account3">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse3" aria-expanded="false" aria-controls="accountCollapse3">
-                                Can I cancel my subscription at any time?
+                                How can I get help if I have questions or issues?
                             </button>
                         </h3>
                         <div id="accountCollapse3" class="accordion-collapse collapse" aria-labelledby="account3" data-bs-parent="#accountAccordion">
                             <div class="accordion-body">
-                                <p>Yes, you can cancel your Digital Companion subscription at any time. There are no long-term contracts or cancellation fees.</p>
-                                <p>When you cancel:</p>
-                                <ul>
-                                    <li>You'll continue to have access until the end of your current billing period</li>
-                                    <li>No further charges will be made to your payment method</li>
-                                    <li>You'll receive a confirmation email when your cancellation is processed</li>
-                                    <li>Your data will be retained for 30 days after your subscription ends, giving you time to download any important information</li>
-                                </ul>
-                                <p>To cancel your subscription, simply go to Account Settings in your Digital Companion dashboard and select "Manage Subscription." From there, you can follow the cancellation process.</p>
-                                <p>If you need any assistance with cancellation, please contact our support team at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a>.</p>
+                                <p>We offer several ways to get support:</p>
+                                <div class="feature-list">
+                                    <p><strong>Email Support:</strong> Contact our support team at annie@digitalcompanion.co.uk</p>
+                                    <p><strong>Help Center:</strong> Browse our comprehensive knowledge base with step-by-step guides</p>
+                                    <p><strong>Video Tutorials:</strong> Watch instructional videos on how to use specific features</p>
+                                    <p><strong>Community Forum:</strong> Ask questions and get advice from other users and our team</p>
+                                    <p><strong>Scheduled Consultations:</strong> Complete Plan members can schedule one-on-one consultations with our support team</p>
+                                </div>
+                                <p>Our support team is committed to providing compassionate and helpful assistance. We understand that you may be using our platform during a difficult time, and we strive to make your experience as smooth and supportive as possible.</p>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="account4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse4" aria-expanded="false" aria-controls="accountCollapse4">
-                                How do I get help if I have questions or issues?
-                            </button>
-                        </h3>
-                        <div id="accountCollapse4" class="accordion-collapse collapse" aria-labelledby="account4" data-bs-parent="#accountAccordion">
-                            <div class="accordion-body">
-                                <p>We offer several ways to get support if you have questions or encounter issues:</p>
-                                <ul>
-                                    <li><strong>Email Support:</strong> Contact our support team at <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a> for personalized assistance.</li>
-                                    <li><strong>Help Center:</strong> Access our comprehensive knowledge base with step-by-step guides and answers to common questions.</li>
-                                    <li><strong>In-App Guidance:</strong> Find contextual help and tooltips throughout the platform to guide you through features.</li>
-                                    <li><strong>Contact Form:</strong> Use the <a href="contact.html">contact form</a> on our website to submit specific questions or feedback.</li>
-                                </ul>
-                                <p>Complete plan subscribers receive priority support, with faster response times and access to additional support channels.</p>
-                                <p>For technical issues, it's helpful to include details about the problem you're experiencing, including any error messages and the device/browser you're using. This helps us resolve your issue more quickly.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Still Have Questions Section -->
-        <section class="feature-section bg-light">
-            <div class="container">
-                <div class="feature-row">
-                    <div class="feature-content text-center">
-                        <h2>Still Have Questions?</h2>
-                        <p>We're here to help. Reach out to our support team for personalized assistance.</p>
-                        <a href="contact.html" class="primary-button">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -790,162 +664,78 @@
         <!-- CTA Section -->
         <section class="cta">
             <h2>Ready to Get Started?</h2>
-            <p>Join our beta program today and be among the first to experience Digital Companion when we launch.</p>
-            <div class="cta-buttons">
-                <a href="/survey/form/index.html" class="primary-button">Join our Beta Program</a>
-                <a href="/how-it-works.html" class="secondary-button">Learn More</a>
-            </div>
+            <p>Join our community of individuals finding their way through loss with practical tools and emotional support.</p>
+            <a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h5>Digital Companion™</h5>
-                <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
+                <h3>Digital Companion</h3>
+                <p>Supporting you through your grief journey with practical tools and emotional resources.</p>
             </div>
+            
             <div class="footer-section">
-                <h5>Company</h5>
+                <h3>Quick Links</h3>
                 <ul>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/how-it-works.html">How It Works</a></li>
                     <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
-                <h5>Platform</h5>
-                <ul>
-                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
-                    <li><a href="/platform/estate.html">Estate</a></li>
-                    <li><a href="/platform/journal.html">Journal</a></li>
-                    <li><a href="/platform/meditation.html">Meditation</a></li>
-                    <li><a href="/platform/memory.html">Memory</a></li>
-                </ul>
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:annie@digitalcompanion.co.uk">annie@digitalcompanion.co.uk</a></p>
+                <p>Our team works remotely across the UK</p>
             </div>
+            
             <div class="footer-section">
-                <h5>Resources</h5>
+                <h3>Legal</h3>
                 <ul>
-                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
-                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
-                    <li><a href="/resources.html">Resource Library</a></li>
-                    <li><a href="/platform/services.html">Professional Services</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/cookies.html">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
-            </div>
+            <p>&copy; 2025 Digital Companion. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- Accordion and Mobile Menu Script -->
     <script>
+        // Simple accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
-            const mobileMenuButton = document.querySelector('.mobile-menu-button');
-            const mobileNav = document.querySelector('.mobile-nav');
-            
-            if (mobileMenuButton && mobileNav) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileNav.classList.toggle('active');
-                });
-            }
-            
-            // Accordion functionality
             const accordionButtons = document.querySelectorAll('.accordion-button');
             
             accordionButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
                     
-                    // Close all accordion items in the same accordion
-                    const accordionId = this.getAttribute('data-bs-parent');
-                    const accordionItems = document.querySelectorAll(`${accordionId} .accordion-collapse`);
-                    const accordionButtons = document.querySelectorAll(`${accordionId} .accordion-button`);
-                    
-                    accordionItems.forEach(item => {
-                        item.classList.remove('show');
-                    });
-                    
+                    // Close all accordion items
                     accordionButtons.forEach(btn => {
                         btn.setAttribute('aria-expanded', 'false');
+                        const target = document.querySelector(btn.getAttribute('data-bs-target'));
+                        if (target) {
+                            target.classList.remove('show');
+                        }
                     });
                     
-                    // Toggle the clicked item
-                    if (!isExpanded) {
-                        const targetId = this.getAttribute('data-bs-target').substring(1);
-                        const targetCollapse = document.getElementById(targetId);
-                        
-                        if (targetCollapse) {
-                            targetCollapse.classList.add('show');
-                            this.setAttribute('aria-expanded', 'true');
+                    // Open the clicked accordion item if it was closed
+                    if (!expanded) {
+                        this.setAttribute('aria-expanded', 'true');
+                        const target = document.querySelector(this.getAttribute('data-bs-target'));
+                        if (target) {
+                            target.classList.add('show');
                         }
                     }
                 });
             });
-            
-            // Search functionality
-            const searchInput = document.querySelector('.search-input');
-            const searchButton = document.querySelector('.search-button');
-            
-            if (searchInput && searchButton) {
-                searchButton.addEventListener('click', function() {
-                    const searchTerm = searchInput.value.toLowerCase();
-                    
-                    if (searchTerm.trim() === '') {
-                        return;
-                    }
-                    
-                    // Simple search implementation - expand accordion items that contain the search term
-                    const accordionButtons = document.querySelectorAll('.accordion-button');
-                    let foundResults = false;
-                    
-                    accordionButtons.forEach(button => {
-                        const accordionText = button.textContent.toLowerCase();
-                        const accordionBodyId = button.getAttribute('data-bs-target').substring(1);
-                        const accordionBody = document.getElementById(accordionBodyId);
-                        const bodyText = accordionBody ? accordionBody.textContent.toLowerCase() : '';
-                        
-                        if (accordionText.includes(searchTerm) || bodyText.includes(searchTerm)) {
-                            // Expand this accordion item
-                            button.setAttribute('aria-expanded', 'true');
-                            if (accordionBody) {
-                                accordionBody.classList.add('show');
-                            }
-                            
-                            // Scroll to the first match
-                            if (!foundResults) {
-                                button.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                foundResults = true;
-                            }
-                        } else {
-                            // Collapse this accordion item
-                            button.setAttribute('aria-expanded', 'false');
-                            if (accordionBody) {
-                                accordionBody.classList.remove('show');
-                            }
-                        }
-                    });
-                    
-                    if (!foundResults) {
-                        alert('No results found for "' + searchTerm + '". Please try a different search term.');
-                    }
-                });
-                
-                // Allow search on Enter key
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        searchButton.click();
-                    }
-                });
-            }
         });
     </script>
 </body>
