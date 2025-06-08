@@ -1,13 +1,10 @@
 [build]
-  base = "/"
-  command = "cd platform && NODE_ENV=production npm install --verbose && CI=false npm run build"
-  publish = "platform/build"
-
-[build.environment]
-  NODE_VERSION = "16"
-  NPM_FLAGS = "--no-audit --production=false"
+  publish = "/"
+  command = ""
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
+  conditions = {Role = ["admin"]}
