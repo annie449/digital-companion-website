@@ -3,406 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Digital Companion</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/animations.css" rel="stylesheet">
+    <title>About Us | Digital Companion™</title>
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Mobile improvements integration script -->
+    <script src="/mobile_improvements/integration.js"></script>
+    <!-- URL redirects for extensionless URLs -->
+    <script src="/js/redirects.js"></script>
+    <meta name="description" content="Learn about the mission, vision, and team behind Digital Companion™ - supporting you through life's most challenging transitions.">
+    <style>
+        :root {
+            --primary-color: #6B5B95;
+            --secondary-color: #6B5B95;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #555;
+            --border-color: #ddd;
+            --hover-color: #f0edf6;
+        }
+        
+        /* Coming Soon Banner */
+        .announcement-bar {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+        
+        /* Navigation Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark-text);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--hover-color);
+            color: var(--primary-color);
+        }
+        
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-button span {
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark-text);
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                flex-direction: column;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body style="padding-top: 60px;">
-    <div id="coming-soon-banner" style="text-align: center; padding: 15px; background-color: #FFC107; color: #495057; font-weight: bold; border-bottom: 1px solid #e0a800; position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; box-sizing: border-box;">Coming Soon - Full Service Launching Shortly!</div>
-    <!-- Accessibility Skip Link -->
-    <a href="#main-content" class="skip-to-content">Skip to content</a>
+<body>
+    <header>
+        <div class="announcement-bar">
+            <p>Coming Soon - Join our Beta Program!</p>
+        </div>
+        <nav class="desktop-nav">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="Digital Companion™ Logo" height="60"> <span class="logo-text">Digital Companion™</span></a>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html" class="active">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Digital Companion Platform ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/platform/tasks.html">Tasks Management</a>
+                        <a href="/platform/estate.html">Estate</a>
+                        <a href="/platform/journal.html">Journal</a>
+                        <a href="/platform/meditation.html">Meditation</a>
+                        <a href="/platform/memory.html">Memory</a>
+                        <a href="/platform/practical-guides.html">Practical Guides</a>
+                        <a href="/platform/emotional-support.html">Emotional Support Resources</a>
+                        <a href="/platform/services.html">Services</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html" class="active">About Us</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                <li><a href="/platform/estate.html">Estate</a></li>
+                <li><a href="/platform/journal.html">Journal</a></li>
+                <li><a href="/platform/meditation.html">Meditation</a></li>
+                <li><a href="/platform/memory.html">Memory</a></li>
+                <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                <li><a href="/platform/emotional-support.html">Emotional Support Resources</a></li>
+                <li><a href="/platform/services.html">Services</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/survey/form/index.html" class="cta-button">Join our Beta Program</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                Digital Companion
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="how-it-works.html">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="practical-support.html">Practical Support</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="emotional-support.html">Emotional Support</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary ms-lg-3" href="mailto:anniedigitalcompanion@gmail.com?subject=Notify%20Me%20About%20Digital%20Companion%20Launch">Notify Me When Launched</a>
-                    </li>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>About Digital Companion™</h1>
+                <p class="lead">Our mission is to support people through life's most challenging transitions</p>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2>Our Mission</h2>
+                        <p>Digital Companion™ exists to simplify the complex journey of loss and grief by providing compassionate, practical support when people need it most.</p>
+                        
+                        <p>We believe that navigating the practical and emotional aspects of loss shouldn't be an additional burden during an already difficult time. By combining technology with human-centered design, we aim to create a supportive presence that guides people through each step of their journey.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="/images/logo.png" alt="Digital Companion™ Logo" width="250">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="vision-section">
+            <div class="container">
+                <h2>Our Vision</h2>
+                <p>We envision a world where:</p>
+                
+                <div class="vision-points">
+                    <div class="vision-point">
+                        <h3>No One Navigates Loss Alone</h3>
+                        <p>Everyone has access to compassionate guidance and support during life's most challenging transitions.</p>
+                    </div>
+                    
+                    <div class="vision-point">
+                        <h3>Practical Support is Accessible</h3>
+                        <p>The administrative burden of loss is simplified, allowing people to focus on what truly matters.</p>
+                    </div>
+                    
+                    <div class="vision-point">
+                        <h3>Emotional Wellbeing is Prioritized</h3>
+                        <p>Emotional support is integrated with practical assistance, recognizing that both are essential during grief.</p>
+                    </div>
+                    
+                    <div class="vision-point">
+                        <h3>Technology Serves Humanity</h3>
+                        <p>Digital tools enhance rather than replace human connection, creating more space for meaningful support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="origin-section">
+            <div class="container">
+                <h2>Our Origin Story</h2>
+                
+                <div class="origin-content">
+                    <p>Digital Companion™ was born from personal experience with loss and the recognition that existing support systems often fall short in addressing both the practical and emotional challenges of grief.</p>
+                    
+                    <p>Our founder experienced firsthand the overwhelming administrative burden that accompanies loss, all while navigating intense grief. The process was fragmented, confusing, and unnecessarily complex during an already difficult time.</p>
+                    
+                    <p>This experience revealed a clear need: a comprehensive support system that guides people through both the practical tasks and emotional journey of loss. Digital Companion™ was created to be the resource our founder wished had existed during that challenging time.</p>
+                    
+                    <p>Today, we're building Digital Companion™ with input from people who have experienced loss, grief support professionals, and experts in user-centered design. Our goal is to create a truly helpful companion for life's most challenging transitions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <h2>Our Values</h2>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Compassion</h3>
+                        <p>We approach every aspect of our service with deep empathy and understanding for the grief experience.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Accessibility</h3>
+                        <p>We believe supportive resources should be available to everyone, regardless of technical ability or background.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Integrity</h3>
+                        <p>We maintain the highest standards of privacy, security, and ethical conduct in all that we do.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Innovation</h3>
+                        <p>We continuously seek better ways to support people through challenging transitions.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Inclusivity</h3>
+                        <p>We design for diverse experiences of grief, recognizing that each person's journey is unique.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Empowerment</h3>
+                        <p>We aim to provide tools that help people feel more capable and in control during difficult times.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>Our Team</h2>
+                <p class="team-intro">Digital Companion™ is being developed by a dedicated team with expertise in grief support, technology, and user experience design.</p>
+                
+                <div class="team-placeholder">
+                    <p>Our team profiles will be available soon. We're currently focused on building the best possible service for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <div class="container">
+                <h2>Partnerships & Affiliations</h2>
+                
+                <div class="partners-placeholder">
+                    <p>We're developing partnerships with grief support organizations, mental health professionals, and administrative service providers to enhance the support we offer.</p>
+                    <p>If you're interested in partnering with Digital Companion™, please contact us at <a href="mailto:partnerships@digitalcompanion.com">partnerships@digitalcompanion.com</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                
+                <div class="contact-info">
+                    <p>We'd love to hear from you. Please reach out with any questions, feedback, or inquiries:</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>General Inquiries</h3>
+                            <p><a href="mailto:info@digitalcompanion.com">info@digitalcompanion.com</a></p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <h3>Support</h3>
+                            <p><a href="mailto:support@digitalcompanion.com">support@digitalcompanion.com</a></p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <h3>Partnerships</h3>
+                            <p><a href="mailto:partnerships@digitalcompanion.com">partnerships@digitalcompanion.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Help Shape Digital Companion™</h2>
+                <p>We're building this service with input from people like you. Share your experiences and insights to help us create the most effective support possible.</p>
+                <a href="/survey" class="button primary-button">Join our Beta Program</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Digital Companion™</h5>
+                <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Platform</h5>
+                <ul>
+                    <li><a href="/platform/tasks.html">Tasks Management</a></li>
+                    <li><a href="/platform/estate.html">Estate</a></li>
+                    <li><a href="/platform/memory.html">Memory</a></li>
+                    <li><a href="/platform/practical-guides.html">Practical Guides</a></li>
+                    <li><a href="/platform/emotional-support.html">Emotional Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="/terms.html">Terms and Conditions</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="main-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center hero-content animate-on-scroll">
-                    <h1>Our Story</h1>
-                    <p>Digital Companion was born from personal experience with loss and a vision to transform how people navigate grief in the digital age.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Mission Section -->
-    <section class="feature-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 animate-on-scroll">
-                    <h2>Our Mission</h2>
-                    <p>At Digital Companion, we believe that no one should have to navigate the complex journey of grief alone. Our mission is to provide comprehensive support that addresses both the practical challenges and emotional impact of loss.</p>
-                    <p>We are committed to:</p>
-                    <ul>
-                        <li>Simplifying the administrative burden that comes with loss</li>
-                        <li>Creating safe spaces for emotional support and connection</li>
-                        <li>Making expert resources accessible to everyone</li>
-                        <li>Honoring the uniqueness of each person's grief journey</li>
-                        <li>Using technology to enhance human connection, not replace it</li>
-                    </ul>
-                    <p>Through our platform, we aim to transform the experience of loss by providing the tools, resources, and community that make this difficult journey more manageable.</p>
-                </div>
-                <div class="col-lg-6 mb-4 animate-on-scroll">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Our Values</h3>
-                        <ul>
-                            <li><strong>Compassion:</strong> We approach every interaction with empathy and understanding</li>
-                            <li><strong>Accessibility:</strong> We make support available to everyone, regardless of background or circumstance</li>
-                            <li><strong>Integrity:</strong> We maintain the highest standards of privacy, security, and ethical practice</li>
-                            <li><strong>Innovation:</strong> We continuously improve our platform to better serve those in need</li>
-                            <li><strong>Community:</strong> We believe in the healing power of human connection</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founder's Story Section -->
-    <section class="feature-section bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 order-lg-2 animate-on-scroll">
-                    <h2>Our Founder's Story</h2>
-                    <p>Digital Companion was founded by Emma Clarke following her experience of losing her father in 2022. As she navigated the overwhelming administrative tasks while processing her grief, she discovered a significant gap in available support.</p>
-                    <p>"I found myself drowning in paperwork while also trying to process my emotions," Emma recalls. "There were resources for practical matters and others for emotional support, but nothing that brought these two essential needs together in a cohesive way."</p>
-                    <p>Drawing on her background in technology and psychology, Emma assembled a team of grief counselors, user experience designers, and legal experts to create a platform that would address both the practical and emotional aspects of loss.</p>
-                    <p>"Our goal was to create the support system I wished I'd had during my own loss journey," says Emma. "Something that could guide people through the necessary tasks while also providing space for their grief."</p>
-                    <p>Digital Companion launched in early 2024 and has since helped thousands of people navigate their grief journeys with greater ease and support.</p>
-                </div>
-                <div class="col-lg-6 mb-4 order-lg-1 animate-on-scroll">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <blockquote class="founder-quote">
-                            <p>"Loss changes you forever, but having the right support can transform how you navigate that change. Digital Companion exists to be that support—a steady presence that helps you manage the practical while honoring the emotional."</p>
-                            <footer class="blockquote-footer">Emma Clarke, Founder</footer>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Team Section -->
-    <section class="feature-section">
-        <div class="container">
-            <h2 class="text-center mb-5 animate-on-scroll">Our Team</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>Emma Clarke</h3>
-                        <p class="team-role">Founder & CEO</p>
-                        <p>With a background in technology and psychology, Emma leads our vision and strategy, ensuring Digital Companion remains focused on our core mission of supporting those experiencing loss.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>Dr. Michael Patel</h3>
-                        <p class="team-role">Chief Clinical Officer</p>
-                        <p>A licensed psychologist specializing in grief and trauma, Dr. Patel oversees our emotional support resources and ensures all content is grounded in best practices for grief support.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>Sarah Johnson</h3>
-                        <p class="team-role">Head of User Experience</p>
-                        <p>With over 15 years in UX design, Sarah ensures our platform is intuitive and accessible, especially for users experiencing the cognitive effects of grief.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>James Rodriguez</h3>
-                        <p class="team-role">Legal Affairs Director</p>
-                        <p>James brings extensive experience in estate law to oversee our practical support resources, ensuring accurate guidance on legal matters across different jurisdictions.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>Aisha Mbeki</h3>
-                        <p class="team-role">Community Director</p>
-                        <p>A certified grief counselor, Aisha manages our support communities, training moderators and developing guidelines that ensure safe, supportive spaces for all members.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>David Chen</h3>
-                        <p class="team-role">Chief Technology Officer</p>
-                        <p>David leads our engineering team, focusing on creating secure, reliable technology that supports our users through their most vulnerable moments.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advisory Board Section -->
-    <section class="feature-section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5 animate-on-scroll">Our Advisory Board</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>Professor Eleanor Wright</h3>
-                        <p class="team-role">Grief Research</p>
-                        <p>A leading researcher in contemporary grief theory from Oxford University, Professor Wright ensures our approach is informed by the latest research in bereavement studies.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>Rabbi Daniel Goldstein</h3>
-                        <p class="team-role">Spiritual Perspectives</p>
-                        <p>Rabbi Goldstein advises on diverse spiritual and religious approaches to grief, helping ensure our platform respects and supports various cultural traditions around loss.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                    <div class="team-card">
-                        <div class="team-image placeholder-image"></div>
-                        <h3>Maria Sanchez</h3>
-                        <p class="team-role">End-of-Life Care</p>
-                        <p>With 25 years as a hospice nurse, Maria provides invaluable insights on supporting families through anticipatory grief and the immediate aftermath of loss.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Approach Section -->
-    <section class="feature-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 animate-on-scroll">
-                    <h2>Our Approach</h2>
-                    <p>Digital Companion takes a holistic approach to grief support, recognizing that the journey through loss involves both practical challenges and profound emotional experiences.</p>
-                    <p>Our approach is guided by these principles:</p>
-                    <ul>
-                        <li><strong>Personalization:</strong> We recognize that every loss is unique, and our platform adapts to each user's specific situation and needs.</li>
-                        <li><strong>Integration:</strong> We seamlessly combine practical tools with emotional support, acknowledging that these needs are interconnected.</li>
-                        <li><strong>Accessibility:</strong> We design for users of all technical abilities and backgrounds, ensuring support is available to everyone.</li>
-                        <li><strong>Privacy-First:</strong> We maintain the highest standards of data protection, recognizing the sensitive nature of grief and loss.</li>
-                        <li><strong>Human-Centered:</strong> While we leverage technology, we ensure that human connection remains at the heart of our platform.</li>
-                    </ul>
-                    <p>This approach allows us to provide comprehensive support that evolves with users throughout their grief journey, from the immediate aftermath of loss through the longer-term process of adaptation.</p>
-                </div>
-                <div class="col-lg-6 mb-4 animate-on-scroll">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-hands-holding-circle"></i>
-                        </div>
-                        <h3>Our Commitment to Inclusivity</h3>
-                        <p>We are committed to creating a platform that serves people of all backgrounds, beliefs, and experiences. Our content and community guidelines are designed to be inclusive and respectful of diverse perspectives on grief and loss.</p>
-                        <p>We actively work to ensure our platform is accessible to users with disabilities, including those with visual, auditory, motor, or cognitive impairments. Our accessibility features include high-contrast mode, text resizing, screen reader compatibility, and keyboard navigation.</p>
-                        <p>We also recognize the importance of cultural competence in grief support and continuously work to ensure our resources respect and address diverse cultural approaches to loss, mourning, and remembrance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section class="feature-section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5 animate-on-scroll">Our Impact</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4 animate-on-scroll">
-                    <div class="impact-stat">
-                        <div class="impact-number">25,000+</div>
-                        <p>Users Supported</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 animate-on-scroll">
-                    <div class="impact-stat">
-                        <div class="impact-number">150+</div>
-                        <p>Support Groups Facilitated</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4 animate-on-scroll">
-                    <div class="impact-stat">
-                        <div class="impact-number">98%</div>
-                        <p>User Satisfaction Rate</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-8 mx-auto text-center animate-on-scroll">
-                    <p class="impact-quote">"Digital Companion has transformed how we think about supporting people through grief. By combining practical guidance with emotional support in such an accessible way, they're filling a critical gap in bereavement care."</p>
-                    <p class="impact-author">— Dr. Rebecca Torres, Director of the National Grief Research Institute</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Our Team Section -->
-    <section class="feature-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 animate-on-scroll">
-                    <h2>Join Our Team</h2>
-                    <p>We're always looking for compassionate, talented individuals who share our mission of supporting people through loss. If you're passionate about making a difference in how people experience grief, we'd love to hear from you.</p>
-                    <p>Working at Digital Companion means:</p>
-                    <ul>
-                        <li>Contributing to meaningful work that directly impacts people during vulnerable times</li>
-                        <li>Joining a diverse team united by shared values and purpose</li>
-                        <li>Enjoying flexible work arrangements that support work-life balance</li>
-                        <li>Having opportunities for professional growth and development</li>
-                        <li>Being part of an organization that practices the compassion it preaches</li>
-                    </ul>
-                    <p>Visit our careers page to see current openings or send your resume to careers@digitalcompanion.com to be considered for future opportunities.</p>
-                    <a href="careers.html" class="btn btn-primary mt-3">View Open Positions</a>
-                </div>
-                <div class="col-lg-6 mb-4 animate-on-scroll">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Our Culture</h3>
-                        <p>"Working at Digital Companion has been the most rewarding experience of my career. We're building something that genuinely helps people during their darkest moments, and that shared purpose creates an incredible team culture. There's a level of empathy and support among colleagues that I haven't experienced anywhere else."</p>
-                        <p class="testimonial-author">— Sophia Chen, User Experience Designer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="animate-on-scroll">Ready to Experience Digital Companion?</h2>
-            <p class="animate-on-scroll">Join thousands of others who have found support through their grief journey.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap animate-on-scroll">
-                <a href="signup.html" class="btn btn-secondary">Start Free Trial</a>
-                <a href="contact.html" class="btn btn-outline">Contact Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5>Digital Companion</h5>
-                    <p>Supporting you through life's most challenging transitions with practical assistance and emotional care.</p>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5>Services</h5>
-                    <ul>
-                        <li><a href="practical-support.html">Practical Support</a></li>
-                        <li><a href="emotional-support.html">Emotional Support</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4 mb-4">
-                    <h5>Stay Connected</h5>
-                    <p>Subscribe to our newsletter for helpful resources and updates.</p>
-                    <form class="needs-validation" novalidate>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Your email" aria-label="Your email" required>
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                            <div class="invalid-feedback">
-                                Please enter a valid email address.
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom text-center">
-                <p>&copy; 2025 Digital Companion. All rights reserved.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Digital Companion™. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Accessibility Controls -->
-    <div class="accessibility-controls">
-        <button id="toggle-contrast" aria-label="Toggle high contrast mode">
-            <i class="fas fa-adjust"></i>
-        </button>
-        <button id="toggle-text-size" aria-label="Toggle large text mode">
-            <i class="fas fa-text-height"></i>
-        </button>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/scripts.js"></script>
     <script>
-        // Accessibility controls
-        document.getElementById('toggle-contrast').addEventListener('click', function() {
-            document.body.classList.toggle('high-contrast');
-        });
-        
-        document.getElementById('toggle-text-size').addEventListener('click', function() {
-            document.body.classList.toggle('large-text');
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
         });
     </script>
 </body>
